@@ -1,0 +1,19 @@
+
+#mainNavbar {
+    background-color: #d00010;
+    height: 100px;
+    padding: 10px;
+}
+
+#navLogo {
+    display: block;
+    margin: auto;
+    height: 80px;
+    width: auto;
+}
+
+#navbarTitle {
+    font-size: 42px;
+    color: #fff;
+    text-align: center;
+}

@@ -9,6 +9,11 @@ class Dashboard extends Component {
         this.setState({ myStrengths: updatedStrengths });
     }
 
+    componentWillMount() {
+        console.log('Dashboard will mount!');
+        this.setState({ username: localStorage.getItem('lifeCallingUsername') });
+    }
+
     componentDidMount() {
         console.log('Dashboard mounted!');
     }
@@ -21,6 +26,8 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            username: "",
+            myStrengths: [],
             strengths: [
                 {
                     id: 1,
@@ -226,8 +233,7 @@ class Dashboard extends Component {
                     description: "",
                     strengthOfMine: false
                 }
-            ],
-            myStrengths: [],
+            ]
         }
     }
 
@@ -238,7 +244,7 @@ class Dashboard extends Component {
             <div className="App col-md-12">
                 <div className="row">
                     <header className="jumbotron col-md-12">
-                        <h1 className="App-title">WCHS Worldviews App</h1>
+                        <h1 className="App-title">WCHS LIFE CALLING<span><h5>{this.state.username} </h5></span></h1>
                     </header>
                 </div>
 

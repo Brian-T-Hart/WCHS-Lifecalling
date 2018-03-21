@@ -1,0 +1,17 @@
+#login-form {
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: auto;
+    margin-top: 40px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+#login-submit {
+    width: 100px;
+}
+
+input {
+    margin-bottom: 10px;
+}
