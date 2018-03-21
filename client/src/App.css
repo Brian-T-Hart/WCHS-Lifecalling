@@ -1,0 +1,66 @@
+/* * {
+  border: 2px solid red;
+} */
+
+.jumbotron {
+  /* background-color: #000; */
+  background-color: #d00010;
+  height: 100px;
+  padding: 10px;
+}
+
+.App-title {
+  text-align: center;
+  font-size: 42px;
+  color: #fff;
+  padding: 20px;
+}
+
+.infoContainer {
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+  max-width: 90%;
+  border: 2px solid silver;
+}
+
+.infoTitle {
+  text-align: center;
+  background-color: #d00010;
+  color: #fff;
+}
+
+.infoInfoBox {
+  border-top: 2px solid silver;
+  height: 240px;
+  overflow: scroll;
+  background-color: #fff;
+}
+
+h3 {
+  padding-top: 10px;
+}
+
+.list-group-item {
+  text-transform: uppercase;
+  /* padding-left: 25%; */
+}
+
+.modal {
+  max-height: 80%;
+  margin-top: 7%;
+}
+
+.modal-body {
+  padding: 20px 40px;
+}
+
+#editIcon {
+  width: 16px;
+  height: auto;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+
+
