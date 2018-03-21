@@ -1,7 +1,11 @@
 var express = require("express");
+var session = require('express-session');
 var bodyParser = require("body-parser");
 var methodOverride = require("method-override");
 var path = require("path");
+var passport = require('passport');
+
+require('./passport.js');
 
 // Set up the Express App
 var app = express();
@@ -14,6 +18,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vmd.api+json" }));
+
+// Set up session
+// ==============
+app.use(session({ secret: "SECRET", resave: false, saveUninitialized: false }));
+app.use(passport.initialize());
+app.use(passport.session());
 
 // Static Directory
 app.use(express.static("client/build"));
