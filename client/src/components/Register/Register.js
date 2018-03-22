@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
+import Navbar from "../Navbar/Navbar.js";
+import "./Register.css";
 
 class Register extends Component {
 
@@ -43,32 +45,28 @@ class Register extends Component {
     render() {
         return (
             <div>
-                <div className="row container">
-                    {this.state.username}
-                </div>
-                <div className="row container">
-                    {this.state.email}
-                </div>
-                {/* <div className="row container">
-                    {this.state.password}
-                </div> */}
+                <Navbar />
                 <div className="row">
-                    <div className="col-md-4">
-
+                    <div className="col-md-6">
+                        <img id="largeLogo" src="../../images/lc-logo.jpg" alt="" />
+                    </div>
+                    <div className="col-md-6">
                         <form id="register-form" >
-                            <h2> Create an Account </h2>
+                            <h2 id="formTitle"> Create an Account</h2>
 
-                            <input type="text" name="username" id="username" tabIndex="1" placeholder="Username *" value={this.state.username} onChange={this.handleInputChange} required>
-                            </input>
-                            <input type="email" name="email" id="email" tabIndex="1" placeholder="Email Address *" value={this.state.email} onChange={this.handleInputChange} autoComplete="email" required>
-                            </input>
+                            <input type="text" name="username" id="username" tabIndex="1" placeholder="Username *" value={this.state.username} onChange={this.handleInputChange} required></input>
+
+                            <input type="email" name="email" id="email" tabIndex="1" placeholder="Email Address *" value={this.state.email} onChange={this.handleInputChange} autoComplete="email" required></input>
+
                             <input type="password" name="password" id="password" tabIndex="2" placeholder="Password *" value={this.state.password} onChange={this.handleInputChange} autoComplete="new-password" required>
                             </input>
-                            <input type="password" name="passwordConfirm" id="confirm-password" tabIndex="2" placeholder="Confirm Password *" value={this.state.passwordConfirm} onChange={this.handleInputChange} autoComplete="new-password" required>
-                            </input>
-                                    <button type="submit" name="register-submit" id="register-submit" tabIndex="4" className="form-control btn btn-register" value="Register Now" onClick={this.handleRegister}>Register</button>
-                        </form>
 
+                            <input type="password" name="passwordConfirm" id="confirm-password" tabIndex="2" placeholder="Confirm Password *" value={this.state.passwordConfirm} onChange={this.handleInputChange} autoComplete="new-password" required></input>
+
+                            <button type="submit" name="register-submit" id="registerBtn" tabIndex="4" className="form-control btn btn-primary btn-register" value="Register Now" onClick={this.handleRegister}>Register</button>
+                            <br></br>
+                            <a id="loginLink" href="/login" target="#">Login</a>
+                        </form>
                     </div>
                 </div>
             </div>

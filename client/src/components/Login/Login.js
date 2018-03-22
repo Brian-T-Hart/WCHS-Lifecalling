@@ -59,16 +59,22 @@ class Login extends Component {
             <div>
                 <Navbar />
                 <div className="row">
-                    <div className="col-md-12">
+                    <div className="col-md-6">
+                        <img id="largeLogo" src="../../images/lc-logo.jpg" alt="" />
+                    </div>
+                    <div className="col-md-6">
                         <form id="login-form" >
-                            <h2> Sign In </h2>
+                            <h2 id="formTitle"> Sign-In </h2>
 
                             <input type="text" name="username" id="username" tabIndex="1" placeholder="Username *" value={this.state.username} onChange={this.handleInputChange} autoComplete="username" required></input>
-                            <br></br>
+
                             <input type="password" name="password" id="password" tabIndex="2" placeholder="Password *" value={this.state.password} onChange={this.handleInputChange} autoComplete="current-password" required></input>
-                            <br></br>
+
                             <button type="submit" name="login-submit" id="login-submit" tabIndex="3" className="form-control btn btn-primary btn-login" value="Log In" onClick={this.handleLogin}>Log In</button>
-                            
+
+                            <div id="registerLink" className="row"> 
+                                <a href="/register" >Register</a>
+                            </div>
                         </form>
                     </div>
                 </div>

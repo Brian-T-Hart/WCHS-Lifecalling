@@ -22,6 +22,7 @@ class StrengthsModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
+        console.log("this ", this);
         console.log("superStrength ", this.props.strengths);
         this.myStrengths = [];
         for (let i = 1; i < 35; i++) {

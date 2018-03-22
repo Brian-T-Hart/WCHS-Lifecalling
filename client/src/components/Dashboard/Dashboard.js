@@ -3,6 +3,8 @@ import MyStrengths from "../MyStrengths/MyStrengths.js";
 import ModalWrapper from '../ModalWrapper/ModalWrapper.js';
 import MBTI from "../MBTI/MBTI.js";
 import listOfStrengths from "./listOfStrengths.js";
+import listOfMBTI from "./listOfMBTI.js";
+import "./Dashboard.css";
 
 class Dashboard extends Component {
 
@@ -18,11 +20,11 @@ class Dashboard extends Component {
 
     componentDidMount() {
         console.log('Dashboard mounted!');
+        console.log('MBTI ', this.state.MBTI);
     }
 
     componentDidUpdate() {
         console.log('Dashboard updated!');
-        console.log("new myStrengths after closing modal ");
     }
 
     constructor(props) {
@@ -30,7 +32,9 @@ class Dashboard extends Component {
         this.state = {
             username: "",
             myStrengths: [],
-            strengths: listOfStrengths
+            strengths: listOfStrengths,
+            MBTI: listOfMBTI,
+            myMBTI: []
         }
     }
 
@@ -54,7 +58,7 @@ class Dashboard extends Component {
                                 <MyStrengths strengths={this.state.strengths} myStrengths={this.state.myStrengths}/>
                             </div>
                             <div className="infoDiv col-md-4">
-                                <MBTI />
+                                <MBTI MBTI={this.state.MBTI} myMBTI={this.state.myMBTI}/>
                             </div>
                             <div className="infoDiv col-md-4">
                                 {/* <MyStrengths /> */}

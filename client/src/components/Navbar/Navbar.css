@@ -2,13 +2,17 @@
 #mainNavbar {
     background-color: #d00010;
     height: 100px;
-    padding: 10px;
+    padding: 10px 0px;
+}
+
+.navbar-header {
+    padding: 0px;
 }
 
 #navLogo {
-    display: block;
-    margin: auto;
-    height: 80px;
+    height: 100px;
+    margin-left: 0px;
+    padding-left: 0px;
     width: auto;
 }
 

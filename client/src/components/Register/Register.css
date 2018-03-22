@@ -1,4 +1,4 @@
-#login-form {
+#register-form {
     width: 340px;
     height: 340px;
     float: left;
@@ -10,30 +10,41 @@
     border-radius: 4px;
 }
 
-#formTitle {
-    text-align: center;
-    color: #393433;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-#login-submit {
-    width: 100px;
+#registerBtn {
+    width: 40%;
     display: block;
     margin: auto;
     margin-top: 20px;
 }
 
 input {
-    width: 100%;
+    width: 70%;
     display: block;
     margin: auto;
     margin-bottom: 10px;
 }
 
-#registerLink {
-    display: block;
-    margin: auto;
+#formTitle {
     text-align: center;
-    margin-top: 20px;
+    color: #393433;
+    margin-bottom: 20px;
+}
+
+#largeLogo {
+    width: 400px;
+    height: 400px;
+    float: right;
+    /* display: block;
+    margin: auto; */
+    margin-top: 80px;
+    margin-right: 20px;
+}
+
+.col-md-6 {
+    margin: 0px;
+    padding: 0px;
+}
+
+#loginLink {
+    float: right;
 }
