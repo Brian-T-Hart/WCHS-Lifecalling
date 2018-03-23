@@ -27,5 +27,11 @@ export default {
     updateStrengths: function (Data) {
         console.log("updating strengths..API.js");
         return axios.post("students/updateStrengths", Data);
-    }
+    },
+
+    updateMBTI: function (Data) {
+        console.log("updating mbpi..API.js");
+        return axios.post("students/updateMBTI", Data);
+    },
+
 }

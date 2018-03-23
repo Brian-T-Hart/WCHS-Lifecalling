@@ -40,7 +40,7 @@ class MyStrengths extends Component {
                     <div className="col-md-12">
                         <h3>Strengths
                             {/* Trigger modal with edit icon */}
-                            <span data-toggle="modal" data-target="#modalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
+                            <span data-toggle="modal" data-target="#strengthsModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
                     </div>
                 </div>
 

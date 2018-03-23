@@ -40,7 +40,7 @@ class MyMBTI extends Component {
                     <div className="col-md-12">
                         <h3>MBTI
                             {/* Trigger modal with edit icon */}
-                            <span data-toggle="modal" data-target="#modalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
+                            <span data-toggle="modal" data-target="#mbtiModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
                     </div>
                 </div>
 

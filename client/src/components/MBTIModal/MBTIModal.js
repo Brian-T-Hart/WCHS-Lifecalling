@@ -24,32 +24,27 @@ class MBTIModal extends Component {
     handleClick(e) {
         e.preventDefault();
         console.log(this);
-        // this.myMBTI = [];
-        // this.myMBTI.push(this.refs.myMBTI1.value);
-        // this.myMBTI.push(this.refs.myMBTI1.value);
-        // this.myMBTI.push(this.refs.myMBTI1.value);
-        // this.myMBTI.push(this.refs.myMBTI1.value);
-        // this.props.callbackFromMBTIModal(this.myMBTI);
-        // API.updateMBTI({
-        //     id: localStorage.getItem("lifeCallingId"),
-        //     strengths: this.myMBTI
-        // })
-        //     .then(res => {
-        //         console.log(res);
-        //     }
-        //     )
-        //     .catch(err => {
-        //         alert('something went wrong');
-        //         console.log(err);
-        //     });
+        this.myMbti = [];
+        this.myMbti.push(this.refs.mbti1.value);
+        this.myMbti.push(this.refs.mbti2.value);
+        this.myMbti.push(this.refs.mbti3.value);
+        this.myMbti.push(this.refs.mbti4.value);
+        this.props.callbackFromMBTIModal(this.myMbti);
+        API.updateMBTI({
+            id: localStorage.getItem("lifeCallingId"),
+            myMbti: this.myMbti
+        })
+            .then(res => {
+                console.log(res);
+            }
+            )
+            .catch(err => {
+                alert('something went wrong');
+                console.log(err);
+            });
     }
 
     render() {
-
-        const types = this.state.mbti.map((type) =>
-            <option key={type.id}>{type.name}</option>
-        );
-
         return (
             <div>
                 <div className="modal-content">
@@ -62,27 +57,31 @@ class MBTIModal extends Component {
                     <form>
                         <div className="modal-body">
                             <div class="form-group">
-                                <label for="strength1">Highest Strength</label>
-                                <select class="form-control" id="strength1" ref="strength1">
-                                    {types}
+                                <label for="mbti1">Choose Type</label>
+                                <select class="form-control" id="mbti1" ref="mbti1">
+                                    <option>Extrovert</option>
+                                    <option>Introvert</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="strength2">Second Highest Strength</label>
-                                <select class="form-control" id="strength2" ref="strength2">
-                                    {types}
+                                <label for="mbti2">Choose Type</label>
+                                <select class="form-control" id="mbti2" ref="mbti2">
+                                    <option>Sensing</option>
+                                    <option>Intuition</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="strength3">Third Highest Strength</label>
-                                <select class="form-control" id="strength3" ref="strength3">
-                                    {types}
+                                <label for="mbti3">Choose Type</label>
+                                <select class="form-control" id="mbti3" ref="mbti3">
+                                    <option>Thinking</option>
+                                    <option>Feeling</option>
                                 </select>
                             </div>
                             <div class="form-group">
-                                <label for="strength4">Fourth Highest Strength</label>
-                                <select class="form-control" id="strength4" ref="strength4">
-                                    {types}
+                                <label for="mbti4">Choose Type</label>
+                                <select class="form-control" id="mbti4" ref="mbti4">
+                                    <option>Perceiving</option>
+                                    <option>Judging</option>
                                 </select>
                             </div>
                         </div>

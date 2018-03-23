@@ -44,4 +44,26 @@ router.post('/updateStrengths', (req, res, next) => {
     });
 });
 
+// post to get all products from a particular rep
+router.post('/updateMBTI', (req, res, next) => {
+    console.log("_________________________________");
+    console.log("update myMbti..index.routes.js");
+    console.log("_________________________________");
+    db.students.update({
+        mbti: req.body.myMbti
+    },
+        {
+            where: {
+                id: req.body.id
+            }
+        })
+        .then(function (results) {
+            console.log("results from updateStrengths..index.js ", results);
+            res.json(results)
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+});
+
 module.exports = router;

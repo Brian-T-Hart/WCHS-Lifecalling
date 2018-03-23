@@ -40,13 +40,16 @@ class ModalWrapper extends Component {
 
         return (
             <div>
-                <div className="modal fade" id="modalWrapper" role="dialog">
+
+                <div className="modal fade" id="strengthsModalWrapper" role="dialog">
                     <div className="modal-dialog">
+                        <StrengthsModal strengths={this.props.strengths} myStrengths={this.props.myStrengths} callbackFromStrengthsModal={this.updateMyStrengths}/>
+                    </div>
+                </div>
 
-                        {/* <StrengthsModal strengths={this.props.strengths} myStrengths={this.props.myStrengths} callbackFromStrengthsModal={this.updateMyStrengths}/> */}
-
+                <div className="modal fade" id="mbtiModalWrapper" role="dialog">
+                    <div className="modal-dialog">
                         <MBTIModal mbti={this.props.mbti} myMbti={this.props.myMbti} callbackFromMBTIModal={this.updateMyMBTI} />
-
                     </div>
                 </div>
             </div>

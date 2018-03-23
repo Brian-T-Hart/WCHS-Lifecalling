@@ -32,7 +32,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: true,
         },
         mbti: {
-            type: DataTypes.STRING,
+            type: DataTypes.JSON,
             allowNull: true,
         },
         active: {
