@@ -42,7 +42,7 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div className="App col-md-12">
+            <div id="dashboardContainer" className="col-md-12">
                 <div className="row">
                     <header className="jumbotron col-md-12">
                         <h1 className="App-title">WCHS LIFE CALLING<span><h5>{this.state.username} </h5></span></h1>

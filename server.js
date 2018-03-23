@@ -31,11 +31,11 @@ app.use(express.static("client/build"));
 // routes
 var index = require("./controllers/index");
 var accounts = require("./controllers/accounts");
-// var students = require("./controllers/students");
+var students = require("./controllers/students");
 
 app.use("/", index);
 app.use("/accounts", accounts);
-// app.use("/students", students);
+app.use("/students", students);
 
 app.listen(PORT, function () {
     console.log("App is listening on PORT " + PORT);

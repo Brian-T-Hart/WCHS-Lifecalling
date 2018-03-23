@@ -17,5 +17,10 @@ export default {
     testCall: function (Data) {
         console.log("testCall..API.js");
         return axios.post("/testCall", Data);
+    },
+
+    updateStrengths: function (Data) {
+        console.log("updating strengths..API.js");
+        return axios.post("students/updateStrengths", Data);
     }
 }

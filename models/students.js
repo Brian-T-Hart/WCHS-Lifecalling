@@ -28,7 +28,7 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
         },
         strengths: {
-            type: DataTypes.STRING,
+            type: DataTypes.JSON,
             allowNull: true,
         },
         mbti: {

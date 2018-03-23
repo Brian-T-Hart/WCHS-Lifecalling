@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from "../../utils/API";
 
 class StrengthsModal extends Component {
     componentDidMount() {
@@ -22,27 +23,32 @@ class StrengthsModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        console.log("this ", this);
-        console.log("superStrength ", this.props.strengths);
+        console.log(this.refs.strength1.value);
         this.myStrengths = [];
-        for (let i = 1; i < 35; i++) {
-            if (this.refs[i].checked) {
-            console.log(this.refs[i].name);
-            this.myStrengths.push(this.refs[i].name);
-            }
-        }
-        console.log("myStrengths: ", this.myStrengths);
+        this.myStrengths.push(this.refs.strength1.value);
+        this.myStrengths.push(this.refs.strength2.value);
+        this.myStrengths.push(this.refs.strength3.value);
+        this.myStrengths.push(this.refs.strength4.value);
+        this.myStrengths.push(this.refs.strength5.value);
         this.props.callbackFromStrengthsModal(this.myStrengths);
-        // this.setState({myStrengths: this.myStrengths});
+        API.updateStrengths({
+            id: localStorage.getItem("lifeCallingId"),
+            strengths: this.myStrengths
+        })
+            .then(res => {
+                console.log(res);
+                }
+            )
+            .catch(err => {
+                alert('something went wrong');
+                console.log(err);
+            });
     }
 
     render() {
 
         const strengths = this.state.strengths.map((strength) => 
-            <div className="form-group" key={strength.id}>
-                <input type="checkbox" name={strength.name} ref={strength.id} className="form-check-input" id={strength.id} />
-                <label key={strength.id} className="form-check-label" htmlFor={strength.id}>{strength.name}</label>
-            </div>
+                    <option key={strength.id}>{strength.name}</option>
         );
 
         return (
@@ -56,8 +62,36 @@ class StrengthsModal extends Component {
                     </div>
                     <form>
                     <div className="modal-body">
-                        
-                                {strengths}
+                            <div class="form-group">
+                                <label for="strength1">Highest Strength</label>
+                                <select class="form-control" id="strength1" ref="strength1">
+                                    {strengths}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="strength2">Second Highest Strength</label>
+                                <select class="form-control" id="strength2" ref="strength2">
+                                    {strengths}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="strength3">Third Highest Strength</label>
+                                <select class="form-control" id="strength3" ref="strength3">
+                                    {strengths}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="strength4">Fourth Highest Strength</label>
+                                <select class="form-control" id="strength4" ref="strength4">
+                                    {strengths}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="strength5">Fifth Highest Strength</label>
+                                <select class="form-control" id="strength5" ref="strength5">
+                                    {strengths}
+                                </select>
+                            </div>
                     </div>
 
                     <div className="modal-footer">

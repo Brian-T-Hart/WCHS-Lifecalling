@@ -30,7 +30,7 @@ class Login extends Component {
                     const decoded = decode(res.data.token);
                     var sub = decoded.sub;
                     console.log('sub: ' + sub);
-                    localStorage.setItem('student_id', sub);
+                    localStorage.setItem('lifeCallingId', sub);
                     console.log("decoded token giving student_id and timestamp: ", decoded);
                     window.location = '/dashboard';
                 }
