@@ -1,11 +1,17 @@
 import React, { Component } from 'react';
 import StrengthsModal from "../StrengthsModal/StrengthsModal.js";
+import MBTIModal from "../MBTIModal/MBTIModal.js";
 
 class ModalWrapper extends Component {
     
     updateMyStrengths = (updatedStrengths) => {
         console.log('updatedStrengths from MyStrengths', updatedStrengths);
-        this.props.callbackFromModalWrapper(updatedStrengths);
+        this.props.strengthsCallbackFromModalWrapper(updatedStrengths);
+    }
+
+    updateMyMBTI = (updatedMBTI) => {
+        console.log('updatedMBTI from MyMBTI', updatedMBTI);
+        this.props.mbtiCallbackFromModalWrapper(updatedMBTI);
     }
 
     componentDidMount() {
@@ -23,7 +29,9 @@ class ModalWrapper extends Component {
         super(props);
         this.state = {
             strengths: this.props.strengths,
-            myStrengths: this.props.myStrengths
+            myStrengths: this.props.myStrengths,
+            mbti: this.props.mbti,
+            myMbti: this.props.myMbti
         }
     }
     
@@ -32,10 +40,12 @@ class ModalWrapper extends Component {
 
         return (
             <div>
-                <div className="modal fade" id="strengthsModal" role="dialog">
+                <div className="modal fade" id="modalWrapper" role="dialog">
                     <div className="modal-dialog">
 
-                        <StrengthsModal strengths={this.props.strengths} myStrengths={this.props.myStrengths} callbackFromStrengthsModal={this.updateMyStrengths}/>
+                        {/* <StrengthsModal strengths={this.props.strengths} myStrengths={this.props.myStrengths} callbackFromStrengthsModal={this.updateMyStrengths}/> */}
+
+                        <MBTIModal mbti={this.props.mbti} myMbti={this.props.myMbti} callbackFromMBTIModal={this.updateMyMBTI} />
 
                     </div>
                 </div>

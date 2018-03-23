@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 
-class MyStrengths extends Component {
-    
+class MyMBTI extends Component {
+
     componentDidMount() {
-        console.log('MyStrengths mounted!');
-        console.log('myStrengths from Dashboard ', this.props.myStrengths);
+        console.log('MyMBTI mounted!');
+        console.log('MyMBTI from Dashboard ', this.props.myMbti);
     }
 
     componentDidUpdate() {
-        console.log('MyStrengths updated!');
-        console.log('myStrengths componentDidMount ', this.props.myStrengths);
+        console.log('MyMBTI updated!');
+        console.log('MyMBTI componentDidMount ', this.props.myMbti);
     }
-    
+
     constructor(props) {
         super(props);
         this.state = {
-            strengths: this.props.strengths,
-            myStrengths: this.props.myStrengths
-    }
+            mbti: this.props.mbti,
+            myMbti: this.props.myMbti
+        }
         // this.handleClick = this.handleClick.bind(this);
-}
+    }
 
     // handleClick() {
     //     console.log("Strengths title was clicked.");
@@ -28,8 +28,8 @@ class MyStrengths extends Component {
 
     render() {
 
-        const listOfMyStrengths = this.props.myStrengths.map((strength) =>
-            <li key={this.props.myStrengths.indexOf(strength)+1} className="list-group-item d-flex align-items-center"><span className="badge badge-default badge-pill">{this.props.myStrengths.indexOf(strength) + 1}</span>{strength}</li>
+        const listOfMyMbti = this.props.myMbti.map((mbti) =>
+            <li key={this.props.myMbti.indexOf(mbti) + 1} className="list-group-item d-flex align-items-center"><span className="badge badge-default badge-pill">{this.props.myMbti.indexOf(mbti) + 1}</span>{mbti}</li>
         );
 
         return (
@@ -38,7 +38,7 @@ class MyStrengths extends Component {
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <h3>Strengths
+                        <h3>MBTI
                             {/* Trigger modal with edit icon */}
                             <span data-toggle="modal" data-target="#modalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
                     </div>
@@ -48,7 +48,7 @@ class MyStrengths extends Component {
                 <div className="infoInfoBox row">
                     <div className="col-md-12">
                         <ul className="list-group list-group-flush">
-                            {listOfMyStrengths}
+                            {listOfMyMbti}
                         </ul>
                     </div>
                 </div>
@@ -57,4 +57,4 @@ class MyStrengths extends Component {
     }
 }
 
-export default MyStrengths;
+export default MyMBTI;

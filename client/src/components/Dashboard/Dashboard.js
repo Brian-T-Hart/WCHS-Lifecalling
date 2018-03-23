@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 import MyStrengths from "../MyStrengths/MyStrengths.js";
 import ModalWrapper from '../ModalWrapper/ModalWrapper.js';
-import MBTI from "../MBTI/MBTI.js";
+import MBTI from "../MyMBTI/MyMBTI.js";
 import listOfStrengths from "./listOfStrengths.js";
 import listOfMBTI from "./listOfMBTI.js";
 import "./Dashboard.css";
@@ -12,6 +12,11 @@ class Dashboard extends Component {
     updateMyStrengths = (updatedStrengths) => {
         console.log('updatedStrengths from ModalWrapper', updatedStrengths);
         this.setState({ myStrengths: updatedStrengths });
+    }
+
+    updateMyMBTI = (updatedMBTI) => {
+        console.log('updatedMBTI from ModalWrapper', updatedMBTI);
+        this.setState({ myMbti: updatedMBTI });
     }
 
     componentWillMount() {
@@ -48,8 +53,8 @@ class Dashboard extends Component {
             username: "",
             myStrengths: [],
             strengths: listOfStrengths,
-            MBTI: listOfMBTI,
-            myMBTI: []
+            mbti: listOfMBTI,
+            myMbti: []
         }
     }
 
@@ -73,7 +78,7 @@ class Dashboard extends Component {
                                 <MyStrengths strengths={this.state.strengths} myStrengths={this.state.myStrengths}/>
                             </div>
                             <div className="infoDiv col-md-4">
-                                <MBTI MBTI={this.state.MBTI} myMBTI={this.state.myMBTI}/>
+                                <MBTI mbti={this.state.mbti} myMbti={this.state.myMbti}/>
                             </div>
                             <div className="infoDiv col-md-4">
                                 {/* <MyStrengths /> */}
@@ -93,7 +98,7 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
-                <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} callbackFromModalWrapper={this.updateMyStrengths} />
+                <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI}/>
             </div>
         );
     }
