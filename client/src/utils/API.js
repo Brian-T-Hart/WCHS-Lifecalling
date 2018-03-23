@@ -19,6 +19,11 @@ export default {
         return axios.post("/testCall", Data);
     },
 
+    getStrengths: function (Data) {
+        console.log("getting strengths..API.js");
+        return axios.post("students/getStrengths", Data);
+    },
+
     updateStrengths: function (Data) {
         console.log("updating strengths..API.js");
         return axios.post("students/updateStrengths", Data);

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import API from "../../utils/API";
 import MyStrengths from "../MyStrengths/MyStrengths.js";
 import ModalWrapper from '../ModalWrapper/ModalWrapper.js';
 import MBTI from "../MBTI/MBTI.js";
@@ -15,8 +16,22 @@ class Dashboard extends Component {
 
     componentWillMount() {
         console.log('Dashboard will mount!');
+        API.getStrengths({
+            id: localStorage.getItem("lifeCallingId"),
+            username: localStorage.getItem("lifeCallingUsername")
+        })
+        .then(res => {
+            console.log(res.data);
+            if (res.data) {
+                this.setState({ myStrengths: res.data })
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
         this.setState({ username: localStorage.getItem('lifeCallingUsername') });
     }
+
 
     componentDidMount() {
         console.log('Dashboard mounted!');
