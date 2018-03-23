@@ -6,6 +6,21 @@ var router = express.Router();
 // requiring our models
 var db = require("../models");
 
+router.post('/getStudentInfo', (req, res, next) => {
+    db.students.findOne({
+        attributes: ['strengths', 'mbti'],
+        where: {
+            id: req.body.id,
+            username: req.body.username
+        }
+    })
+        .then(function (results) {
+            res.json(results)
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+})
 
 router.post('/getStrengths', (req, res, next) => {
     db.students.findOne({
@@ -44,6 +59,20 @@ router.post('/updateStrengths', (req, res, next) => {
     });
 });
 
+router.post('/getMBTI', (req, res, next) => {
+    db.students.findOne({
+        where: {
+            id: req.body.id,
+            username: req.body.username
+        }
+    })
+        .then(function (results) {
+            res.json(results.mbti)
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+})
 // post to get all products from a particular rep
 router.post('/updateMBTI', (req, res, next) => {
     console.log("_________________________________");

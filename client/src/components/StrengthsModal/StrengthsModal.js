@@ -62,33 +62,33 @@ class StrengthsModal extends Component {
                     </div>
                     <form>
                     <div className="modal-body">
-                            <div class="form-group">
-                                <label for="strength1">Highest Strength</label>
-                                <select class="form-control" id="strength1" ref="strength1">
+                            <div className="form-group">
+                                <label htmlFor="strength1">Highest Strength</label>
+                                <select className="form-control" id="strength1" ref="strength1">
                                     {strengths}
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="strength2">Second Highest Strength</label>
-                                <select class="form-control" id="strength2" ref="strength2">
+                            <div className="form-group">
+                                <label htmlFor="strength2">Second Highest Strength</label>
+                                <select className="form-control" id="strength2" ref="strength2">
                                     {strengths}
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="strength3">Third Highest Strength</label>
-                                <select class="form-control" id="strength3" ref="strength3">
+                            <div className="form-group">
+                                <label htmlFor="strength3">Third Highest Strength</label>
+                                <select className="form-control" id="strength3" ref="strength3">
                                     {strengths}
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="strength4">Fourth Highest Strength</label>
-                                <select class="form-control" id="strength4" ref="strength4">
+                            <div className="form-group">
+                                <label htmlFor="strength4">Fourth Highest Strength</label>
+                                <select className="form-control" id="strength4" ref="strength4">
                                     {strengths}
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="strength5">Fifth Highest Strength</label>
-                                <select class="form-control" id="strength5" ref="strength5">
+                            <div className="form-group">
+                                <label htmlFor="strength5">Fifth Highest Strength</label>
+                                <select className="form-control" id="strength5" ref="strength5">
                                     {strengths}
                                 </select>
                             </div>

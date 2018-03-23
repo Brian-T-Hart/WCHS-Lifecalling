@@ -56,30 +56,30 @@ class MBTIModal extends Component {
                     </div>
                     <form>
                         <div className="modal-body">
-                            <div class="form-group">
-                                <label for="mbti1">Choose Type</label>
-                                <select class="form-control" id="mbti1" ref="mbti1">
+                            <div className="form-group">
+                                <label htmlFor="mbti1">Choose Type</label>
+                                <select className="form-control" id="mbti1" ref="mbti1">
                                     <option>Extrovert</option>
                                     <option>Introvert</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="mbti2">Choose Type</label>
-                                <select class="form-control" id="mbti2" ref="mbti2">
+                            <div className="form-group">
+                                <label htmlFor="mbti2">Choose Type</label>
+                                <select className="form-control" id="mbti2" ref="mbti2">
                                     <option>Sensing</option>
                                     <option>Intuition</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="mbti3">Choose Type</label>
-                                <select class="form-control" id="mbti3" ref="mbti3">
+                            <div className="form-group">
+                                <label htmlFor="mbti3">Choose Type</label>
+                                <select className="form-control" id="mbti3" ref="mbti3">
                                     <option>Thinking</option>
                                     <option>Feeling</option>
                                 </select>
                             </div>
-                            <div class="form-group">
-                                <label for="mbti4">Choose Type</label>
-                                <select class="form-control" id="mbti4" ref="mbti4">
+                            <div className="form-group">
+                                <label htmlFor="mbti4">Choose Type</label>
+                                <select className="form-control" id="mbti4" ref="mbti4">
                                     <option>Perceiving</option>
                                     <option>Judging</option>
                                 </select>

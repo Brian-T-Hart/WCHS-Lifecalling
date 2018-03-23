@@ -9,6 +9,12 @@ import "./Dashboard.css";
 
 class Dashboard extends Component {
 
+    handleLogOut() {
+        localStorage.clear("lifeCallingId");
+        localStorage.clear("lifeCallingUsername");
+        window.location.replace('/login');
+    }
+
     updateMyStrengths = (updatedStrengths) => {
         console.log('updatedStrengths from ModalWrapper', updatedStrengths);
         this.setState({ myStrengths: updatedStrengths });
@@ -21,14 +27,17 @@ class Dashboard extends Component {
 
     componentWillMount() {
         console.log('Dashboard will mount!');
-        API.getStrengths({
+        API.getStudentInfo({
             id: localStorage.getItem("lifeCallingId"),
             username: localStorage.getItem("lifeCallingUsername")
         })
         .then(res => {
-            console.log(res.data);
-            if (res.data) {
-                this.setState({ myStrengths: res.data })
+            console.log("data from dashboard mounting and getStudentInfo ", res.data);
+            if (res.data.strengths) {
+                this.setState({ myStrengths: res.data.strengths });
+            }
+            if (res.data.mbti) {
+                this.setState({ myMbti: res.data.mbti});
             }
         })
         .catch(err => {
@@ -40,7 +49,7 @@ class Dashboard extends Component {
 
     componentDidMount() {
         console.log('Dashboard mounted!');
-        console.log('MBTI ', this.state.MBTI);
+        console.log('MBTI ', this.state.mbti);
     }
 
     componentDidUpdate() {
@@ -65,8 +74,11 @@ class Dashboard extends Component {
             <div id="dashboardContainer" className="col-md-12">
                 <div className="row">
                     <header className="jumbotron col-md-12">
-                        <h1 className="App-title">WCHS LIFE CALLING<span><h5>{this.state.username} </h5></span></h1>
+                        <h1 className="App-title">WCHS LIFE CALLING
+                        <span><h5>{this.state.username} </h5></span>
+                        </h1>
                     </header>
+                    <button type="submit" onClick={this.handleLogOut} className="btn btn-default">Logout</button>
                 </div>
 
                 <div className="row">
