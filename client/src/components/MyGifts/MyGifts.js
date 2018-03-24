@@ -1,22 +1,21 @@
 import React, { Component } from 'react';
 
-class MyMBTI extends Component {
+class MyGifts extends Component {
 
     componentDidMount() {
-        console.log('MyMBTI mounted!');
-        console.log('MyMBTI from Dashboard ', this.props.myMbti);
+        console.log('myStrengths from Dashboard ', this.props.myGifts);
     }
 
     componentDidUpdate() {
-        console.log('MyMBTI updated!');
-        console.log('MyMBTI componentDidMount ', this.props.myMbti);
+        console.log('MyStrengths updated!');
+        console.log('myStrengths componentDidMount ', this.props.myGifts);
     }
 
     constructor(props) {
         super(props);
         this.state = {
-            mbti: this.props.mbti,
-            myMbti: this.props.myMbti
+            gifts: this.props.gifts,
+            myGifts: this.props.myGifts
         }
         // this.handleClick = this.handleClick.bind(this);
     }
@@ -28,8 +27,8 @@ class MyMBTI extends Component {
 
     render() {
 
-        const listOfMyMbti = this.props.myMbti.map((mbti) =>
-            <li key={this.props.myMbti.indexOf(mbti) + 1} className="list-group-item d-flex align-items-center"><span className="badge badge-default badge-pill">{this.props.myMbti.indexOf(mbti) + 1}</span>{mbti}</li>
+        const listOfMyGifts = this.props.myGifts.map((gift) =>
+            <li key={this.props.myGifts.indexOf(gift) + 1} className="list-group-item d-flex align-items-center"><span className="badge badge-default badge-pill">{this.props.myGifts.indexOf(gift) + 1}</span>{gift}</li>
         );
 
         return (
@@ -38,9 +37,9 @@ class MyMBTI extends Component {
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <h3>Meyers-Briggs
+                        <h3>Spiritual Gifts
                             {/* Trigger modal with edit icon */}
-                            <span data-toggle="modal" data-target="#mbtiModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
+                            <span data-toggle="modal" data-target="#giftsModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
                     </div>
                 </div>
 
@@ -48,7 +47,7 @@ class MyMBTI extends Component {
                 <div className="infoInfoBox row">
                     <div className="col-md-12">
                         <ul className="list-group list-group-flush">
-                            {listOfMyMbti}
+                            {listOfMyGifts}
                         </ul>
                     </div>
                 </div>
@@ -57,4 +56,4 @@ class MyMBTI extends Component {
     }
 }
 
-export default MyMBTI;
+export default MyGifts;

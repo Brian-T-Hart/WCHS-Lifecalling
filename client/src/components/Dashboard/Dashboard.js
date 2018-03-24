@@ -6,13 +6,14 @@ import MBTI from "../MyMBTI/MyMBTI.js";
 import listOfStrengths from "./listOfStrengths.js";
 import listOfMBTI from "./listOfMBTI.js";
 import "./Dashboard.css";
+import listOfSpiritualGifts from './listOfSpiritualGifts';
+import MyGifts from "../MyGifts/MyGifts.js";
 
 class Dashboard extends Component {
 
     handleLogOut() {
         localStorage.clear("lifeCallingId");
         localStorage.clear("lifeCallingUsername");
-        window.location.replace('/login');
     }
 
     updateMyStrengths = (updatedStrengths) => {
@@ -39,6 +40,9 @@ class Dashboard extends Component {
             if (res.data.mbti) {
                 this.setState({ myMbti: res.data.mbti});
             }
+            if (res.data.gifts) {
+                this.setState({ myGifts: res.data.gifts});
+            }
         })
         .catch(err => {
             console.log(err);
@@ -62,23 +66,24 @@ class Dashboard extends Component {
             username: "",
             myStrengths: [],
             strengths: listOfStrengths,
+            myMbti: [],
             mbti: listOfMBTI,
-            myMbti: []
+            gifts: listOfSpiritualGifts,
+            myGifts: []
         }
     }
 
-   
 
     render() {
         return (
             <div id="dashboardContainer" className="col-md-12">
                 <div className="row">
                     <header className="jumbotron col-md-12">
+                        <a href="/login" onClick={this.handleLogOut}>logout</a>
                         <h1 className="App-title">WCHS LIFE CALLING
                         <span><h5>{this.state.username} </h5></span>
                         </h1>
                     </header>
-                    <button type="submit" onClick={this.handleLogOut} className="btn btn-default">Logout</button>
                 </div>
 
                 <div className="row">
@@ -92,8 +97,8 @@ class Dashboard extends Component {
                             <div className="infoDiv col-md-4">
                                 <MBTI mbti={this.state.mbti} myMbti={this.state.myMbti}/>
                             </div>
-                            <div className="infoDiv col-md-4">
-                                {/* <MyStrengths /> */}
+                            <div className="infoDiv col-md-4">                    
+                                <MyGifts gifts={this.state.gifts} myGifts={this.state.myGifts}/>
                             </div>
                         </div>
 
@@ -110,7 +115,7 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
-                <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI}/>
+                <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts}/>
             </div>
         );
     }

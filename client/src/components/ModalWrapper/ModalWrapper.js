@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import StrengthsModal from "../StrengthsModal/StrengthsModal.js";
 import MBTIModal from "../MBTIModal/MBTIModal.js";
+import GiftsModal from "../GiftsModal/GiftsModal.js";
 
 class ModalWrapper extends Component {
     
@@ -12,6 +13,11 @@ class ModalWrapper extends Component {
     updateMyMBTI = (updatedMBTI) => {
         console.log('updatedMBTI from MyMBTI', updatedMBTI);
         this.props.mbtiCallbackFromModalWrapper(updatedMBTI);
+    }
+
+    updateMyGifts = (updatedGifts) => {
+        console.log('updatedGifts from MyStrengths', updatedGifts);
+        this.props.giftsCallbackFromModalWrapper(updatedGifts);
     }
 
     componentDidMount() {
@@ -31,7 +37,9 @@ class ModalWrapper extends Component {
             strengths: this.props.strengths,
             myStrengths: this.props.myStrengths,
             mbti: this.props.mbti,
-            myMbti: this.props.myMbti
+            myMbti: this.props.myMbti,
+            gifts: this.props.gifts,
+            myGifts: this.props.myGifts
         }
     }
     
@@ -41,17 +49,27 @@ class ModalWrapper extends Component {
         return (
             <div>
 
+                {/* Modal wrapper for strengthsModal */}
                 <div className="modal fade" id="strengthsModalWrapper" role="dialog">
                     <div className="modal-dialog">
                         <StrengthsModal strengths={this.props.strengths} myStrengths={this.props.myStrengths} callbackFromStrengthsModal={this.updateMyStrengths}/>
                     </div>
                 </div>
 
+                {/* Modal wrapper for MBTIModal */}
                 <div className="modal fade" id="mbtiModalWrapper" role="dialog">
                     <div className="modal-dialog">
                         <MBTIModal mbti={this.props.mbti} myMbti={this.props.myMbti} callbackFromMBTIModal={this.updateMyMBTI} />
                     </div>
                 </div>
+
+                {/* Modal wrapper for giftsModal */}
+                <div className="modal fade" id="giftsModalWrapper" role="dialog">
+                    <div className="modal-dialog">
+                        <GiftsModal gifts={this.props.gifts} myGifts={this.props.myGifts} callbackFromGiftsModal={this.updateMyGifts} />
+                    </div>
+                </div>
+
             </div>
         )
     }
