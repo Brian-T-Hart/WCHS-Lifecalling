@@ -26,6 +26,11 @@ class Dashboard extends Component {
         this.setState({ myMbti: updatedMBTI });
     }
 
+    updateMyGifts = (updatedGifts) => {
+        console.log('updatedGifts from ModalWrapper', updatedGifts);
+        this.setState({ myGifts: updatedGifts });
+    }
+
     componentWillMount() {
         console.log('Dashboard will mount!');
         API.getStudentInfo({
@@ -68,8 +73,8 @@ class Dashboard extends Component {
             strengths: listOfStrengths,
             myMbti: [],
             mbti: listOfMBTI,
+            myGifts: [],
             gifts: listOfSpiritualGifts,
-            myGifts: []
         }
     }
 

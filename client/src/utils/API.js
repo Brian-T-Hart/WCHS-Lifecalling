@@ -41,5 +41,10 @@ export default {
     updateMBTI: function (Data) {
         console.log("updating mbpi..API.js");
         return axios.post("students/updateMBTI", Data);
+    },
+
+    updateGifts: function (Data) {
+        console.log("updating gifts..API.js");
+        return axios.post("students/updateGifts", Data);
     }
 }

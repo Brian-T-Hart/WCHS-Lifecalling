@@ -11,7 +11,7 @@ const listOfSpiritualGifts = [
     },
     {
         id: 3,
-        name: "Teaching",
+        name: "TEACHING",
         description: "The Instructive Investigator: These are persons who have the inward motivation to carefully research truth and to clearly present it to the others in such a way that it will be easy to learn."
     },
     {

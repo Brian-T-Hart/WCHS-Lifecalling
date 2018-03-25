@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import API from "../../utils/API";
+import API from "../../utils/API";
 
 class GiftsModal extends Component {
     componentDidMount() {
@@ -24,24 +24,22 @@ class GiftsModal extends Component {
     handleClick(e) {
         e.preventDefault();
         console.log(this);
-        // this.myMbti = [];
-        // this.myMbti.push(this.refs.mbti1.value);
-        // this.myMbti.push(this.refs.mbti2.value);
-        // this.myMbti.push(this.refs.mbti3.value);
-        // this.myMbti.push(this.refs.mbti4.value);
-        // this.props.callbackFromMBTIModal(this.myMbti);
-        // API.updateMBTI({
-        //     id: localStorage.getItem("lifeCallingId"),
-        //     myMbti: this.myMbti
-        // })
-        //     .then(res => {
-        //         console.log(res);
-        //     }
-        //     )
-        //     .catch(err => {
-        //         alert('something went wrong');
-        //         console.log(err);
-        //     });
+        this.myGifts = [];
+        this.myGifts.push(this.refs.gift1.value);
+        console.log("this.myGifts ", this.myGifts);
+        this.props.callbackFromGiftsModal(this.myGifts);
+        API.updateGifts({
+            id: localStorage.getItem("lifeCallingId"),
+            myGifts: this.myGifts
+        })
+            .then(res => {
+                console.log(res);
+            }
+            )
+            .catch(err => {
+                alert('something went wrong');
+                console.log(err);
+            });
     }
 
     render() {
