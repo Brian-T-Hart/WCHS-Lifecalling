@@ -1,6 +1,11 @@
 /* * {
   border: 2px solid red;
 } */
+body {
+  background-image: url("/../images/chalkboardBackground.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .jumbotron {
   /* background-color: #000; */

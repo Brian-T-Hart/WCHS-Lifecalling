@@ -57,7 +57,7 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <Navbar />
+                <Navbar username={this.state.username}/>
                 <div className="row">
                     <div className="col-md-6">
                         <img id="largeLogo" src="../../images/lc-logo.jpg" alt="" />

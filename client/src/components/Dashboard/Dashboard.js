@@ -5,9 +5,10 @@ import ModalWrapper from '../ModalWrapper/ModalWrapper.js';
 import MBTI from "../MyMBTI/MyMBTI.js";
 import listOfStrengths from "./listOfStrengths.js";
 import listOfMBTI from "./listOfMBTI.js";
-import "./Dashboard.css";
 import listOfSpiritualGifts from './listOfSpiritualGifts';
 import MyGifts from "../MyGifts/MyGifts.js";
+import Navbar from "../Navbar/Navbar.js";
+import "./Dashboard.css";
 
 class Dashboard extends Component {
 
@@ -17,17 +18,17 @@ class Dashboard extends Component {
     }
 
     updateMyStrengths = (updatedStrengths) => {
-        console.log('updatedStrengths from ModalWrapper', updatedStrengths);
+        // console.log('updatedStrengths from ModalWrapper', updatedStrengths);
         this.setState({ myStrengths: updatedStrengths });
     }
 
     updateMyMBTI = (updatedMBTI) => {
-        console.log('updatedMBTI from ModalWrapper', updatedMBTI);
+        // console.log('updatedMBTI from ModalWrapper', updatedMBTI);
         this.setState({ myMbti: updatedMBTI });
     }
 
     updateMyGifts = (updatedGifts) => {
-        console.log('updatedGifts from ModalWrapper', updatedGifts);
+        // console.log('updatedGifts from ModalWrapper', updatedGifts);
         this.setState({ myGifts: updatedGifts });
     }
 
@@ -38,7 +39,7 @@ class Dashboard extends Component {
             username: localStorage.getItem("lifeCallingUsername")
         })
         .then(res => {
-            console.log("data from dashboard mounting and getStudentInfo ", res.data);
+            // console.log("data from dashboard mounting and getStudentInfo ", res.data);
             if (res.data.strengths) {
                 this.setState({ myStrengths: res.data.strengths });
             }
@@ -57,7 +58,7 @@ class Dashboard extends Component {
 
 
     componentDidMount() {
-        console.log('Dashboard mounted!');
+        // console.log('Dashboard mounted!');
         console.log('MBTI ', this.state.mbti);
     }
 
@@ -81,15 +82,9 @@ class Dashboard extends Component {
 
     render() {
         return (
-            <div id="dashboardContainer" className="col-md-12">
-                <div className="row">
-                    <header className="jumbotron col-md-12">
-                        <a href="/login" onClick={this.handleLogOut}>logout</a>
-                        <h1 className="App-title">WCHS LIFE CALLING
-                        <span><h5>{this.state.username} </h5></span>
-                        </h1>
-                    </header>
-                </div>
+            <div id="dashboardContainer">
+                
+               <Navbar username={this.state.username}/>
 
                 <div className="row">
                     <div className="col-md-1">
@@ -120,7 +115,9 @@ class Dashboard extends Component {
                         </div>
                     </div>
                 </div>
+
                 <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts}/>
+
             </div>
         );
     }

@@ -2,20 +2,29 @@ import React, { Component } from 'react';
 import './Navbar.css'
 
 class Navbar extends Component {
+    
+    handleLogOut() {
+        localStorage.clear("lifeCallingId");
+        localStorage.clear("lifeCallingUsername");
+    }
+
     render() {
         return (
             <div>
-                <nav id="mainNavbar" className="navbar navbar-default">
-                        <div className="col-md-2 navbar-header">
-                            {/* <img id="navLogo" src="../../images/lifeCallingLogo.png" alt="" /> */}
-                        </div>
-                        <div className="col-md-8 navbar-header">
-                            <h1 id="navbarTitle">WCHS LIFE-CALLING</h1>
-                        </div>
-                    <div className="col-md-2 navbar-header">
-                        {/* <img id="navLogo" src="../../images/lifeCallingLogo.png" alt="" /> */}
-                    </div>
-
+                <nav id="mainNavbar" className="navbar navbar-expand-lg navbar-light">
+                    <a href="/dashboard"><img id="navLogo" src="../../images/lifeCallingLogo.png" alt="" />Life Calling</a>
+                    <ul id="navDropdownMenu" class="navbar-nav ml-auto">
+                        <li className="nav-item dropdown">
+                            <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                {this.props.username}</a>
+                            <div className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                <a className="dropdown-item" href="/dashboard">Dashboard</a>
+                                <a className="dropdown-item" href="/login">Login</a>
+                                <a className="dropdown-item" href="/register">Register</a>
+                                <a className="dropdown-item" href="/login">Logout</a>
+                            </div>
+                        </li>
+                    </ul>
                 </nav>
             </div>
         )

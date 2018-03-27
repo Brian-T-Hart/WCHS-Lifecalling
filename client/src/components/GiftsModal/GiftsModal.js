@@ -26,6 +26,8 @@ class GiftsModal extends Component {
         console.log(this);
         this.myGifts = [];
         this.myGifts.push(this.refs.gift1.value);
+        this.myGifts.push(this.refs.gift2.value);
+        this.myGifts.push(this.refs.gift3.value);
         console.log("this.myGifts ", this.myGifts);
         this.props.callbackFromGiftsModal(this.myGifts);
         API.updateGifts({
@@ -65,27 +67,18 @@ class GiftsModal extends Component {
                                     {listOfGifts}
                                 </select>
                             </div>
-                            {/* <div className="form-group">
-                                <label htmlFor="mbti2">Choose Type</label>
-                                <select className="form-control" id="mbti2" ref="mbti2">
-                                    <option>Sensing</option>
-                                    <option>Intuition</option>
+                            <div className="form-group">
+                                <label htmlFor="gift2">Choose Type</label>
+                                <select className="form-control" id="gift2" ref="gift2">
+                                    {listOfGifts}
                                 </select>
                             </div>
                             <div className="form-group">
-                                <label htmlFor="mbti3">Choose Type</label>
-                                <select className="form-control" id="mbti3" ref="mbti3">
-                                    <option>Thinking</option>
-                                    <option>Feeling</option>
+                                <label htmlFor="gift3">Choose Type</label>
+                                <select className="form-control" id="gift3" ref="gift3">
+                                    {listOfGifts}
                                 </select>
                             </div>
-                            <div className="form-group">
-                                <label htmlFor="mbti4">Choose Type</label>
-                                <select className="form-control" id="mbti4" ref="mbti4">
-                                    <option>Perceiving</option>
-                                    <option>Judging</option>
-                                </select>
-                            </div> */}
                         </div>
 
                         <div className="modal-footer">
