@@ -13,7 +13,7 @@ class Navbar extends Component {
             <div>
                 <nav id="mainNavbar" className="navbar navbar-expand-lg navbar-light">
                     <a href="/dashboard"><img id="navLogo" src="../../images/lifeCallingLogo.png" alt="" />Life Calling</a>
-                    <ul id="navDropdownMenu" class="navbar-nav ml-auto">
+                    <ul id="navDropdownMenu" className="navbar-nav ml-auto">
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {this.props.username}</a>

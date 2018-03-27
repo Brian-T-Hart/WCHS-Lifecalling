@@ -7,6 +7,8 @@ import listOfStrengths from "./listOfStrengths.js";
 import listOfMBTI from "./listOfMBTI.js";
 import listOfSpiritualGifts from './listOfSpiritualGifts';
 import MyGifts from "../MyGifts/MyGifts.js";
+import listOfLoveLanguages from './listOfLoveLanguages';
+import MyLoveLanguages from "../MyLoveLanguages/MyLoveLanguages.js";
 import Navbar from "../Navbar/Navbar.js";
 import "./Dashboard.css";
 
@@ -32,6 +34,11 @@ class Dashboard extends Component {
         this.setState({ myGifts: updatedGifts });
     }
 
+    updateMyLoveLanguages = (updatedLoveLanguages) => {
+        // console.log('updatedGifts from ModalWrapper', updatedGifts);
+        this.setState({ myLoveLanguages: updatedLoveLanguages });
+    }
+
     componentWillMount() {
         console.log('Dashboard will mount!');
         API.getStudentInfo({
@@ -39,7 +46,7 @@ class Dashboard extends Component {
             username: localStorage.getItem("lifeCallingUsername")
         })
         .then(res => {
-            // console.log("data from dashboard mounting and getStudentInfo ", res.data);
+            console.log("data from dashboard mounting and getStudentInfo ", res.data);
             if (res.data.strengths) {
                 this.setState({ myStrengths: res.data.strengths });
             }
@@ -48,6 +55,9 @@ class Dashboard extends Component {
             }
             if (res.data.gifts) {
                 this.setState({ myGifts: res.data.gifts});
+            }
+            if (res.data.loveLanguages) {
+                this.setState({ myLoveLanguages: res.data.loveLanguages });
             }
         })
         .catch(err => {
@@ -76,6 +86,8 @@ class Dashboard extends Component {
             mbti: listOfMBTI,
             myGifts: [],
             gifts: listOfSpiritualGifts,
+            myLoveLanguages: [],
+            loveLanguages: listOfLoveLanguages
         }
     }
 
@@ -104,7 +116,7 @@ class Dashboard extends Component {
 
                         <div className="row">
                             <div className="infoDiv col-md-4">
-                                {/* <MyStrengths /> */}
+                                <MyLoveLanguages loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} />
                             </div>
                             <div className="infoDiv col-md-4">
                                 {/* <MyStrengths /> */}
@@ -116,7 +128,7 @@ class Dashboard extends Component {
                     </div>
                 </div>
 
-                <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts}/>
+                <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts} loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages}/>
 
             </div>
         );

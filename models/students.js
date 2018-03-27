@@ -39,6 +39,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.JSON,
             allowNull: true,
         },
+        loveLanguages: {
+            type: DataTypes.JSON,
+            allowNull: true,
+        },
         active: {
             type: DataTypes.BOOLEAN,
             allowNull: false,

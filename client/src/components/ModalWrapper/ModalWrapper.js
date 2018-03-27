@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import StrengthsModal from "../StrengthsModal/StrengthsModal.js";
 import MBTIModal from "../MBTIModal/MBTIModal.js";
 import GiftsModal from "../GiftsModal/GiftsModal.js";
+import LoveLanguagesModal from "../LoveLanguagesModal/LoveLanguagesModal.js";
 
 class ModalWrapper extends Component {
     
@@ -18,6 +19,11 @@ class ModalWrapper extends Component {
     updateMyGifts = (updatedGifts) => {
         console.log('updatedGifts from MyStrengths', updatedGifts);
         this.props.giftsCallbackFromModalWrapper(updatedGifts);
+    }
+
+    updateMyLoveLanguages = (updatedLoveLanguages) => {
+        console.log('updatedGifts from MyStrengths', updatedLoveLanguages);
+        this.props.loveLanguagesCallbackFromModalWrapper(updatedLoveLanguages);
     }
 
     componentDidMount() {
@@ -39,7 +45,9 @@ class ModalWrapper extends Component {
             mbti: this.props.mbti,
             myMbti: this.props.myMbti,
             gifts: this.props.gifts,
-            myGifts: this.props.myGifts
+            myGifts: this.props.myGifts,
+            loveLanguages: this.props.loveLanguages,
+            myLoveLanguages: this.props.myLoveLanguages
         }
     }
     
@@ -67,6 +75,12 @@ class ModalWrapper extends Component {
                 <div className="modal fade" id="giftsModalWrapper" role="dialog">
                     <div className="modal-dialog">
                         <GiftsModal gifts={this.props.gifts} myGifts={this.props.myGifts} callbackFromGiftsModal={this.updateMyGifts} />
+                    </div>
+                </div>
+
+                <div className="modal fade" id="loveLanguagesModalWrapper" role="dialog">
+                    <div className="modal-dialog">
+                        <LoveLanguagesModal loveLanguages={this.props.loveLanguages} myLoveLanguages={this.props.myLoveLanguages} callbackFromLoveLanguagesModal={this.updateMyLoveLanguages} />
                     </div>
                 </div>
 

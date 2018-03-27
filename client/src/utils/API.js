@@ -46,5 +46,10 @@ export default {
     updateGifts: function (Data) {
         console.log("updating gifts..API.js");
         return axios.post("students/updateGifts", Data);
+    },
+
+    updateLoveLanguages: function (Data) {
+        console.log("updating loveLanguages..API.js");
+        return axios.post("students/updateLoveLanguages", Data);
     }
 }

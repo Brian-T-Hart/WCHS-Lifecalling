@@ -9,7 +9,7 @@ var db = require("../models");
 // route to get student info to set initial state of components upon login
 router.post('/getStudentInfo', (req, res, next) => {
     db.students.findOne({
-        attributes: ['strengths', 'mbti', 'gifts'],
+        attributes: ['strengths', 'mbti', 'gifts','loveLanguages'],
         where: {
             id: req.body.id,
             username: req.body.username
@@ -124,6 +124,28 @@ router.post('/updateGifts', (req, res, next) => {
     console.log("_________________________________");
     db.students.update({
         gifts: req.body.myGifts
+    },
+        {
+            where: {
+                id: req.body.id
+            }
+        })
+        .then(function (results) {
+            console.log("results from updateStrengths..index.js ", results);
+            res.json(results)
+        })
+        .catch(function (err) {
+            res.json(err);
+        });
+});
+
+// route to update spiritual gifts of a particular student
+router.post('/updateLoveLanguages', (req, res, next) => {
+    console.log("_________________________________");
+    console.log("update LoveLanguages..index.routes.js");
+    console.log("_________________________________");
+    db.students.update({
+        loveLanguages: req.body.myLoveLanguages
     },
         {
             where: {
