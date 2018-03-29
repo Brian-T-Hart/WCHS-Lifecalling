@@ -9,6 +9,8 @@ import listOfSpiritualGifts from './listOfSpiritualGifts';
 import MyGifts from "../MyGifts/MyGifts.js";
 import listOfLoveLanguages from './listOfLoveLanguages';
 import MyLoveLanguages from "../MyLoveLanguages/MyLoveLanguages.js";
+import listOfIntelligences from './listOfIntelligences';
+import MyIntelligences from "../MyIntelligences/MyIntelligences.js";
 import Navbar from "../Navbar/Navbar.js";
 import "./Dashboard.css";
 
@@ -39,14 +41,19 @@ class Dashboard extends Component {
         this.setState({ myLoveLanguages: updatedLoveLanguages });
     }
 
+    updateMyIntelligences = (updatedIntelligences) => {
+        // console.log('updatedGifts from ModalWrapper', updatedGifts);
+        this.setState({ myIntelligences: updatedIntelligences });
+    }
+
     componentWillMount() {
-        console.log('Dashboard will mount!');
+        // console.log('Dashboard will mount!');
         API.getStudentInfo({
             id: localStorage.getItem("lifeCallingId"),
             username: localStorage.getItem("lifeCallingUsername")
         })
         .then(res => {
-            console.log("data from dashboard mounting and getStudentInfo ", res.data);
+            // console.log("data from dashboard mounting and getStudentInfo ", res.data);
             if (res.data.strengths) {
                 this.setState({ myStrengths: res.data.strengths });
             }
@@ -59,6 +66,9 @@ class Dashboard extends Component {
             if (res.data.loveLanguages) {
                 this.setState({ myLoveLanguages: res.data.loveLanguages });
             }
+            if (res.data.intelligences) {
+                this.setState({ myIntelligences: res.data.intelligences });
+            }
         })
         .catch(err => {
             console.log(err);
@@ -69,11 +79,11 @@ class Dashboard extends Component {
 
     componentDidMount() {
         // console.log('Dashboard mounted!');
-        console.log('MBTI ', this.state.mbti);
+        // console.log('MBTI ', this.state.mbti);
     }
 
     componentDidUpdate() {
-        console.log('Dashboard updated!');
+        // console.log('Dashboard updated!');
     }
 
     constructor(props) {
@@ -87,7 +97,9 @@ class Dashboard extends Component {
             myGifts: [],
             gifts: listOfSpiritualGifts,
             myLoveLanguages: [],
-            loveLanguages: listOfLoveLanguages
+            loveLanguages: listOfLoveLanguages,
+            intelligences: listOfIntelligences,
+            myIntelligences: []
         }
     }
 
@@ -119,7 +131,7 @@ class Dashboard extends Component {
                                 <MyLoveLanguages loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} />
                             </div>
                             <div className="infoDiv col-md-4">
-                                {/* <MyStrengths /> */}
+                                <MyIntelligences intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} />
                             </div>
                             <div className="infoDiv col-md-4">
                                 {/* <MyStrengths /> */}
@@ -128,7 +140,7 @@ class Dashboard extends Component {
                     </div>
                 </div>
 
-                <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts} loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages}/>
+                <ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts} loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages} intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} intelligencesCallbackFromModalWrapper={this.updateMyIntelligences}/>
 
             </div>
         );

@@ -43,6 +43,10 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.JSON,
             allowNull: true,
         },
+        intelligences: {
+            type: DataTypes.JSON,
+            allowNull: true,
+        },
         active: {
             type: DataTypes.BOOLEAN,
             allowNull: false,

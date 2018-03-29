@@ -51,7 +51,6 @@ class Login extends Component {
             email: "",
             password: ""
         }
-        // this.handleClick = this.handleClick.bind(this);
     }
 
     render() {

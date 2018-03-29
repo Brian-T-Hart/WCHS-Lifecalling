@@ -43,13 +43,39 @@ export default {
         return axios.post("students/updateMBTI", Data);
     },
 
+    // retrieve Spiritual Gifts info from database
+    getGifts: function (Data) {
+        console.log("getting mbti..API.js");
+        return axios.post("students/getGifts", Data);
+    },
+    
+    // update spiritual gifts in the database
     updateGifts: function (Data) {
         console.log("updating gifts..API.js");
         return axios.post("students/updateGifts", Data);
     },
 
+    // retrieve love languages info from database
+    getLoveLanguages: function (Data) {
+        console.log("getting mbti..API.js");
+        return axios.post("students/getLoveLanguages", Data);
+    },
+
+    // update love languages in the database
     updateLoveLanguages: function (Data) {
         console.log("updating loveLanguages..API.js");
         return axios.post("students/updateLoveLanguages", Data);
-    }
+    },
+
+    // retrieve multiple intelligence info from database
+    getIntelligences: function (Data) {
+        console.log("getting intelligences..API.js");
+        return axios.post("students/getIntelligences", Data);
+    },
+
+    // update multiple intelligences in the database
+    updateIntelligences: function (Data) {
+        console.log("updating intelligences..API.js");
+        return axios.post("students/updateIntelligences", Data);
+    },
 }

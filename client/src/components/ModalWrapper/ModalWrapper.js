@@ -3,6 +3,7 @@ import StrengthsModal from "../StrengthsModal/StrengthsModal.js";
 import MBTIModal from "../MBTIModal/MBTIModal.js";
 import GiftsModal from "../GiftsModal/GiftsModal.js";
 import LoveLanguagesModal from "../LoveLanguagesModal/LoveLanguagesModal.js";
+import IntelligencesModal from "../IntelligencesModal/IntelligencesModal.js";
 
 class ModalWrapper extends Component {
     
@@ -26,6 +27,11 @@ class ModalWrapper extends Component {
         this.props.loveLanguagesCallbackFromModalWrapper(updatedLoveLanguages);
     }
 
+    updateMyIntelligences = (updatedIntelligences) => {
+        console.log('updatedGifts from MyStrengths', updatedIntelligences);
+        this.props.intelligencesCallbackFromModalWrapper(updatedIntelligences);
+    }
+
     componentDidMount() {
         console.log('ModalWrapper mounted!');
         console.log('strengths from Dashboard ', this.props.strengths);
@@ -47,7 +53,9 @@ class ModalWrapper extends Component {
             gifts: this.props.gifts,
             myGifts: this.props.myGifts,
             loveLanguages: this.props.loveLanguages,
-            myLoveLanguages: this.props.myLoveLanguages
+            myLoveLanguages: this.props.myLoveLanguages,
+            intelligences: this.props.intelligences,
+            myIntelligences: this.props.myIntelligences
         }
     }
     
@@ -81,6 +89,12 @@ class ModalWrapper extends Component {
                 <div className="modal fade" id="loveLanguagesModalWrapper" role="dialog">
                     <div className="modal-dialog">
                         <LoveLanguagesModal loveLanguages={this.props.loveLanguages} myLoveLanguages={this.props.myLoveLanguages} callbackFromLoveLanguagesModal={this.updateMyLoveLanguages} />
+                    </div>
+                </div>
+
+                <div className="modal fade" id="intelligencesModalWrapper" role="dialog">
+                    <div className="modal-dialog">
+                        <IntelligencesModal intelligences={this.props.intelligences} myIntelligences={this.props.myIntelligences} callbackFromIntelligencesModal={this.updateMyIntelligences} />
                     </div>
                 </div>
 
