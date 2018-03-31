@@ -19,6 +19,7 @@ export default {
         console.log("getting strengths..API.js");
         return axios.post("students/getStudentInfo", Data);
     },
+    
     // retrieve strengths from database
     getStrengths: function (Data) {
         console.log("getting strengths..API.js");

@@ -2,28 +2,13 @@ import React, { Component } from 'react';
 
 class MyGifts extends Component {
 
-    componentDidMount() {
-        console.log('myStrengths from Dashboard ', this.props.myGifts);
-    }
-
-    componentDidUpdate() {
-        console.log('MyStrengths updated!');
-        console.log('myStrengths componentDidMount ', this.props.myGifts);
-    }
-
     constructor(props) {
         super(props);
         this.state = {
             gifts: this.props.gifts,
             myGifts: this.props.myGifts
         }
-        // this.handleClick = this.handleClick.bind(this);
     }
-
-    // handleClick() {
-    //     console.log("Strengths title was clicked.");
-    //     this.setState({strengths: ['achiever']});
-    // }
 
     render() {
 

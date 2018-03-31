@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 
 class IntelligencesModal extends Component {
-    componentDidMount() {
-        console.log('IntelligencesModal mounted!');
-        console.log('myIntelligences from IntelligencesModal componentDidMount ', this.props.myIntelligences);
-    }
-
-    componentDidUpdate() {
-        console.log('LoveLanguagesModal updated!');
-        console.log('myLoveLanguages from LoveLanguagesModal componentDidUpdate ', this.props.myIntelligences);
-    }
 
     constructor(props) {
         super(props);
@@ -23,11 +14,9 @@ class IntelligencesModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        console.log(this);
         this.myIntelligences = [];
         this.myIntelligences.push(this.refs.intelligence1.value);
         this.myIntelligences.push(this.refs.intelligence2.value);
-        console.log("this.myIntelligences", this.myIntelligences);
         this.props.callbackFromIntelligencesModal(this.myIntelligences);
         API.updateIntelligences({
             id: localStorage.getItem("lifeCallingId"),

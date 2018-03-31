@@ -2,16 +2,6 @@ import React, { Component } from 'react';
 
 class MyMBTI extends Component {
 
-    componentDidMount() {
-        console.log('MyMBTI mounted!');
-        console.log('MyMBTI from Dashboard ', this.props.myMbti);
-    }
-
-    componentDidUpdate() {
-        console.log('MyMBTI updated!');
-        console.log('MyMBTI componentDidMount ', this.props.myMbti);
-    }
-
     constructor(props) {
         super(props);
         this.state = {

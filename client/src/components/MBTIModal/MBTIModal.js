@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 
 class MBTIModal extends Component {
-    componentDidMount() {
-        console.log('MBTIModal mounted!');
-        console.log('myMBTI from MBTIModal componentDidMount ', this.props.myMbti);
-    }
-
-    componentDidUpdate() {
-        console.log('StrengthsModal updated!');
-        console.log('myStrengths from StrengthsModal componentDidUpdate ', this.props.myMbti);
-    }
 
     constructor(props) {
         super(props);
@@ -23,7 +14,6 @@ class MBTIModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        console.log(this);
         this.myMbti = [];
         this.myMbti.push(this.refs.mbti1.value);
         this.myMbti.push(this.refs.mbti2.value);

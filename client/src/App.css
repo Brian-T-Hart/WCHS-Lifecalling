@@ -1,17 +1,10 @@
 /* * {
   border: 2px solid red;
 } */
-body {
-  background-image: url("/../images/chalkboardBackground.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.jumbotron {
-  /* background-color: #000; */
-  background-color: #d00010;
-  height: 100px;
-  padding: 10px;
+body { 
+  background: url("/../images/chalkboardBackground.jpg") no-repeat center center fixed;
+  background-size: cover;
 }
 
 .App-title {

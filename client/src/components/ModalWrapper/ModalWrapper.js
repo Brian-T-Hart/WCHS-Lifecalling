@@ -8,39 +8,23 @@ import IntelligencesModal from "../IntelligencesModal/IntelligencesModal.js";
 class ModalWrapper extends Component {
     
     updateMyStrengths = (updatedStrengths) => {
-        console.log('updatedStrengths from MyStrengths', updatedStrengths);
         this.props.strengthsCallbackFromModalWrapper(updatedStrengths);
     }
 
     updateMyMBTI = (updatedMBTI) => {
-        console.log('updatedMBTI from MyMBTI', updatedMBTI);
         this.props.mbtiCallbackFromModalWrapper(updatedMBTI);
     }
 
     updateMyGifts = (updatedGifts) => {
-        console.log('updatedGifts from MyStrengths', updatedGifts);
         this.props.giftsCallbackFromModalWrapper(updatedGifts);
     }
 
     updateMyLoveLanguages = (updatedLoveLanguages) => {
-        console.log('updatedGifts from MyStrengths', updatedLoveLanguages);
         this.props.loveLanguagesCallbackFromModalWrapper(updatedLoveLanguages);
     }
 
     updateMyIntelligences = (updatedIntelligences) => {
-        console.log('updatedGifts from MyStrengths', updatedIntelligences);
         this.props.intelligencesCallbackFromModalWrapper(updatedIntelligences);
-    }
-
-    componentDidMount() {
-        console.log('ModalWrapper mounted!');
-        console.log('strengths from Dashboard ', this.props.strengths);
-        console.log('MyStrengths from Dashboard ', this.props.myStrengths);
-    }
-
-    componentDidUpdate() {
-        console.log('ModalWrapper updated!');
-        console.log('MyStrengths from ModalWrapper componentDidUpdate ', this.props.myStrengths);
     }
 
     constructor(props) {

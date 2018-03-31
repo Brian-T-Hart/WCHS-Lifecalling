@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 
 class GiftsModal extends Component {
-    componentDidMount() {
-        console.log('MBTIModal mounted!');
-        console.log('myMBTI from MBTIModal componentDidMount ', this.props.myGifts);
-    }
-
-    componentDidUpdate() {
-        console.log('StrengthsModal updated!');
-        console.log('myStrengths from StrengthsModal componentDidUpdate ', this.props.myGifts);
-    }
 
     constructor(props) {
         super(props);
@@ -23,12 +14,10 @@ class GiftsModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        console.log(this);
         this.myGifts = [];
         this.myGifts.push(this.refs.gift1.value);
         this.myGifts.push(this.refs.gift2.value);
         this.myGifts.push(this.refs.gift3.value);
-        console.log("this.myGifts ", this.myGifts);
         this.props.callbackFromGiftsModal(this.myGifts);
         API.updateGifts({
             id: localStorage.getItem("lifeCallingId"),

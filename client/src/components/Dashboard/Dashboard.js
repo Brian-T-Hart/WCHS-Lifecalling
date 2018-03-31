@@ -22,38 +22,31 @@ class Dashboard extends Component {
     }
 
     updateMyStrengths = (updatedStrengths) => {
-        // console.log('updatedStrengths from ModalWrapper', updatedStrengths);
         this.setState({ myStrengths: updatedStrengths });
     }
 
     updateMyMBTI = (updatedMBTI) => {
-        // console.log('updatedMBTI from ModalWrapper', updatedMBTI);
         this.setState({ myMbti: updatedMBTI });
     }
 
     updateMyGifts = (updatedGifts) => {
-        // console.log('updatedGifts from ModalWrapper', updatedGifts);
         this.setState({ myGifts: updatedGifts });
     }
 
     updateMyLoveLanguages = (updatedLoveLanguages) => {
-        // console.log('updatedGifts from ModalWrapper', updatedGifts);
         this.setState({ myLoveLanguages: updatedLoveLanguages });
     }
 
     updateMyIntelligences = (updatedIntelligences) => {
-        // console.log('updatedGifts from ModalWrapper', updatedGifts);
         this.setState({ myIntelligences: updatedIntelligences });
     }
 
     componentWillMount() {
-        // console.log('Dashboard will mount!');
         API.getStudentInfo({
             id: localStorage.getItem("lifeCallingId"),
             username: localStorage.getItem("lifeCallingUsername")
         })
         .then(res => {
-            // console.log("data from dashboard mounting and getStudentInfo ", res.data);
             if (res.data.strengths) {
                 this.setState({ myStrengths: res.data.strengths });
             }
@@ -76,15 +69,6 @@ class Dashboard extends Component {
         this.setState({ username: localStorage.getItem('lifeCallingUsername') });
     }
 
-
-    componentDidMount() {
-        // console.log('Dashboard mounted!');
-        // console.log('MBTI ', this.state.mbti);
-    }
-
-    componentDidUpdate() {
-        // console.log('Dashboard updated!');
-    }
 
     constructor(props) {
         super(props);

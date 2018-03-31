@@ -17,7 +17,7 @@ class Login extends Component {
         event.preventDefault();
         console.log("Handling login..Login.js");
         API.loginAccount({
-            username: this.state.username,
+            username: this.state.userName,
             password: this.state.password
         })
             .then(res => {
@@ -47,6 +47,7 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            userName: "",
             username: "",
             email: "",
             password: ""
@@ -56,7 +57,7 @@ class Login extends Component {
     render() {
         return (
             <div>
-                <Navbar username={this.state.username}/>
+                <Navbar />
                 <div className="row">
                     <div className="col-md-6">
                         <img id="largeLogo" src="../../images/lc-logo.jpg" alt="" />
@@ -65,7 +66,7 @@ class Login extends Component {
                         <form id="login-form" >
                             <h2 id="formTitle"> Sign-In </h2>
 
-                            <input type="text" name="username" id="username" tabIndex="1" placeholder="Username *" value={this.state.username} onChange={this.handleInputChange} autoComplete="username" required></input>
+                            <input type="text" name="userName" id="username" tabIndex="1" placeholder="Username *" value={this.state.userName} onChange={this.handleInputChange} autoComplete="username" required></input>
 
                             <input type="password" name="password" id="password" tabIndex="2" placeholder="Password *" value={this.state.password} onChange={this.handleInputChange} autoComplete="current-password" required></input>
 

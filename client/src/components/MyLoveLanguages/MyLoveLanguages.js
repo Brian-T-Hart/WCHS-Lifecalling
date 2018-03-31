@@ -2,15 +2,6 @@ import React, { Component } from 'react';
 
 class MyLoveLanguages extends Component {
 
-    componentDidMount() {
-        console.log('MyLoveLanguages from Dashboard ', this.props.MyLoveLanguages);
-    }
-
-    componentDidUpdate() {
-        console.log('MyLoveLanguages updated!');
-        console.log('MyLoveLanguages componentDidMount ', this.props.MyLoveLanguages);
-    }
-
     constructor(props) {
         super(props);
         this.state = {
