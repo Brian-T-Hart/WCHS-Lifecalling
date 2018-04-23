@@ -11,6 +11,7 @@ import listOfLoveLanguages from './listOfLoveLanguages';
 import MyLoveLanguages from "../MyLoveLanguages/MyLoveLanguages.js";
 import listOfIntelligences from './listOfIntelligences';
 import MyIntelligences from "../MyIntelligences/MyIntelligences.js";
+import MyOthers from "../MyOthers/MyOthers.js";
 import Navbar from "../Navbar/Navbar.js";
 import "./Dashboard.css";
 
@@ -118,7 +119,7 @@ class Dashboard extends Component {
                                 <MyIntelligences intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} />
                             </div>
                             <div className="infoDiv col-md-4">
-                                {/* <MyStrengths /> */}
+                                <MyOthers />
                             </div>
                         </div>
                     </div>
