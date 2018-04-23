@@ -22,7 +22,7 @@ class MyIntelligences extends Component {
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <h3>Intelligences
+                        <h3>Multiple Intelligences
                             {/* Trigger modal with edit icon */}
                             <span data-toggle="modal" data-target="#intelligencesModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
                     </div>
