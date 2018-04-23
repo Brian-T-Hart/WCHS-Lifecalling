@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 
 class MyOthers extends Component {
 
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         strengths: this.props.strengths,
-    //         myStrengths: this.props.myStrengths
-    //     }
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            jahari: "Jahari Window",
+            learningStyles: "Learning Styles",
+            myPDF: "PDF Document"
+        }
+    }
 
 
     render() {
@@ -33,9 +34,11 @@ class MyOthers extends Component {
                 {/* display container */}
                 <div className="infoInfoBox row">
                     <div className="col-md-12">
-                        {/* <ul className="list-group list-group-flush">
-                            {listOfMyStrengths}
-                        </ul> */}
+                        <ul className="list-group list-group-flush">
+                            <li key={this.state.jahari} className="list-group-item d-flex align-items-center">{this.state.jahari}</li>
+                            <li key={this.state.learningStyles} className="list-group-item d-flex align-items-center">{this.state.learningStyles}</li>
+                            <li key={this.state.myPDF} className="list-group-item d-flex align-items-center">{this.state.myPDF}</li>
+                        </ul>
                     </div>
                 </div>
             </div>
