@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import StrengthsModal from "../StrengthsModal/StrengthsModal.js";
-import MBTIModal from "../MBTIModal/MBTIModal.js";
-import GiftsModal from "../GiftsModal/GiftsModal.js";
-import LoveLanguagesModal from "../LoveLanguagesModal/LoveLanguagesModal.js";
-import IntelligencesModal from "../IntelligencesModal/IntelligencesModal.js";
+import StrengthsModal from "../MyStrengths/StrengthsModal.js";
+import MBTIModal from "../MyMBTI/MBTIModal.js";
+import GiftsModal from "../MyGifts/GiftsModal.js";
+import LoveLanguagesModal from "../MyLoveLanguages/LoveLanguagesModal.js";
+import IntelligencesModal from "../MyIntelligences/IntelligencesModal.js";
 
 class ModalWrapper extends Component {
     

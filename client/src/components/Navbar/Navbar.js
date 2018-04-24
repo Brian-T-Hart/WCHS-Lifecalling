@@ -4,6 +4,7 @@ import './Navbar.css'
 class Navbar extends Component {
     
     handleLogOut() {
+        localStorage.clear("lifeCallingToken");
         localStorage.clear("lifeCallingId");
         localStorage.clear("lifeCallingUsername");
     }
@@ -21,7 +22,7 @@ class Navbar extends Component {
                                 <a className="dropdown-item" href="/dashboard">Dashboard</a>
                                 <a className="dropdown-item" href="/login">Login</a>
                                 <a className="dropdown-item" href="/register">Register</a>
-                                <a className="dropdown-item" href="/login">Logout</a>
+                                <a className="dropdown-item" onClick={this.handleLogOut} href="/login">Logout</a>
                             </div>
                         </li>
                     </ul>
