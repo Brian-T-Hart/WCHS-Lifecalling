@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './Navbar.css'
+import './Navbar.css';
+import authenticated from "../../utils/Authenticated";
 
 class Navbar extends Component {
     
@@ -7,6 +8,18 @@ class Navbar extends Component {
         localStorage.clear("lifeCallingToken");
         localStorage.clear("lifeCallingId");
         localStorage.clear("lifeCallingUsername");
+    }
+
+    handleRoute(e) {
+        e.preventDefault();
+        authenticated.authenticate();
+        if (authenticated.isTrue) {
+            window.location.replace("/dashboard");
+        }
+        else {
+            alert("You must be logged in to view your dashboard.");
+            window.location.replace("/login");
+        }
     }
 
     render() {
@@ -19,10 +32,10 @@ class Navbar extends Component {
                             <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 {this.props.username}</a>
                             <div id="navDropdown" className="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                <a className="dropdown-item" href="/dashboard">Dashboard</a>
+                                <a className="dropdown-item" href="/dashboard" onClick={this.handleRoute}>Dashboard</a>
                                 <a className="dropdown-item" href="/login">Login</a>
                                 <a className="dropdown-item" href="/register">Register</a>
-                                <a className="dropdown-item" onClick={this.handleLogOut} href="/login">Logout</a>
+                                <a className="dropdown-item" href="/login" onClick={this.handleLogOut}>Logout</a>
                             </div>
                         </li>
                     </ul>
