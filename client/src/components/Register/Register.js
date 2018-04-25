@@ -66,7 +66,7 @@ class Register extends Component {
 
                             <button type="submit" name="register-submit" id="registerBtn" tabIndex="4" className="form-control btn btn-primary btn-register" value="Register Now" onClick={this.handleRegister}>Register</button>
                             <br></br>
-                            <a id="loginLink" href="/login" target="#">Login</a>
+                            <a id="loginLink" href="/login">Login</a>
                         </form>
                     </div>
                 </div>

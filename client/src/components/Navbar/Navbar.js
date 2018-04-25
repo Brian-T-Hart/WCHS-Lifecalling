@@ -26,7 +26,7 @@ class Navbar extends Component {
         return (
             <div>
                 <nav id="mainNavbar" className="navbar navbar-expand-lg navbar-light">
-                    <a id="navTitle" href="/dashboard"><img id="navLogo" src="../../images/lifeCallingLogo.png" alt="" />LIFE CALLING</a>
+                    <a id="navTitle" href="/dashboard" onClick={this.handleRoute}><img id="navLogo" src="../../images/lifeCallingLogo.png" alt="" />LIFE CALLING</a>
                     <ul id="navDropdownMenu" className="navbar-nav ml-auto">
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
