@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import listOfSpiritualGifts from "../Dashboard/listOfSpiritualGifts.js";
 
 class MyGifts extends Component {
 
@@ -6,14 +7,37 @@ class MyGifts extends Component {
         super(props);
         this.state = {
             gifts: this.props.gifts,
-            myGifts: this.props.myGifts
+            myGifts: this.props.myGifts,
+            giftName: "",
+            giftDescription: ""
         }
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    giftIndex(name) {
+        for (let i = 0; i < listOfSpiritualGifts.length; i++) {
+            if (listOfSpiritualGifts[i].name === name) {
+                console.log("index of gift ", i);
+                console.log(listOfSpiritualGifts[i].name);
+                this.setState({ giftName: listOfSpiritualGifts[i].name });
+                this.setState({ giftDescription: listOfSpiritualGifts[i].description })
+                console.log(listOfSpiritualGifts[i].description);
+            }
+        }
+    }
+
+    handleClick(e) {
+        e.preventDefault();
+        var giftName = e.target.dataset.txt;
+        console.log(giftName);
+        // console.log(listOfStrengths);
+        this.giftIndex(giftName);
     }
 
     render() {
 
         const listOfMyGifts = this.props.myGifts.map((gift) =>
-            <li key={this.props.myGifts.indexOf(gift) + 1} className="list-group-item d-flex align-items-center"><span className="badge badge-default badge-pill">{this.props.myGifts.indexOf(gift) + 1}</span>{gift}</li>
+            <li key={this.props.myGifts.indexOf(gift) + 1} className="list-group-item d-flex align-items-center" data-txt={gift} onClick={this.handleClick}><span className="badge badge-default badge-pill">{this.props.myGifts.indexOf(gift) + 1}</span>{gift}</li>
         );
 
         return (
@@ -32,10 +56,34 @@ class MyGifts extends Component {
                 <div className="infoInfoBox row">
                     <div className="col-md-12">
                         <ul className="list-group list-group-flush">
-                            {listOfMyGifts}
+                            <span data-toggle="modal" data-target="#giftModal">
+                                {listOfMyGifts}
+                            </span>
                         </ul>
                     </div>
                 </div>
+
+                {/* Modal for displaying individual Spiritual Gift Info */}
+                <div className="modal fade" id="giftModal" role="dialog">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h4 className="col-4 text-center modal-title">{this.state.giftName}</h4>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                <h5>{this.state.giftDescription}</h5>
+                            </div>
+                            <div className="modal-footer">
+                                <button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* -------------end of Modal------------- */}
+
             </div>
         )
     }

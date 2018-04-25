@@ -78,7 +78,6 @@ class MyStrengths extends Component {
                                 <h5>{this.state.strengthDescription}</h5>
                             </div>
                             <div className="modal-footer">
-                                <button type="submit" className="btn btn-default" data-dismiss="modal" onClick={this.handleClick}>Submit</button>
                                 <button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
                             </div>
                         </div>
