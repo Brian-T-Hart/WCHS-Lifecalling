@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './Navbar.css';
 import authenticated from "../../utils/Authenticated";
 
 class Navbar extends Component {
