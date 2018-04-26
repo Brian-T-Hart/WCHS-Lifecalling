@@ -42,7 +42,7 @@ class MyStrengths extends Component {
         const allStrengths = listOfStrengths.map((allStrength) =>
             <div>
                 <div className="row">
-                    <h5 className="allStrengthsNames">{allStrength.name}</h5>
+                    <h5 className="allNames">{allStrength.name}</h5>
                 </div>
                 <div className="row">
                     <h6>{allStrength.description}</h6>

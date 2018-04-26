@@ -39,15 +39,27 @@ class MyIntelligences extends Component {
             <li key={this.props.myIntelligences.indexOf(intelligence) + 1} className="list-group-item d-flex align-items-center" data-txt={intelligence} onClick={this.handleClick}><span className="badge badge-default badge-pill">{this.props.myIntelligences.indexOf(intelligence) + 1}</span>{intelligence}</li>
         );
 
+        const allIntelligences = listOfIntelligences.map((allIntelligences) =>
+            <div>
+                <div className="row">
+                    <h5 className="allNames">{allIntelligences.name}</h5>
+                </div>
+                <div className="row">
+                    <h6>{allIntelligences.description}</h6>
+                </div>
+            </div>
+        );
+
         return (
 
             <div className="infoContainer col-md-12">
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <h3>Multiple Intelligences
+                        <span data-toggle="modal" data-target="#allIntelligencesModal"><h3>Multiple Intelligences</h3></span>
+                        
                             {/* Trigger modal with edit icon */}
-                            <span data-toggle="modal" data-target="#intelligencesModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
+                            <span data-toggle="modal" data-target="#intelligencesModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>
                     </div>
                 </div>
 
@@ -74,6 +86,27 @@ class MyIntelligences extends Component {
                             </div>
                             <div className="modal-body">
                                 <h5>{this.state.intelligenceDescription}</h5>
+                            </div>
+                            <div className="modal-footer">
+                                <button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* -------------end of Modal------------- */}
+
+                {/* Modal for displaying all Myers-Briggs Info */}
+                <div className="modal fade" id="allIntelligencesModal" role="dialog">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h4 className="modal-title">Multiple Intelligences</h4>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                {allIntelligences}
                             </div>
                             <div className="modal-footer">
                                 <button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>

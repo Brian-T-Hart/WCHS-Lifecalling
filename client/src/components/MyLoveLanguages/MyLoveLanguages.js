@@ -40,15 +40,27 @@ class MyLoveLanguages extends Component {
             <li key={this.props.myLoveLanguages.indexOf(loveLanguage) + 1} className="list-group-item d-flex align-items-center" data-txt={loveLanguage} onClick={this.handleClick}><span className="badge badge-default badge-pill">{this.props.myLoveLanguages.indexOf(loveLanguage) + 1}</span>{loveLanguage}</li>
         );
 
+        const allLoveLanguages = listOfLoveLanguages.map((allLoveLanguages) =>
+            <div>
+                <div className="row">
+                    <h5 className="allNames">{allLoveLanguages.name}</h5>
+                </div>
+                <div className="row">
+                    <h6>{allLoveLanguages.description}</h6>
+                </div>
+            </div>
+        );
+
         return (
 
             <div className="infoContainer col-md-12">
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <h3>Love Languages
+                        <span data-toggle="modal" data-target="#allLoveLanguagesModal"><h3>Love Languages</h3></span>
+
                             {/* Trigger modal with edit icon */}
-                            <span data-toggle="modal" data-target="#loveLanguagesModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span></h3>
+                            <span data-toggle="modal" data-target="#loveLanguagesModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>
                     </div>
                 </div>
 
@@ -75,6 +87,27 @@ class MyLoveLanguages extends Component {
                             </div>
                             <div className="modal-body">
                                 <h5>{this.state.loveLanguageDescription}</h5>
+                            </div>
+                            <div className="modal-footer">
+                                <button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* -------------end of Modal------------- */}
+
+                {/* Modal for displaying all Myers-Briggs Info */}
+                <div className="modal fade" id="allLoveLanguagesModal" role="dialog">
+                    <div className="modal-dialog">
+                        <div className="modal-content">
+                            <div className="modal-header">
+                                <h4 className="modal-title">Love Languages</h4>
+                                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div className="modal-body">
+                                {allLoveLanguages}
                             </div>
                             <div className="modal-footer">
                                 <button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>

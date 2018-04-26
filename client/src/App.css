@@ -28,6 +28,10 @@ body {
   color: #fff;
 }
 
+.infoTitle:hover {
+  cursor: pointer;
+}
+
 .infoInfoBox {
   border-top: 2px solid silver;
   height: 240px;
@@ -40,12 +44,7 @@ h3 {
   font-size: 20px;
 }
 
-.allStrengthsContainer {
-  width: 100%;
-  background-color: #fff;
-}
-
-.allStrengthsNames {
+.allNames {
   color: blue;
   margin: 0px;
   padding-left: 0.5em;
