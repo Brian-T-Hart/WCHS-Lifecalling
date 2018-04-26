@@ -42,7 +42,7 @@ h3 {
 
 .list-group-item {
   text-transform: uppercase;
-  font-size: 14px;
+  font-size: 0.9em;
   /* padding-left: 25%; */
 }
 
@@ -52,15 +52,23 @@ h3 {
 }
 
 .modal-body {
-  padding: 20px 40px;
+  padding: 2em 2em;
+}
+
+.modal-title {
+  padding-left: 0.7em;
+}
+
+ul li:hover {
+  cursor: pointer;
 }
 
 #editIcon {
-  width: 16px;
+  width: 0.7em;
   height: auto;
   position: absolute;
-  right: 10px;
-  top: 10px;
+  right: 0.4em;
+  top: 0.4em;
 }
 
 

@@ -30,7 +30,6 @@ class MyStrengths extends Component {
         e.preventDefault();
         var strengthName = e.target.dataset.txt;
         console.log(strengthName);
-        // console.log(listOfStrengths);
         this.strengthIndex(strengthName);
     }
 
@@ -69,7 +68,7 @@ class MyStrengths extends Component {
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
-                                <h4 className="col-4 text-center modal-title">{this.state.strengthName}</h4>
+                                <h4 className="modal-title">{this.state.strengthName}</h4>
                                 <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
