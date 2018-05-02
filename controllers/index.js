@@ -6,6 +6,10 @@ var router = express.Router();
 // requiring our models
 var db = require("../models");
 
+router.get('*', (req, res, next) => {
+    res.sendFile(path.join(__dirname + '../../client/build/index.html'));
+});
+
 // post to get all products from a particular rep
 router.post('/testCall', (req, res, next) => {
     console.log("_________________________________");
@@ -21,10 +25,5 @@ router.post('/testCall', (req, res, next) => {
         res.json(results)
     });
 });
-
-// router.get('*', (req, res, next) => {
-//     res.sendFile(path.join(__dirname + '../../client/build/index.html'));
-// });
-
 
 module.exports = router;
