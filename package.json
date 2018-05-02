@@ -1,7 +1,6 @@
 {
   "name": "wchs-life-calling",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "server": "node server.js",
     "client": "node scripts/start-client.js",
