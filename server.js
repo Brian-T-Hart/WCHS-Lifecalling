@@ -39,7 +39,7 @@ app.use("/students", students);
 
 app.listen(PORT, function () {
     console.log("App is listening on PORT " + PORT);
-    db.sequelize.sync({ force: true });
+    db.sequelize.sync({ force: false });
 });
 
 module.exports = app;
