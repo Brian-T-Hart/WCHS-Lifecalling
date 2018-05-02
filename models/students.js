@@ -28,23 +28,23 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false,
         },
         strengths: {
-            type: DataTypes.JSON,
+            type: DataTypes.ENUM,
             allowNull: true,
         },
         mbti: {
-            type: DataTypes.JSON,
+            type: DataTypes.ENUM,
             allowNull: true,
         },
         gifts: {
-            type: DataTypes.JSON,
+            type: DataTypes.ENUM,
             allowNull: true,
         },
         loveLanguages: {
-            type: DataTypes.JSON,
+            type: DataTypes.ENUM,
             allowNull: true,
         },
         intelligences: {
-            type: DataTypes.JSON,
+            type: DataTypes.ENUM,
             allowNull: true,
         },
         active: {
