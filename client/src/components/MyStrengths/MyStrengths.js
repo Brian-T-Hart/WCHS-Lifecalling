@@ -96,7 +96,7 @@ class MyStrengths extends Component {
                 {/* -------------end of Modal------------- */}
 
                 {/* Modal for displaying all Strengths Info */}
-                <div className="modal fade" id="allStrengthsModal" role="dialog">
+                <div className="modal" id="allStrengthsModal" role="dialog">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">

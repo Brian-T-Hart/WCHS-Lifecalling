@@ -18,8 +18,8 @@ body {
   color: #fff;
 }
 
-.titleSpan {
-  z-index: 99;
+.clickable {
+  cursor: pointer;
 }
 
 .infoInfoBox {
