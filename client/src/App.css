@@ -7,7 +7,7 @@ body {
 .infoContainer {
   display: block;
   margin: auto;
-  margin-bottom: 1.8em;
+  margin-top: 1.8em;
   max-width: 90%;
   border: 2px solid silver;
 }
@@ -24,14 +24,14 @@ body {
 
 .infoInfoBox {
   border-top: 2px solid silver;
-  height: 240px;
+  height: 14em;
   overflow: scroll;
   background-color: #fff;
 }
 
 h3 {
-  padding-top: 10px;
-  font-size: 20px;
+  padding-top: 0.5em;
+  font-size: 1.2em;
 }
 
 .allNames {
@@ -43,7 +43,7 @@ h3 {
 h6 {
   color: #000;
   padding-bottom: 0.6em;
-  margin: 10px;
+  margin: 0.5em;
 }
 
 .list-group-item {
@@ -54,7 +54,7 @@ h6 {
 
 .modal {
   max-height: 80%;
-  margin-top: 7%;
+  margin-top: 3em;
 }
 
 .modal-header {
@@ -84,9 +84,8 @@ ul li:hover {
 
 #mainNavbar {
     background-color: #d00010;
-    padding: 10px;
-    min-height: 60px;
-    margin-bottom: 40px;
+    padding: 0.5em;
+    min-height: 4em;
 }
 
 #navTitle {
@@ -96,14 +95,14 @@ ul li:hover {
 }
 
 #navLogo {
-    height: 50px;
-    margin: 0px 20px;
-    padding-left: 0px;
+    height: 2.3em;
+    margin: 0em 1em;
+    padding-left: 0em;
     width: auto;
 }
 
 #navDropdownMenu {
-    margin-right: 30px;
+    margin-right: 1.5em;
     font-size: 1.3em;
 }
 
