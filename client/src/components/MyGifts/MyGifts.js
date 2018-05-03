@@ -57,7 +57,7 @@ class MyGifts extends Component {
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <span><h3 data-toggle="modal" data-target="#allGiftsModal">Spiritual Gifts</h3></span>
+                        <span data-toggle="modal" data-target="#allGiftsModal"><h3>Spiritual Gifts</h3></span>
 
                             {/* Trigger modal with edit icon */}
                             <span data-toggle="modal" data-target="#giftsModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>

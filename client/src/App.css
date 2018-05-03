@@ -65,7 +65,7 @@ h6 {
   padding: 2em 2em;
 }
 
-ul li:hover, h3:hover {
+ul li:hover {
   cursor: pointer;
 }
 
