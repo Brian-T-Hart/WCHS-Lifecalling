@@ -18,6 +18,10 @@ body {
   color: #fff;
 }
 
+.titleSpan {
+  z-index: 99;
+}
+
 .infoInfoBox {
   border-top: 2px solid silver;
   height: 14em;

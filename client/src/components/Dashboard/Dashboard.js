@@ -13,7 +13,6 @@ import listOfIntelligences from './listOfIntelligences';
 import MyIntelligences from "../MyIntelligences/MyIntelligences.js";
 import MyOthers from "../MyOthers/MyOthers.js";
 import Navbar from "../Navbar/Navbar.js";
-import "./Dashboard.css";
 
 class Dashboard extends Component {
 
