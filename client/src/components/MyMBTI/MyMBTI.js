@@ -56,7 +56,8 @@ class MyMBTI extends Component {
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <span data-toggle="modal" data-target="#allMBTIModal"><h3>Myers-Briggs </h3></span>
+                    {/* Trigger modal with title span */}
+                        <span className="clickable" data-toggle="modal" data-target="#allMBTIModal"><h3>Myers-Briggs </h3></span>
 
                             {/* Trigger modal with edit icon */}
                             <span data-toggle="modal" data-target="#mbtiModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>

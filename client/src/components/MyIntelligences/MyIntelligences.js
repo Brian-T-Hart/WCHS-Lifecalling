@@ -56,7 +56,8 @@ class MyIntelligences extends Component {
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <span data-toggle="modal" data-target="#allIntelligencesModal"><h3>Multiple Intelligences</h3></span>
+                        {/* Trigger modal with title span */}
+                        <span className="clickable" data-toggle="modal" data-target="#allIntelligencesModal"><h3>Multiple Intelligences</h3></span>
                         
                             {/* Trigger modal with edit icon */}
                             <span data-toggle="modal" data-target="#intelligencesModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>

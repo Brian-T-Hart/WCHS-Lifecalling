@@ -57,7 +57,8 @@ class MyStrengths extends Component {
                 {/* title row */}
                 <div className="infoTitle row">
                     <div className="col-md-12">
-                        <span data-toggle="modal" data-target="#allStrengthsModal"><h3>Strengths Finder</h3></span>
+                        {/* Trigger modal with title span */}
+                        <span className="clickable" data-toggle="modal" data-target="#allStrengthsModal"><h3>Strengths Finder</h3></span>
                             {/* Trigger modal with edit icon */}
                             <span data-toggle="modal" data-target="#strengthsModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>
                     </div>
@@ -96,7 +97,7 @@ class MyStrengths extends Component {
                 {/* -------------end of Modal------------- */}
 
                 {/* Modal for displaying all Strengths Info */}
-                <div className="modal" id="allStrengthsModal" role="dialog">
+                <div className="modal fade" id="allStrengthsModal" role="dialog">
                     <div className="modal-dialog">
                         <div className="modal-content">
                             <div className="modal-header">
