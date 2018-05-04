@@ -58,7 +58,7 @@ class Login extends Component {
         return (
             <div>
                 <Navbar />
-                <div className="row">
+                <div className="row container-fluid loginContentRow">
                     <div className="col-md-6">
                         <img id="largeLogo" src="../../images/lc-logo.jpg" alt="" />
                     </div>

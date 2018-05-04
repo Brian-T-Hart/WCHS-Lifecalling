@@ -1,7 +1,11 @@
-
 body { 
   background: url("/../images/chalkboardBackground.jpg") no-repeat center center fixed;
   background-size: cover;
+}
+
+.dashboardContentRow, .loginContentRow, .registerContentRow {
+  margin: 0;
+  padding: 0;
 }
 
 .infoContainer {
@@ -16,10 +20,6 @@ body {
   text-align: center;
   background-color: #d00010;
   color: #fff;
-}
-
-.clickable, .clickable:hover {
-  cursor: pointer;
 }
 
 .infoInfoBox {
@@ -69,7 +69,7 @@ h6 {
   padding: 2em 2em;
 }
 
-ul li:hover {
+.clickable, .clickable:hover, ul li:hover {
   cursor: pointer;
 }
 

@@ -47,7 +47,7 @@ class Register extends Component {
         return (
             <div>
                 <Navbar />
-                <div className="row">
+                <div className="row container-fluid registerContentRow">
                     <div className="col-md-6">
                         <img id="largeLogo" src="../../images/lc-logo.jpg" alt="" />
                     </div>

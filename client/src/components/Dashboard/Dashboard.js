@@ -94,7 +94,7 @@ class Dashboard extends Component {
                 
                <Navbar username={this.state.username}/>
 
-                <div className="row">
+                <div className="row container-fluid dashboardContentRow">
                     <div className="col-md-1">
                     </div>
                     <div className="col-md-10">
