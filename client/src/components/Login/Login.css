@@ -37,3 +37,16 @@ input {
     text-align: center;
     margin-top: 20px;
 }
+
+@media only screen and (max-width: 480px) {
+    .largeLogo {
+        display: none;
+    }
+    #login-form {
+        float: none;
+        margin: auto;
+        margin-top: 5em;
+        width: 360px;
+        height: 360px;
+    }
+}

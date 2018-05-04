@@ -48,3 +48,16 @@ input {
     margin: auto;
     text-align: center;
 }
+
+@media only screen and (max-width: 480px) {
+    .largeLogo {
+        display: none;
+    }
+    #register-form {
+        float: none;
+        margin: auto;
+        margin-top: 5em;
+        width: 360px;
+        height: 360px;
+    }
+}
