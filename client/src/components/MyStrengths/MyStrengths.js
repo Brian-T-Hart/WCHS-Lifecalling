@@ -6,8 +6,6 @@ class MyStrengths extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            strengths: this.props.strengths,
-            myStrengths: this.props.myStrengths,
             strengthName: "",
             strengthDescription: "",
     }
@@ -40,7 +38,7 @@ class MyStrengths extends Component {
         );
 
         const allStrengths = listOfStrengths.map((allStrength) =>
-            <div>
+            <div key={allStrength.id}>
                 <div className="row">
                     <h5 className="allNames">{allStrength.name}</h5>
                 </div>

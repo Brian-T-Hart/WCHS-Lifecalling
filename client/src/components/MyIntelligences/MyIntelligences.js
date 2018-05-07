@@ -6,8 +6,6 @@ class MyIntelligences extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            intelligences: this.props.intelligences,
-            myIntelligences: this.props.myIntelligences,
             intelligenceName: "",
             intelligenceDescription: ""
         }
@@ -40,7 +38,7 @@ class MyIntelligences extends Component {
         );
 
         const allIntelligences = listOfIntelligences.map((allIntelligences) =>
-            <div>
+            <div key={allIntelligences.id}>
                 <div className="row">
                     <h5 className="allNames">{allIntelligences.name}</h5>
                 </div>

@@ -5,10 +5,6 @@ class GiftsModal extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            gifts: this.props.gifts,
-            myGifts: this.props.myGifts
-        }
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -35,7 +31,7 @@ class GiftsModal extends Component {
 
     render() {
 
-        const listOfGifts = this.state.gifts.map((gift) =>
+        const listOfGifts = this.props.gifts.map((gift) =>
             <option key={gift.id}>{gift.name}</option>
         );
 

@@ -5,10 +5,6 @@ class IntelligencesModal extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            intelligences: this.props.intelligences,
-            myIntelligences: this.props.myIntelligences
-        }
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -34,7 +30,7 @@ class IntelligencesModal extends Component {
 
     render() {
 
-        const listOfIntelligences = this.state.intelligences.map((intelligence) =>
+        const listOfIntelligences = this.props.intelligences.map((intelligence) =>
             <option key={intelligence.id}>{intelligence.name}</option>
         );
 

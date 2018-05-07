@@ -4,20 +4,17 @@ import API from "../../utils/API";
 class StrengthsModal extends Component {
     componentDidMount() {
         console.log('StrengthsModal mounted!');
-        console.log('myStrengths from StrengthsModal componentDidMount ', this.props.myStrengths);
+        console.log('myStrengths from props StrengthsModal componentDidMount ', this.props.myStrengths);
     }
 
     componentDidUpdate() {
         console.log('StrengthsModal updated!');
         console.log('myStrengths from StrengthsModal componentDidUpdate ', this.props.myStrengths);
+        console.log('myStrengths[0]', this.props.myStrengths[0]);
     }
 
     constructor(props) {
         super(props);
-        this.state = {
-            strengths: this.props.strengths,
-            myStrengths: this.props.myStrengths
-        }
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -47,7 +44,7 @@ class StrengthsModal extends Component {
 
     render() {
 
-        const strengths = this.state.strengths.map((strength) => 
+        const strengths = this.props.strengths.map((strength) => 
                     <option key={strength.id}>{strength.name}</option>
         );
 
@@ -64,7 +61,8 @@ class StrengthsModal extends Component {
                     <div className="modal-body">
                             <div className="form-group">
                                 <label htmlFor="strength1">Highest Strength</label>
-                                <select className="form-control" id="strength1" ref="strength1">
+                                <select defaultValue={this.props.myStrengths[0]} className="form-control" id="strength1" ref="strength1">
+                                    {/* <option value="" selected disabled hidden>{this.props.myStrengths[0]}</option> */}
                                     {strengths}
                                 </select>
                             </div>

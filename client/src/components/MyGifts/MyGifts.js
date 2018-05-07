@@ -6,8 +6,6 @@ class MyGifts extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            gifts: this.props.gifts,
-            myGifts: this.props.myGifts,
             giftName: "",
             giftDescription: ""
         }
@@ -41,7 +39,7 @@ class MyGifts extends Component {
         );
 
         const allGifts = listOfSpiritualGifts.map((allGifts) =>
-            <div>
+            <div key={allGifts.id}>
                 <div className="row">
                     <h5 className="allNames">{allGifts.name}</h5>
                 </div>

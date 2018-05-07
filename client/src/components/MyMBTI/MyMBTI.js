@@ -6,8 +6,6 @@ class MyMBTI extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            mbti: this.props.mbti,
-            myMbti: this.props.myMbti,
             mbtiName: "",
             mbtiDescription: ""
         }
@@ -40,7 +38,7 @@ class MyMBTI extends Component {
         );
 
         const allMBTI = listOfMBTI.map((allMBTI) =>
-            <div>
+            <div key={allMBTI.id}>
                 <div className="row">
                     <h5 className="allNames">{allMBTI.name}</h5>
                 </div>

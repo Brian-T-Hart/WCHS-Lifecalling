@@ -6,8 +6,6 @@ class MyLoveLanguages extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            loveLanguages: this.props.loveLanguages,
-            myLoveLanguages: this.props.myLoveLanguages,
             loveLanguageName: "",
             loveLanguageDescription: ""
         }
@@ -41,7 +39,7 @@ class MyLoveLanguages extends Component {
         );
 
         const allLoveLanguages = listOfLoveLanguages.map((allLoveLanguages) =>
-            <div>
+            <div key={allLoveLanguages.id}>
                 <div className="row">
                     <h5 className="allNames">{allLoveLanguages.name}</h5>
                 </div>

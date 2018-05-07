@@ -5,10 +5,6 @@ class MBTIModal extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            mbti: this.props.mbti,
-            myMbti: this.props.myMbti
-        }
         this.handleClick = this.handleClick.bind(this);
     }
 
