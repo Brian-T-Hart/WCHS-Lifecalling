@@ -48,12 +48,14 @@ class IntelligencesModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="intelligence1">Choose Type</label>
                                 <select className="form-control" id="intelligence1" ref="intelligence1">
+                                    <option value="" selected disabled hidden>{this.props.myIntelligences[0]}</option>
                                     {listOfIntelligences}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="intelligence2">Choose Type</label>
                                 <select className="form-control" id="intelligence2" ref="intelligence2">
+                                    <option value="" selected disabled hidden>{this.props.myIntelligences[1]}</option>
                                     {listOfIntelligences}
                                 </select>
                             </div>

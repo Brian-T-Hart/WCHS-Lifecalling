@@ -45,6 +45,7 @@ class MBTIModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="mbti1">Choose Type</label>
                                 <select className="form-control" id="mbti1" ref="mbti1">
+                                    <option value="" selected disabled hidden>{this.props.myMbti[0]}</option>
                                     <option>Extrovert</option>
                                     <option>Introvert</option>
                                 </select>
@@ -52,6 +53,7 @@ class MBTIModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="mbti2">Choose Type</label>
                                 <select className="form-control" id="mbti2" ref="mbti2">
+                                    <option value="" selected disabled hidden>{this.props.myMbti[1]}</option>
                                     <option>Sensing</option>
                                     <option>Intuition</option>
                                 </select>
@@ -59,6 +61,7 @@ class MBTIModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="mbti3">Choose Type</label>
                                 <select className="form-control" id="mbti3" ref="mbti3">
+                                    <option value="" selected disabled hidden>{this.props.myMbti[2]}</option>
                                     <option>Thinking</option>
                                     <option>Feeling</option>
                                 </select>
@@ -66,6 +69,7 @@ class MBTIModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="mbti4">Choose Type</label>
                                 <select className="form-control" id="mbti4" ref="mbti4">
+                                    <option value="" selected disabled hidden>{this.props.myMbti[3]}</option>
                                     <option>Perceiving</option>
                                     <option>Judging</option>
                                 </select>

@@ -26,22 +26,6 @@ class ModalWrapper extends Component {
     updateMyIntelligences = (updatedIntelligences) => {
         this.props.intelligencesCallbackFromModalWrapper(updatedIntelligences);
     }
-
-    // constructor(props) {
-    //     super(props);
-    //     this.state = {
-    //         strengths: this.props.strengths,
-    //         myStrengths: this.props.myStrengths,
-    //         mbti: this.props.mbti,
-    //         myMbti: this.props.myMbti,
-    //         gifts: this.props.gifts,
-    //         myGifts: this.props.myGifts,
-    //         loveLanguages: this.props.loveLanguages,
-    //         myLoveLanguages: this.props.myLoveLanguages,
-    //         intelligences: this.props.intelligences,
-    //         myIntelligences: this.props.myIntelligences
-    //     }
-    // }
     
 
     render() {

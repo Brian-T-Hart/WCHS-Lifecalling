@@ -2,19 +2,12 @@ import React, { Component } from 'react';
 import API from "../../utils/API";
 
 class StrengthsModal extends Component {
-    componentDidMount() {
-        console.log('StrengthsModal mounted!');
-        console.log('myStrengths from props StrengthsModal componentDidMount ', this.props.myStrengths);
-    }
-
-    componentDidUpdate() {
-        console.log('StrengthsModal updated!');
-        console.log('myStrengths from StrengthsModal componentDidUpdate ', this.props.myStrengths);
-        console.log('myStrengths[0]', this.props.myStrengths[0]);
-    }
 
     constructor(props) {
         super(props);
+        this.state = {
+            myStrengths: this.props.myStrengths
+        }
         this.handleClick = this.handleClick.bind(this);
     }
 
@@ -61,32 +54,36 @@ class StrengthsModal extends Component {
                     <div className="modal-body">
                             <div className="form-group">
                                 <label htmlFor="strength1">Highest Strength</label>
-                                <select defaultValue={this.props.myStrengths[0]} className="form-control" id="strength1" ref="strength1">
-                                    {/* <option value="" selected disabled hidden>{this.props.myStrengths[0]}</option> */}
+                                <select className="form-control" id="strength1" ref="strength1">
+                                    <option value="" selected disabled hidden>{this.props.myStrengths[0]}</option>
                                     {strengths}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="strength2">Second Highest Strength</label>
                                 <select className="form-control" id="strength2" ref="strength2">
+                                    <option value="" selected disabled hidden>{this.props.myStrengths[1]}</option>
                                     {strengths}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="strength3">Third Highest Strength</label>
                                 <select className="form-control" id="strength3" ref="strength3">
+                                    <option value="" selected disabled hidden>{this.props.myStrengths[2]}</option>
                                     {strengths}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="strength4">Fourth Highest Strength</label>
                                 <select className="form-control" id="strength4" ref="strength4">
+                                    <option value="" selected disabled hidden>{this.props.myStrengths[3]}</option>
                                     {strengths}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="strength5">Fifth Highest Strength</label>
                                 <select className="form-control" id="strength5" ref="strength5">
+                                    <option value="" selected disabled hidden>{this.props.myStrengths[4]}</option>
                                     {strengths}
                                 </select>
                             </div>

@@ -52,12 +52,14 @@ class LoveLanguagesModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="loveLanguage1">Choose Type</label>
                                 <select className="form-control" id="loveLanguage1" ref="loveLanguage1">
+                                    <option value="" selected disabled hidden>{this.props.myLoveLanguages[0]}</option>
                                     {listOfLoveLanguages}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="loveLanguage2">Choose Type</label>
                                 <select className="form-control" id="loveLanguage2" ref="loveLanguage2">
+                                    <option value="" selected disabled hidden>{this.props.myLoveLanguages[1]}</option>
                                     {listOfLoveLanguages}
                                 </select>
                             </div>
