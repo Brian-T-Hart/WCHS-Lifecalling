@@ -43,7 +43,9 @@ class MyStrengths extends Component {
     render() {
 
         const listOfMyStrengths = this.props.myStrengths.map((strength) =>
-            <li key={this.props.myStrengths.indexOf(strength)} className="list-group-item d-flex align-items-center" data-txt={strength} onClick={this.handleClick}><span className="badge badge-default badge-pill">{this.props.myStrengths.indexOf(strength) + 1}</span>{strength}</li>
+            <li key={listOfStrengths.indexOf(strength)} className="list-group-item d-flex align-items-center" data-txt={strength} onClick={this.handleClick}>
+            {/* <span className="badge badge-default badge-pill">{this.props.myStrengths.indexOf(strength) + 1}</span> */}
+            {strength}</li>
         );
 
         const allStrengths = listOfStrengths.map((allStrength) =>

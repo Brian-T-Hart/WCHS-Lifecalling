@@ -13,13 +13,12 @@ class StrengthsModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        console.log(this.refs.strength1.value);
-        this.myStrengths = [];
-        this.myStrengths.push(this.refs.strength1.value);
-        this.myStrengths.push(this.refs.strength2.value);
-        this.myStrengths.push(this.refs.strength3.value);
-        this.myStrengths.push(this.refs.strength4.value);
-        this.myStrengths.push(this.refs.strength5.value);
+        this.myStrengths = [this.props.myStrengths[0], this.props.myStrengths[1], this.props.myStrengths[2], this.props.myStrengths[3], this.props.myStrengths[4]];
+        this.myStrengths[0]=this.refs.strength1.value;
+        this.myStrengths[1]=this.refs.strength2.value;
+        this.myStrengths[2]=this.refs.strength3.value;
+        this.myStrengths[3]=this.refs.strength4.value;
+        this.myStrengths[4]=this.refs.strength5.value;
         this.props.callbackFromStrengthsModal(this.myStrengths);
         API.updateStrengths({
             id: localStorage.getItem("lifeCallingId"),
@@ -55,35 +54,35 @@ class StrengthsModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="strength1">Highest Strength</label>
                                 <select className="form-control" id="strength1" ref="strength1">
-                                    <option value="" selected disabled hidden>{this.props.myStrengths[0]}</option>
+                                    <option selected disabled hidden>{this.props.myStrengths[0]}</option>
                                     {strengths}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="strength2">Second Highest Strength</label>
                                 <select className="form-control" id="strength2" ref="strength2">
-                                    <option value="" selected disabled hidden>{this.props.myStrengths[1]}</option>
+                                    <option selected disabled hidden>{this.props.myStrengths[1]}</option>
                                     {strengths}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="strength3">Third Highest Strength</label>
                                 <select className="form-control" id="strength3" ref="strength3">
-                                    <option value="" selected disabled hidden>{this.props.myStrengths[2]}</option>
+                                    <option selected disabled hidden>{this.props.myStrengths[2]}</option>
                                     {strengths}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="strength4">Fourth Highest Strength</label>
                                 <select className="form-control" id="strength4" ref="strength4">
-                                    <option value="" selected disabled hidden>{this.props.myStrengths[3]}</option>
+                                    <option selected disabled hidden>{this.props.myStrengths[3]}</option>
                                     {strengths}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="strength5">Fifth Highest Strength</label>
                                 <select className="form-control" id="strength5" ref="strength5">
-                                    <option value="" selected disabled hidden>{this.props.myStrengths[4]}</option>
+                                    <option selected disabled hidden>{this.props.myStrengths[4]}</option>
                                     {strengths}
                                 </select>
                             </div>

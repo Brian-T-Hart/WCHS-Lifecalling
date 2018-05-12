@@ -10,11 +10,11 @@ class MBTIModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        this.myMbti = [];
-        this.myMbti.push(this.refs.mbti1.value);
-        this.myMbti.push(this.refs.mbti2.value);
-        this.myMbti.push(this.refs.mbti3.value);
-        this.myMbti.push(this.refs.mbti4.value);
+        this.myMbti = [this.props.myMbti[0], this.props.myMbti[1], this.props.myMbti[2], this.props.myMbti[3]];
+        this.myMbti[0]=this.refs.mbti1.value;
+        this.myMbti[1]=this.refs.mbti2.value;
+        this.myMbti[2]=this.refs.mbti3.value;
+        this.myMbti[3]=this.refs.mbti4.value;
         this.props.callbackFromMBTIModal(this.myMbti);
         API.updateMBTI({
             id: localStorage.getItem("lifeCallingId"),
@@ -45,7 +45,7 @@ class MBTIModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="mbti1">Choose Type</label>
                                 <select className="form-control" id="mbti1" ref="mbti1">
-                                    <option value="" selected disabled hidden>{this.props.myMbti[0]}</option>
+                                    <option selected disabled hidden>{this.props.myMbti[0]}</option>
                                     <option>Extrovert</option>
                                     <option>Introvert</option>
                                 </select>
@@ -53,7 +53,7 @@ class MBTIModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="mbti2">Choose Type</label>
                                 <select className="form-control" id="mbti2" ref="mbti2">
-                                    <option value="" selected disabled hidden>{this.props.myMbti[1]}</option>
+                                    <option selected disabled hidden>{this.props.myMbti[1]}</option>
                                     <option>Sensing</option>
                                     <option>Intuition</option>
                                 </select>
@@ -61,7 +61,7 @@ class MBTIModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="mbti3">Choose Type</label>
                                 <select className="form-control" id="mbti3" ref="mbti3">
-                                    <option value="" selected disabled hidden>{this.props.myMbti[2]}</option>
+                                    <option selected disabled hidden>{this.props.myMbti[2]}</option>
                                     <option>Thinking</option>
                                     <option>Feeling</option>
                                 </select>
@@ -69,7 +69,7 @@ class MBTIModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="mbti4">Choose Type</label>
                                 <select className="form-control" id="mbti4" ref="mbti4">
-                                    <option value="" selected disabled hidden>{this.props.myMbti[3]}</option>
+                                    <option selected disabled hidden>{this.props.myMbti[3]}</option>
                                     <option>Perceiving</option>
                                     <option>Judging</option>
                                 </select>

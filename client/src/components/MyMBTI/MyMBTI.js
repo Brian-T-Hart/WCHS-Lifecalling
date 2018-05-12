@@ -15,11 +15,8 @@ class MyMBTI extends Component {
     mbtiIndex(name) {
         for (let i = 0; i < listOfMBTI.length; i++) {
             if (listOfMBTI[i].name === name) {
-                console.log("index of mbti ", i);
-                console.log(listOfMBTI[i].name);
                 this.setState({ mbtiName: listOfMBTI[i].name });
                 this.setState({ mbtiDescription: listOfMBTI[i].description })
-                console.log(listOfMBTI[i].description);
             }
         }
     }
@@ -27,14 +24,13 @@ class MyMBTI extends Component {
     handleClick(e) {
         e.preventDefault();
         var mbtiName = e.target.dataset.txt;
-        console.log(mbtiName);
         this.mbtiIndex(mbtiName);
     }
 
     render() {
 
         const listOfMyMbti = this.props.myMbti.map((mbti) =>
-            <li key={this.props.myMbti.indexOf(mbti) + 1} className="list-group-item d-flex align-items-center" data-txt={mbti} onClick={this.handleClick}><span className="badge badge-default badge-pill">{this.props.myMbti.indexOf(mbti) + 1}</span>{mbti}</li>
+            <li key={this.props.myMbti.indexOf(mbti) + 1} className="list-group-item d-flex" data-txt={mbti} onClick={this.handleClick}>{mbti}</li>
         );
 
         const allMBTI = listOfMBTI.map((allMBTI) =>
