@@ -14,9 +14,9 @@ class LoveLanguagesModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        this.myLoveLanguages = [];
-        this.myLoveLanguages.push(this.refs.loveLanguage1.value);
-        this.myLoveLanguages.push(this.refs.loveLanguage2.value);
+        this.myLoveLanguages = [this.props.myLoveLanguages[0], this.props.myLoveLanguages[1], this.props.myLoveLanguages[2]];
+        this.myLoveLanguages[0]=this.refs.loveLanguage1.value;
+        this.myLoveLanguages[1]=this.refs.loveLanguage2.value;
         this.props.callbackFromLoveLanguagesModal(this.myLoveLanguages);
         API.updateLoveLanguages({
             id: localStorage.getItem("lifeCallingId"),
@@ -52,14 +52,14 @@ class LoveLanguagesModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="loveLanguage1">Choose Type</label>
                                 <select className="form-control" id="loveLanguage1" ref="loveLanguage1">
-                                    <option value="" selected disabled hidden>{this.props.myLoveLanguages[0]}</option>
+                                    <option selected disabled hidden>{this.props.myLoveLanguages[0]}</option>
                                     {listOfLoveLanguages}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="loveLanguage2">Choose Type</label>
                                 <select className="form-control" id="loveLanguage2" ref="loveLanguage2">
-                                    <option value="" selected disabled hidden>{this.props.myLoveLanguages[1]}</option>
+                                    <option selected disabled hidden>{this.props.myLoveLanguages[1]}</option>
                                     {listOfLoveLanguages}
                                 </select>
                             </div>

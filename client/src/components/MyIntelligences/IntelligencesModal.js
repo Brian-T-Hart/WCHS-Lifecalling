@@ -10,9 +10,9 @@ class IntelligencesModal extends Component {
 
     handleClick(e) {
         e.preventDefault();
-        this.myIntelligences = [];
-        this.myIntelligences.push(this.refs.intelligence1.value);
-        this.myIntelligences.push(this.refs.intelligence2.value);
+        this.myIntelligences = [this.props.myIntelligences[0], this.props.myIntelligences[1]];
+        this.myIntelligences[0]=this.refs.intelligence1.value;
+        this.myIntelligences[1]=this.refs.intelligence2.value;
         this.props.callbackFromIntelligencesModal(this.myIntelligences);
         API.updateIntelligences({
             id: localStorage.getItem("lifeCallingId"),
@@ -48,14 +48,14 @@ class IntelligencesModal extends Component {
                             <div className="form-group">
                                 <label htmlFor="intelligence1">Choose Type</label>
                                 <select className="form-control" id="intelligence1" ref="intelligence1">
-                                    <option value="" selected disabled hidden>{this.props.myIntelligences[0]}</option>
+                                    <option selected disabled hidden>{this.props.myIntelligences[0]}</option>
                                     {listOfIntelligences}
                                 </select>
                             </div>
                             <div className="form-group">
                                 <label htmlFor="intelligence2">Choose Type</label>
                                 <select className="form-control" id="intelligence2" ref="intelligence2">
-                                    <option value="" selected disabled hidden>{this.props.myIntelligences[1]}</option>
+                                    <option selected disabled hidden>{this.props.myIntelligences[1]}</option>
                                     {listOfIntelligences}
                                 </select>
                             </div>

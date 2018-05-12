@@ -15,11 +15,8 @@ class MyIntelligences extends Component {
     intelligenceIndex(name) {
         for (let i = 0; i < listOfIntelligences.length; i++) {
             if (listOfIntelligences[i].name === name) {
-                console.log("index of strength ", i);
-                console.log(listOfIntelligences[i].name);
                 this.setState({ intelligenceName: listOfIntelligences[i].name });
                 this.setState({ intelligenceDescription: listOfIntelligences[i].description })
-                console.log(listOfIntelligences[i].description);
             }
         }
     }
@@ -27,14 +24,13 @@ class MyIntelligences extends Component {
     handleClick(e) {
         e.preventDefault();
         var intelligenceName = e.target.dataset.txt;
-        console.log(intelligenceName);
         this.intelligenceIndex(intelligenceName);
     }
 
     render() {
 
         const listOfMyIntelligences = this.props.myIntelligences.map((intelligence) =>
-            <li key={this.props.myIntelligences.indexOf(intelligence) + 1} className="list-group-item d-flex align-items-center" data-txt={intelligence} onClick={this.handleClick}><span className="badge badge-default badge-pill">{this.props.myIntelligences.indexOf(intelligence) + 1}</span>{intelligence}</li>
+            <li key={this.props.myIntelligences.indexOf(intelligence) + 1} className="list-group-item d-flex align-items-center" data-txt={intelligence} onClick={this.handleClick}>{intelligence}</li>
         );
 
         const allIntelligences = listOfIntelligences.map((allIntelligences) =>

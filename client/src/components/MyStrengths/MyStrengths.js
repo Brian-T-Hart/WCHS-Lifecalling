@@ -24,11 +24,8 @@ class MyStrengths extends Component {
     strengthIndex(name) {
         for (let i=0; i<listOfStrengths.length; i++) {
             if (listOfStrengths[i].name === name) {
-                console.log("index of strength ", i);
-                console.log(listOfStrengths[i].name);
                 this.setState({ strengthName: listOfStrengths[i].name });
                 this.setState({ strengthDescription: listOfStrengths[i].description })
-                console.log(listOfStrengths[i].description);
             }
         }
     }
@@ -36,7 +33,6 @@ class MyStrengths extends Component {
     handleClick(e) {
         e.preventDefault();
         var strengthName = e.target.dataset.txt;
-        console.log(strengthName);
         this.strengthIndex(strengthName);
     }
 
@@ -44,7 +40,6 @@ class MyStrengths extends Component {
 
         const listOfMyStrengths = this.props.myStrengths.map((strength) =>
             <li key={listOfStrengths.indexOf(strength)} className="list-group-item d-flex align-items-center" data-txt={strength} onClick={this.handleClick}>
-            {/* <span className="badge badge-default badge-pill">{this.props.myStrengths.indexOf(strength) + 1}</span> */}
             {strength}</li>
         );
 

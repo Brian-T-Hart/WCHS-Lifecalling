@@ -15,11 +15,8 @@ class MyGifts extends Component {
     giftIndex(name) {
         for (let i = 0; i < listOfSpiritualGifts.length; i++) {
             if (listOfSpiritualGifts[i].name === name) {
-                console.log("index of gift ", i);
-                console.log(listOfSpiritualGifts[i].name);
                 this.setState({ giftName: listOfSpiritualGifts[i].name });
                 this.setState({ giftDescription: listOfSpiritualGifts[i].description })
-                console.log(listOfSpiritualGifts[i].description);
             }
         }
     }
@@ -27,15 +24,13 @@ class MyGifts extends Component {
     handleClick(e) {
         e.preventDefault();
         var giftName = e.target.dataset.txt;
-        console.log(giftName);
-        // console.log(listOfStrengths);
         this.giftIndex(giftName);
     }
 
     render() {
 
         const listOfMyGifts = this.props.myGifts.map((gift) =>
-            <li key={this.props.myGifts.indexOf(gift) + 1} className="list-group-item d-flex align-items-center" data-txt={gift} onClick={this.handleClick}><span className="badge badge-default badge-pill">{this.props.myGifts.indexOf(gift) + 1}</span>{gift}</li>
+            <li key={this.props.myGifts.indexOf(gift) + 1} className="list-group-item d-flex align-items-center" data-txt={gift} onClick={this.handleClick}>{gift}</li>
         );
 
         const allGifts = listOfSpiritualGifts.map((allGifts) =>

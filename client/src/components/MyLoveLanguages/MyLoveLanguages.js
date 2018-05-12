@@ -15,11 +15,8 @@ class MyLoveLanguages extends Component {
     loveLanguageIndex(name) {
         for (let i = 0; i < listOfLoveLanguages.length; i++) {
             if (listOfLoveLanguages[i].name === name) {
-                console.log("index of strength ", i);
-                console.log(listOfLoveLanguages[i].name);
                 this.setState({ loveLanguageName: listOfLoveLanguages[i].name });
                 this.setState({ loveLanguageDescription: listOfLoveLanguages[i].description })
-                console.log(listOfLoveLanguages[i].description);
             }
         }
     }
@@ -27,15 +24,13 @@ class MyLoveLanguages extends Component {
     handleClick(e) {
         e.preventDefault();
         var loveLanguageName = e.target.dataset.txt;
-        console.log(loveLanguageName);
-        // console.log(listOfStrengths);
         this.loveLanguageIndex(loveLanguageName);
     }
 
     render() {
 
         const listOfMyLoveLanguages = this.props.myLoveLanguages.map((loveLanguage) =>
-            <li key={this.props.myLoveLanguages.indexOf(loveLanguage) + 1} className="list-group-item d-flex align-items-center" data-txt={loveLanguage} onClick={this.handleClick}><span className="badge badge-default badge-pill">{this.props.myLoveLanguages.indexOf(loveLanguage) + 1}</span>{loveLanguage}</li>
+            <li key={this.props.myLoveLanguages.indexOf(loveLanguage) + 1} className="list-group-item d-flex align-items-center" data-txt={loveLanguage} onClick={this.handleClick}>{loveLanguage}</li>
         );
 
         const allLoveLanguages = listOfLoveLanguages.map((allLoveLanguages) =>
