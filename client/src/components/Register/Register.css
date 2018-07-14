@@ -1,46 +1,27 @@
-#register-form {
-	width: 400px;
-	height: 400px;
-	float: left;
-	margin-top: 80px;
-	margin-left: 20px;
-	background-color: #fff;
-	padding: 20px;
-	border: 2px solid #393433;
-	border-radius: 4px;
-}
-
-#registerBtn {
-	width: 40%;
-	display: block;
-	margin: auto;
-	margin-top: 20px;
-}
-
-input {
-	width: 70%;
-	display: block;
-	margin: auto;
-	margin-bottom: 10px;
-}
-
-#formTitle {
-	text-align: center;
-	color: #393433;
-	margin-bottom: 20px;
-}
-
-#largeLogo {
-	width: 400px;
-	height: 400px;
-	float: right;
-	margin-top: 80px;
-	margin-right: 20px;
-}
-
 .col-md-6 {
 	margin: 0px;
 	padding: 0px;
+}
+
+#formTitle {
+	color: #393433;
+	margin-bottom: 20px;
+	text-align: center;
+}
+
+input {
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
+	width: 70%;
+}
+
+#largeLogo {
+	float: right;
+	height: 400px;
+	margin-right: 20px;
+	margin-top: 80px;
+	width: 400px;
 }
 
 #loginLink {
@@ -49,15 +30,35 @@ input {
 	text-align: center;
 }
 
+#registerBtn {
+	display: block;
+	margin: auto;
+	margin-top: 20px;
+	width: 40%;
+}
+
+#register-form {
+	background-color: #fff;
+	border: 2px solid #393433;
+	border-radius: 4px;
+	float: left;
+	height: 400px;
+	margin-left: 20px;
+	margin-top: 80px;
+	padding: 20px;
+	width: 400px;
+}
+
 @media only screen and (max-width: 480px) {
 	.largeLogo {
 		display: none;
 	}
+
 	#register-form {
 		float: none;
+		height: 360px;
 		margin: auto;
 		margin-top: 5em;
 		width: 360px;
-		height: 360px;
 	}
 }
