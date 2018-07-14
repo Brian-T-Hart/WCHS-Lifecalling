@@ -1,52 +1,52 @@
 #login-form {
-    width: 400px;
-    height: 400px;
-    float: left;
-    margin-top: 80px;
-    margin-left: 20px;
-    background-color: #fff;
-    padding: 20px;
-    border: 2px solid #393433;
-    border-radius: 4px;
+	width: 400px;
+	height: 400px;
+	float: left;
+	margin-top: 80px;
+	margin-left: 20px;
+	background-color: #fff;
+	padding: 20px;
+	border: 2px solid #393433;
+	border-radius: 4px;
 }
 
 #formTitle {
-    text-align: center;
-    color: #393433;
-    margin-top: 20px;
-    margin-bottom: 20px;
+	text-align: center;
+	color: #393433;
+	margin-top: 20px;
+	margin-bottom: 20px;
 }
 
 #login-submit {
-    width: 100px;
-    display: block;
-    margin: auto;
-    margin-top: 20px;
+	width: 100px;
+	display: block;
+	margin: auto;
+	margin-top: 20px;
 }
 
 input {
-    width: 100%;
-    display: block;
-    margin: auto;
-    margin-bottom: 10px;
+	width: 100%;
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
 }
 
 #registerLink {
-    display: block;
-    margin: auto;
-    text-align: center;
-    margin-top: 20px;
+	display: block;
+	margin: auto;
+	text-align: center;
+	margin-top: 20px;
 }
 
 @media only screen and (max-width: 480px) {
-    .largeLogo {
-        display: none;
-    }
-    #login-form {
-        float: none;
-        margin: auto;
-        margin-top: 5em;
-        width: 360px;
-        height: 360px;
-    }
+	.largeLogo {
+		display: none;
+	}
+	#login-form {
+		float: none;
+		margin: auto;
+		margin-top: 5em;
+		width: 360px;
+		height: 360px;
+	}
 }

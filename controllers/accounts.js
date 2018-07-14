@@ -11,16 +11,16 @@ var router = express.Router();
 
 // this is handling the login authentication
 router.post('/login',
-    passport.authenticate('local', { session: false }),
-    function (req, res) {
-        console.log("user authenticated..account.routes.js ", req.user.username, req.user.token);
-        res.json({ username: req.user.username, token: req.user.token });
-    });
+	passport.authenticate('local', { session: false }),
+	function (req, res) {
+		console.log("user authenticated..account.routes.js ", req.user.username, req.user.token);
+		res.json({ username: req.user.username, token: req.user.token });
+	});
 
 // this is handling the registration
 router.post('/register', passport.authenticate('local-register', {
-    successRedirect: '/login',
-    failureRedirect: '/'
+	successRedirect: '/login',
+	failureRedirect: '/'
 }));
 
 module.exports = router;

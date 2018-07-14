@@ -1,110 +1,110 @@
-body { 
-  background: url("/../images/chalkboardBackground.jpg") no-repeat center center fixed;
-  background-size: cover;
+body {
+	background: url("/../images/chalkboardBackground.jpg") no-repeat center center fixed;
+	background-size: cover;
 }
 
 .dashboardContentRow, .loginContentRow, .registerContentRow {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 .infoContainer {
-  display: block;
-  margin: auto;
-  margin-top: 1.8em;
-  max-width: 90%;
-  border: 2px solid silver;
+	display: block;
+	margin: auto;
+	margin-top: 1.8em;
+	max-width: 90%;
+	border: 2px solid silver;
 }
 
 .infoTitle {
-  text-align: center;
-  background-color: #d00010;
-  color: #fff;
+	text-align: center;
+	background-color: #d00010;
+	color: #fff;
 }
 
 .infoInfoBox {
-  border-top: 2px solid silver;
-  height: 14em;
-  overflow: scroll;
-  background-color: #fff;
+	border-top: 2px solid silver;
+	height: 14em;
+	overflow: scroll;
+	background-color: #fff;
 }
 
 h3 {
-  padding-top: 0.5em;
-  font-size: 1.2em;
+	padding-top: 0.5em;
+	font-size: 1.2em;
 }
 
 .allNames {
-  color: blue;
-  margin: 0em;
-  padding-left: 0.5em;
+	color: blue;
+	margin: 0em;
+	padding-left: 0.5em;
 }
 
 h6 {
-  color: #000;
-  padding-bottom: 0.6em;
-  margin: 0.5em;
+	color: #000;
+	padding-bottom: 0.6em;
+	margin: 0.5em;
 }
 
 .list-group-item {
-  text-transform: uppercase;
-  font-size: 0.8em;
+	text-transform: uppercase;
+	font-size: 0.8em;
 }
 
 .modal {
-  max-height: 80%;
-  margin-top: 3em;
+	max-height: 80%;
+	margin-top: 3em;
 }
 
 .modal-header {
-  background-color: #0000ff;
+	background-color: #0000ff;
 }
 
 .modal-title {
-  padding-left: 0.7em;
-  color: #fff;
+	padding-left: 0.7em;
+	color: #fff;
 }
 
 .modal-body {
-  padding: 2em 2em;
+	padding: 2em 2em;
 }
 
 .clickable, .clickable:hover, ul li:hover {
-  cursor: pointer;
+	cursor: pointer;
 }
 
 #editIcon {
-  width: 0.7em;
-  height: auto;
-  position: absolute;
-  right: 0.4em;
-  top: 0.4em;
+	width: 0.7em;
+	height: auto;
+	position: absolute;
+	right: 0.4em;
+	top: 0.4em;
 }
 
 #mainNavbar {
-    background-color: #d00010;
-    padding: 0.5em;
-    min-height: 4em;
+		background-color: #d00010;
+		padding: 0.5em;
+		min-height: 4em;
 }
 
 #navTitle {
-    text-decoration: none;
-    color: #fff;
-    font-size: 1.3em;
+		text-decoration: none;
+		color: #fff;
+		font-size: 1.3em;
 }
 
 #navLogo {
-    height: 2.3em;
-    margin: 0em 1em;
-    padding-left: 0em;
-    width: auto;
+		height: 2.3em;
+		margin: 0em 1em;
+		padding-left: 0em;
+		width: auto;
 }
 
 #navDropdownMenu {
-    margin-right: 1.5em;
-    font-size: 1.3em;
+		margin-right: 1.5em;
+		font-size: 1.3em;
 }
 
 #navbarDropdown {
-    color: #fff;
+		color: #fff;
 }
