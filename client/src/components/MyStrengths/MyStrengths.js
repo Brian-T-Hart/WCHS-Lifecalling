@@ -3,7 +3,7 @@ import listOfStrengths from "../Dashboard/listOfStrengths.js";
 
 class MyStrengths extends Component {
 
-	ComponentDidMount() {
+	componentDidMount() {
 		console.log("MyStrengths Mounted");
 	}
 

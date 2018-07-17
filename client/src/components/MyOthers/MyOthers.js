@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 
 class MyOthers extends Component {
 
-	ComponentDidMount() {
+	componentDidMount() {
 		console.log('MyOthers Mounted');
+	}
+
+	componentDidUpdate() {
+		console.log('MyOthers updated');
 	}
 
 	constructor(props) {
@@ -13,9 +17,24 @@ class MyOthers extends Component {
 			learningStyles: "Learning Styles",
 			myPDF: "PDF Document"
 		}
+		this.handleClick = this.handleClick.bind(this);
+	}
+
+	handleClick(e) {
+		e.preventDefault();
+		window.cloudinary.openUploadWidget(
+			{
+				cloud_name: 'demo',
+				upload_preset: 'a5vxnzbp'
+			},
+			function(error, result) {
+				console.log(error, result)
+			}
+		)
 	}
 
 	render() {
+
 
 		// const listOfMyStrengths = this.props.myStrengths.map((strength) =>
 		//     <li key={this.props.myStrengths.indexOf(strength) + 1} className="list-group-item d-flex align-items-center"><span className="badge badge-default badge-pill">{this.props.myStrengths.indexOf(strength) + 1}</span>{strength}</li>
@@ -26,7 +45,7 @@ class MyOthers extends Component {
 				{/* title row */}
 				<div className="infoTitle row">
 					<div className="col-md-12">
-						<a href="#" id="upload_widget_opener">Upload multiple images</a>
+						<button id="upload_widget_opener" onClick={this.handleClick}>Upload multiple images</button>
 						<h3>Others
 							{/* Trigger modal with edit icon */}
 							{/* <span data-toggle="modal" data-target="#othersModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span> */}
