@@ -4,6 +4,7 @@ import MBTIModal from "../MyMBTI/MBTIModal.js";
 import GiftsModal from "../MyGifts/GiftsModal.js";
 import LoveLanguagesModal from "../MyLoveLanguages/LoveLanguagesModal.js";
 import IntelligencesModal from "../MyIntelligences/IntelligencesModal.js";
+import OthersModal from "../MyOthers/OthersModal.js";
 
 class ModalWrapper extends Component {
 
@@ -25,6 +26,10 @@ class ModalWrapper extends Component {
 
 	updateMyIntelligences = (updatedIntelligences) => {
 		this.props.intelligencesCallbackFromModalWrapper(updatedIntelligences);
+	}
+
+	updateMyOthers = (updatedOthers) => {
+		this.props.othersCallbackFromModalWrapper(updatedOthers);
 	}
 
 
@@ -54,18 +59,26 @@ class ModalWrapper extends Component {
 					</div>
 				</div>
 
+				{/* Modal wrapper for loveLanguagesModal */}
 				<div className="modal fade" id="loveLanguagesModalWrapper" role="dialog">
 					<div className="modal-dialog">
 						<LoveLanguagesModal loveLanguages={this.props.loveLanguages} myLoveLanguages={this.props.myLoveLanguages} callbackFromLoveLanguagesModal={this.updateMyLoveLanguages} />
 					</div>
 				</div>
 
+				{/* Modal wrapper for intelligencesModal */}
 				<div className="modal fade" id="intelligencesModalWrapper" role="dialog">
 					<div className="modal-dialog">
 						<IntelligencesModal intelligences={this.props.intelligences} myIntelligences={this.props.myIntelligences} callbackFromIntelligencesModal={this.updateMyIntelligences} />
 					</div>
 				</div>
 
+				{/* Modal wrapper for othersModal */}
+				<div className="modal fade" id="othersModalWrapper" role="dialog">
+					<div className="modal-dialog">
+						<OthersModal others={this.props.others} myOthers={this.props.myOthers} callbackFromOthersModal={this.updateMyOthers} />
+					</div>
+				</div>
 			</div>
 		)
 	}

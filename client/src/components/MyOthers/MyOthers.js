@@ -24,11 +24,15 @@ class MyOthers extends Component {
 		e.preventDefault();
 		window.cloudinary.openUploadWidget(
 			{
-				cloud_name: 'demo',
-				upload_preset: 'a5vxnzbp'
+				cloud_name: 'dfonttj4w',
+				upload_preset: 'bfkrw8gu',
+				folder: 'wchs-life-calling'
 			},
 			function(error, result) {
-				console.log(error, result)
+				if (error) {
+					console.log(error);
+				}
+				console.log(result);
 			}
 		)
 	}
@@ -45,10 +49,9 @@ class MyOthers extends Component {
 				{/* title row */}
 				<div className="infoTitle row">
 					<div className="col-md-12">
-						<button id="upload_widget_opener" onClick={this.handleClick}>Upload multiple images</button>
 						<h3>Others
 							{/* Trigger modal with edit icon */}
-							{/* <span data-toggle="modal" data-target="#othersModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span> */}
+							<span data-toggle="modal" data-target="#othersModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>
 							</h3>
 					</div>
 				</div>
@@ -57,7 +60,7 @@ class MyOthers extends Component {
 				<div className="infoInfoBox row">
 					<div className="col-md-12">
 						<ul className="list-group list-group-flush">
-							<li key={this.state.jahari} className="list-group-item d-flex align-items-center">{this.state.jahari}</li>
+							<li key={this.state.jahari} className="list-group-item d-flex align-items-center" onClick={this.handleClick}>{this.state.jahari}</li>
 							<li key={this.state.learningStyles} className="list-group-item d-flex align-items-center">{this.state.learningStyles}</li>
 							<li key={this.state.myPDF} className="list-group-item d-flex align-items-center">{this.state.myPDF}</li>
 						</ul>
