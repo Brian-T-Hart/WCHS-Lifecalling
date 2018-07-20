@@ -14,8 +14,7 @@ class MyOthers extends Component {
 		super(props);
 		this.state = {
 			jahari: "Jahari Window",
-			learningStyles: "Learning Styles",
-			myPDF: "PDF Document"
+			learningStyles: "Learning Styles"
 		}
 		this.handleClick = this.handleClick.bind(this);
 	}
@@ -57,7 +56,8 @@ class MyOthers extends Component {
 						<ul className="list-group list-group-flush">
 							<li key={this.state.jahari} className="list-group-item d-flex align-items-center" onClick={this.handleClick}>{this.state.jahari}</li>
 							<li key={this.state.learningStyles} className="list-group-item d-flex align-items-center">{this.state.learningStyles}</li>
-							<li key={this.state.myPDF} className="list-group-item d-flex align-items-center">{this.state.myPDF}</li>
+							<li key={this.state.myPDF} className="list-group-item d-flex align-items-center">
+								<a href={this.props.documentUrl} target="_blank">Document</a> </li>
 						</ul>
 					</div>
 				</div>

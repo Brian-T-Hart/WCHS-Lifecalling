@@ -6,6 +6,7 @@ class OthersModal extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
+			documentUrl: this.props.documentUrl,
 			jahari: this.props.jahari
 		}
 		this.uploadDoc = this.uploadDoc.bind(this);
