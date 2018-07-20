@@ -183,4 +183,33 @@ router.post('/updateIntelligences', (req, res, next) => {
 		});
 });
 
+// route to update multiple intelligences of a particular student
+router.post('/saveDocument', (req, res, next) => {
+	console.log("_________________________________");
+	console.log("update saveDocument..students.js");
+	console.log("_________________________________");
+	db.students.update(
+		{
+			documentUrl: req.body.documentUrl
+		},
+		{
+			where:
+				{
+					id: req.body.id
+				}
+		}
+	)
+	.then(
+		function (results) {
+			console.log("results from saveDocument..studens.js ", results);
+			res.json(results)
+		}
+	)
+	.catch(
+		function (err) {
+			res.json(err);
+		}
+	);
+});
+
 module.exports = router;

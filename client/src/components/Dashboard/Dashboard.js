@@ -91,20 +91,22 @@ class Dashboard extends Component {
 	render() {
 		return (
 			<div id="dashboardContainer">
-
-			   <Navbar username={this.state.username}/>
+				<Navbar username={this.state.username}/>
 
 				<div className="row container-fluid dashboardContentRow">
 					<div className="col-md-1">
 					</div>
+
 					<div className="col-md-10">
 						<div className="row">
 							<div className="infoDiv col-md-4">
 								<MyStrengths strengths={this.state.strengths} myStrengths={this.state.myStrengths}/>
 							</div>
+
 							<div className="infoDiv col-md-4">
 								<MBTI mbti={this.state.mbti} myMbti={this.state.myMbti}/>
 							</div>
+
 							<div className="infoDiv col-md-4">
 								<MyGifts gifts={this.state.gifts} myGifts={this.state.myGifts}/>
 							</div>
@@ -114,18 +116,20 @@ class Dashboard extends Component {
 							<div className="infoDiv col-md-4">
 								<MyLoveLanguages loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} />
 							</div>
+
 							<div className="infoDiv col-md-4">
 								<MyIntelligences intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} />
 							</div>
+
 							<div className="infoDiv col-md-4">
 								<MyOthers />
 							</div>
+
 						</div>
 					</div>
 				</div>
 
 				<ModalWrapper strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts} loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages} intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} intelligencesCallbackFromModalWrapper={this.updateMyIntelligences}/>
-
 			</div>
 		);
 	}

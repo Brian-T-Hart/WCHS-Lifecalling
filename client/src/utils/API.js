@@ -79,4 +79,9 @@ export default {
 		console.log("updating intelligences..API.js");
 		return axios.post("students/updateIntelligences", Data);
 	},
+
+	saveDocument: function (Data) {
+		console.log("saving document..API.js");
+		return axios.post("students/saveDocument", Data);
+	}
 }

@@ -39,11 +39,6 @@ class MyOthers extends Component {
 
 	render() {
 
-
-		// const listOfMyStrengths = this.props.myStrengths.map((strength) =>
-		//     <li key={this.props.myStrengths.indexOf(strength) + 1} className="list-group-item d-flex align-items-center"><span className="badge badge-default badge-pill">{this.props.myStrengths.indexOf(strength) + 1}</span>{strength}</li>
-		// );
-
 		return (
 			<div className="infoContainer col-md-12">
 				{/* title row */}

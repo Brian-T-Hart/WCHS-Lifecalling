@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import API from "../../utils/API";
+import API from "../../utils/API";
 
 class OthersModal extends Component {
 
@@ -39,11 +39,29 @@ class OthersModal extends Component {
 				upload_preset: 'bfkrw8gu',
 				folder: 'wchs-life-calling'
 			},
+
 			function(error, result) {
 				if (error) {
 					console.log(error);
 				}
-				console.log(result);
+
+				API.saveDocument(
+					{
+						id: localStorage.getItem("lifeCallingId"),
+						documentUrl: result[0].secure_url
+					}
+				)
+				.then(res =>
+					{
+						console.log(res);
+					}
+				)
+				.catch(err =>
+					{
+						alert('something went wrong');
+						console.log(err);
+					}
+				)
 			}
 		)
 	}
@@ -61,7 +79,7 @@ class OthersModal extends Component {
 					</div>
 					<form>
 						<div className="modal-body">
-							<div className="form-group">
+							{/* <div className="form-group">
 								<label htmlFor="Jahari">Choose Type</label>
 								<select className="form-control" id="Jahari" ref="Jahari">
 									<option selected disabled hidden>Jahari</option>
@@ -73,7 +91,7 @@ class OthersModal extends Component {
 								<select className="form-control" id="learning-styles" ref="learning-styles">
 									<option selected disabled hidden>Learning Styles</option>
 								</select>
-							</div>
+							</div> */}
 
 							<button onClick={this.uploadDoc}>Add Document</button>
 						</div>

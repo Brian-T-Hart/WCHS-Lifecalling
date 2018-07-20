@@ -33,19 +33,23 @@ module.exports = function (sequelize, DataTypes) {
 		},
 		mbti: {
 			type: DataTypes.JSON,
-			allowNull: true,
+			allowNull: true
 		},
 		gifts: {
 			type: DataTypes.JSON,
-			allowNull: true,
+			allowNull: true
 		},
 		loveLanguages: {
 			type: DataTypes.JSON,
-			allowNull: true,
+			allowNull: true
 		},
 		intelligences: {
 			type: DataTypes.JSON,
-			allowNull: true,
+			allowNull: true
+		},
+		documentUrl: {
+			type: DataTypes.JSON,
+			allowNull: true
 		},
 		active: {
 			type: DataTypes.BOOLEAN,
@@ -54,13 +58,16 @@ module.exports = function (sequelize, DataTypes) {
 		},
 		createdAt: {
 			type: DataTypes.DATE,
-			allowNull: false,
+			allowNull: false
 		},
 		updatedAt: {
 			type: DataTypes.DATE,
-			allowNull: false,
+			allowNull: false
 		},
 	},
-		{ timestamps: true });
+	{
+		timestamps: true
+	});
+
 	return students;
 };
