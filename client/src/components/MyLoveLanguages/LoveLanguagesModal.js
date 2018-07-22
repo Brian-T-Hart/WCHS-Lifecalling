@@ -14,10 +14,17 @@ class LoveLanguagesModal extends Component {
 
 	handleClick(e) {
 		e.preventDefault();
-		this.myLoveLanguages = [this.props.myLoveLanguages[0], this.props.myLoveLanguages[1], this.props.myLoveLanguages[2]];
-		this.myLoveLanguages[0]=this.refs.loveLanguage1.value;
-		this.myLoveLanguages[1]=this.refs.loveLanguage2.value;
+		this.myLoveLanguages = [
+			this.props.myLoveLanguages[0],
+			this.props.myLoveLanguages[1],
+			this.props.myLoveLanguages[2]
+		];
+
+		this.myLoveLanguages[0]	= this.refs.loveLanguage1.value;
+		this.myLoveLanguages[1] = this.refs.loveLanguage2.value;
+
 		this.props.callbackFromLoveLanguagesModal(this.myLoveLanguages);
+
 		API.updateLoveLanguages({
 			id: localStorage.getItem("lifeCallingId"),
 			myLoveLanguages: this.myLoveLanguages
@@ -42,11 +49,15 @@ class LoveLanguagesModal extends Component {
 			<div>
 				<div className="modal-content">
 					<div className="modal-header">
-						<h5 className="modal-title">Select Your Love Languages</h5>
+						<h5 className="modal-title">
+							Select Your Love Languages
+						</h5>
+
 						<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
 					</div>
+
 					<form>
 						<div className="modal-body">
 							<div className="form-group">
@@ -56,6 +67,7 @@ class LoveLanguagesModal extends Component {
 									{listOfLoveLanguages}
 								</select>
 							</div>
+
 							<div className="form-group">
 								<label htmlFor="loveLanguage2">Choose Type</label>
 								<select className="form-control" id="loveLanguage2" ref="loveLanguage2">

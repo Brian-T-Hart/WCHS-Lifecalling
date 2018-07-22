@@ -8,6 +8,7 @@ class MyOthers extends Component {
 
 	componentDidUpdate() {
 		console.log('MyOthers updated');
+		console.log(this.props.documentUrl);
 	}
 
 	constructor(props) {
@@ -54,9 +55,9 @@ class MyOthers extends Component {
 				<div className="infoInfoBox row">
 					<div className="col-md-12">
 						<ul className="list-group list-group-flush">
-							<li key={this.state.jahari} className="list-group-item d-flex align-items-center" onClick={this.handleClick}>{this.state.jahari}</li>
-							<li key={this.state.learningStyles} className="list-group-item d-flex align-items-center">{this.state.learningStyles}</li>
-							<li key={this.state.myPDF} className="list-group-item d-flex align-items-center">
+							{/* <li key={this.state.jahari} className="list-group-item d-flex align-items-center" onClick={this.handleClick}>{this.state.jahari}</li>
+							<li key={this.state.learningStyles} className="list-group-item d-flex align-items-center">{this.state.learningStyles}</li> */}
+							<li key={"document"} className="list-group-item d-flex align-items-center">
 								<a href={this.props.documentUrl} target="_blank">Document</a> </li>
 						</ul>
 					</div>
