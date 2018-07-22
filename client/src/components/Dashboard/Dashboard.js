@@ -67,7 +67,7 @@ class Dashboard extends Component {
 				this.setState({ myIntelligences: res.data.intelligences });
 			}
 			if (res.data.documentUrl) {
-				this.setState({ myDocumentUrl })
+				this.setState({ myDocumentUrl: res.data.documentUrl })
 			}
 		})
 		.catch(err => {

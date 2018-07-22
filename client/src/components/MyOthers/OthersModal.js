@@ -54,7 +54,7 @@ class OthersModal extends Component {
 				)
 				.then(res =>
 					{
-						console.log(res);
+						console.log("response from saveDocument...OthersModal.js ", res);
 					}
 				)
 				.catch(err =>

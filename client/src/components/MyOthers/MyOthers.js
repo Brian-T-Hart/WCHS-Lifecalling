@@ -16,25 +16,25 @@ class MyOthers extends Component {
 			jahari: "Jahari Window",
 			learningStyles: "Learning Styles"
 		}
-		this.handleClick = this.handleClick.bind(this);
+		// this.handleClick = this.handleClick.bind(this);
 	}
 
-	handleClick(e) {
-		e.preventDefault();
-		window.cloudinary.openUploadWidget(
-			{
-				cloud_name: 'dfonttj4w',
-				upload_preset: 'bfkrw8gu',
-				folder: 'wchs-life-calling'
-			},
-			function(error, result) {
-				if (error) {
-					console.log(error);
-				}
-				console.log(result);
-			}
-		)
-	}
+	// handleClick(e) {
+	// 	e.preventDefault();
+	// 	window.cloudinary.openUploadWidget(
+	// 		{
+	// 			cloud_name: 'dfonttj4w',
+	// 			upload_preset: 'bfkrw8gu',
+	// 			folder: 'wchs-life-calling'
+	// 		},
+	// 		function(error, result) {
+	// 			if (error) {
+	// 				console.log(error);
+	// 			}
+	// 			console.log(result);
+	// 		}
+	// 	)
+	// }
 
 	render() {
 

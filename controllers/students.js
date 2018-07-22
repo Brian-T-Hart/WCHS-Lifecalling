@@ -9,7 +9,7 @@ var db = require("../models");
 // route to get student info to set initial state of components upon login
 router.post('/getStudentInfo', (req, res, next) => {
 	db.students.findOne({
-		attributes: ['strengths', 'mbti', 'gifts','loveLanguages', 'intelligences'],
+		attributes: ['strengths', 'mbti', 'gifts','loveLanguages', 'intelligences', 'documentUrl'],
 		where: {
 			id: req.body.id,
 			username: req.body.username
