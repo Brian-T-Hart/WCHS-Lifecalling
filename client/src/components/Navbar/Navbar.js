@@ -22,6 +22,16 @@ class Navbar extends Component {
 	}
 
 	render() {
+		var isAdmin = true;
+		var adminLink = "";
+
+		if (isAdmin === true) {
+			adminLink = <a className="dropdown-item" href="/allStudents">Students</a>;
+		}
+		else {
+			adminLink = "";
+		}
+
 		return (
 			<div>
 				<nav id="mainNavbar" className="navbar navbar-expand-lg navbar-light">
@@ -35,6 +45,7 @@ class Navbar extends Component {
 								<a className="dropdown-item" href="/login">Login</a>
 								<a className="dropdown-item" href="/register">Register</a>
 								<a className="dropdown-item" href="/login" onClick={this.handleLogOut}>Logout</a>
+								{ adminLink }
 							</div>
 						</li>
 					</ul>

@@ -14,6 +14,12 @@ export default {
 		return axios.post("accounts/login", Data);
 	},
 
+	// retrieve all students from the database
+	getAllStudents: function (Data) {
+		console.log("getting all students..API.js");
+		return axios.post("students/getAllStudents", Data);
+	},
+
 	// retrieve strengths from database
 	getStudentInfo: function (Data) {
 		console.log("getting strengths..API.js");

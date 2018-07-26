@@ -6,6 +6,38 @@ var router = express.Router();
 // requiring our models
 var db = require("../models");
 
+// route to get all students
+router.post('/getAllStudents', (req, res, next) => {
+	db.students.findOne({
+		attributes: ['isAdmin'],
+		where: {
+			id: req.body.id,
+			username: req.body.username
+		}
+	})
+	.then(function (results) {
+		console.log("results1 ", results);
+
+		if (results.isAdmin === true) {
+			db.students.findAll({
+			})
+			.then(function (results) {
+				res.json(results);
+				// console.log("results2 ", results)
+			})
+			.catch(function (err) {
+				console.log(err);
+			})
+		}
+		else {
+			res.json("You do not have admin privileges!")
+		}
+	})
+	.catch(function (err) {
+		console.log(err);
+	})
+})
+
 // route to get student info to set initial state of components upon login
 router.post('/getStudentInfo', (req, res, next) => {
 	db.students.findOne({
@@ -15,12 +47,12 @@ router.post('/getStudentInfo', (req, res, next) => {
 			username: req.body.username
 		}
 	})
-		.then(function (results) {
-			res.json(results)
-		})
-		.catch(function (err) {
-			res.json(err);
-		});
+	.then(function (results) {
+		res.json(results)
+	})
+	.catch(function (err) {
+		res.json(err);
+	})
 })
 
 // route to get student strengths
