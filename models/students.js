@@ -51,6 +51,11 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.JSON,
 			allowNull: true
 		},
+		isAdmin: {
+			type: DataTypes.BOOLEAN,
+			allowNull: false,
+			defaultValue: false
+		},
 		active: {
 			type: DataTypes.BOOLEAN,
 			allowNull: false,
