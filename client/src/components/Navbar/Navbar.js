@@ -9,7 +9,6 @@ class Navbar extends Component {
 
 	componentWillMount() {
 		var isAdmin = localStorage.getItem('lifeCallingIsAdmin');
-		console.log("isAdmin navbar ", isAdmin);
 		if (isAdmin === "true") {
 			this.setState({adminLink: true})
 		}
