@@ -26,6 +26,9 @@ class Login extends Component {
 					// set token to local storage
 					localStorage.setItem('lifeCallingToken', res.data.token);
 					localStorage.setItem('lifeCallingUsername', res.data.username);
+					localStorage.setItem('lifeCallingIsAdmin', res.data.isAdmin);
+					const isAdmin = res.data.isAdmin;
+					console.log("isAdmin ", isAdmin);
 					// decode token
 					const decoded = decode(res.data.token);
 					var sub = decoded.sub;

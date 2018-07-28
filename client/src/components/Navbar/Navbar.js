@@ -3,6 +3,25 @@ import authenticated from "../../utils/Authenticated";
 
 class Navbar extends Component {
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			adminLink: ""
+		}
+	  }
+
+	componentWillMount() {
+		var isAdmin = localStorage.getItem('lifeCallingIsAdmin');
+		console.log("isAdmin navbar ", isAdmin);
+		var adminLink = <a className='dropdown-item' href='/allStudents'>Students</a>
+		if (isAdmin == true) {
+			this.setState({ adminLink: adminLink })
+		}
+		else {
+			this.setState({ adminLink: "Hello" })
+		}
+	}
+
 	handleLogOut() {
 		localStorage.clear("lifeCallingToken");
 		localStorage.clear("lifeCallingId");
@@ -22,15 +41,6 @@ class Navbar extends Component {
 	}
 
 	render() {
-		var isAdmin = true;
-		var adminLink = "";
-
-		if (isAdmin === true) {
-			adminLink = <a className="dropdown-item" href="/allStudents">Students</a>;
-		}
-		else {
-			adminLink = "";
-		}
 
 		return (
 			<div>
@@ -45,7 +55,7 @@ class Navbar extends Component {
 								<a className="dropdown-item" href="/login">Login</a>
 								<a className="dropdown-item" href="/register">Register</a>
 								<a className="dropdown-item" href="/login" onClick={this.handleLogOut}>Logout</a>
-								{ adminLink }
+								{ this.state.adminLink }
 							</div>
 						</li>
 					</ul>

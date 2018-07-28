@@ -13,8 +13,8 @@ var router = express.Router();
 router.post('/login',
 	passport.authenticate('local', { session: false }),
 	function (req, res) {
-		console.log("user authenticated..account.routes.js ", req.user.username, req.user.token);
-		res.json({ username: req.user.username, token: req.user.token });
+		console.log("user authenticated..account.routes.js ", req.user.username, req.user.token, req.user.isAdmin);
+		res.json({ username: req.user.username, token: req.user.token, isAdmin: req.user.isAdmin });
 	});
 
 // this is handling the registration

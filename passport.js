@@ -22,6 +22,7 @@ const authenticate = (username, password, done) => {
 		// create a token string
 		const token = jwt.sign(payload, config.jwtSecret);
 		const data = {
+			isAdmin: student.isAdmin,
 			username: student.username,
 			token: token
 		};
