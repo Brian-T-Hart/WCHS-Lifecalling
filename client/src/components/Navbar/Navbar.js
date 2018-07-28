@@ -2,23 +2,16 @@ import React, { Component } from 'react';
 import authenticated from "../../utils/Authenticated";
 
 class Navbar extends Component {
-
 	constructor(props) {
 		super(props);
-		this.state = {
-			adminLink: ""
-		}
+		this.state = {adminLink: false};
 	  }
 
 	componentWillMount() {
 		var isAdmin = localStorage.getItem('lifeCallingIsAdmin');
 		console.log("isAdmin navbar ", isAdmin);
-		var adminLink = <a className='dropdown-item' href='/allStudents'>Students</a>
-		if (isAdmin == true) {
-			this.setState({ adminLink: adminLink })
-		}
-		else {
-			this.setState({ adminLink: "Hello" })
+		if (isAdmin === "true") {
+			this.setState({adminLink: true})
 		}
 	}
 
@@ -26,6 +19,7 @@ class Navbar extends Component {
 		localStorage.clear("lifeCallingToken");
 		localStorage.clear("lifeCallingId");
 		localStorage.clear("lifeCallingUsername");
+		localStorage.clear("lifeCallingIsAdmin");
 	}
 
 	handleRoute(e) {
@@ -55,7 +49,7 @@ class Navbar extends Component {
 								<a className="dropdown-item" href="/login">Login</a>
 								<a className="dropdown-item" href="/register">Register</a>
 								<a className="dropdown-item" href="/login" onClick={this.handleLogOut}>Logout</a>
-								{ this.state.adminLink }
+								{this.state.adminLink ? <a className='dropdown-item' disabled='true' href='/allStudents'>Students</a> : null}
 							</div>
 						</li>
 					</ul>
