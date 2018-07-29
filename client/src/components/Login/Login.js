@@ -22,27 +22,21 @@ class Login extends Component {
 		})
 			.then(res => {
 				if (res.data.token) {
-					console.log("res..Login.js: ", res.data.token, this.props);
-					// set token to local storage
+					// decode token and set local storage
+					const decoded = decode(res.data.token);
+					var sub = decoded.sub;
+					localStorage.setItem('lifeCallingId', sub);
 					localStorage.setItem('lifeCallingToken', res.data.token);
 					localStorage.setItem('lifeCallingUsername', res.data.username);
 					localStorage.setItem('lifeCallingIsAdmin', res.data.isAdmin);
-					const isAdmin = res.data.isAdmin;
-					console.log("isAdmin ", isAdmin);
-					// decode token
-					const decoded = decode(res.data.token);
-					var sub = decoded.sub;
-					console.log('sub: ' + sub);
-					localStorage.setItem('lifeCallingId', sub);
-					console.log("decoded token giving student_id and timestamp: ", decoded);
 					window.location = '/dashboard';
 				}
 				else {
-					alert("login credentials not found");
+					alert('There was a problem signing in. Please make sure your username and password are correct and then try again.');
 				}
 			})
 			.catch(err => {
-				alert('something went wrong');
+				alert('There was a problem signing in. Please try again.');
 				console.log(err);
 			});
 		}

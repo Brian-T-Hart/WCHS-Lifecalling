@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
 import Navbar from "../Navbar/Navbar.js";
+import "./AllStudents.css";
 
 class AllStudents extends Component {
 
@@ -18,7 +19,14 @@ class AllStudents extends Component {
 			username: localStorage.getItem("lifeCallingUsername")
 		})
 		.then(res => {
-			console.log("response to getAllStudents ", res.data);
+			var students = res.data;
+			var data = [];
+			for (var i = 0; i < students.length; i++) {
+				data[i] = students[i]
+			}
+			// console.log("data ", data);
+			this.setState({allStudents: data});
+			console.log("this.state.allStudents ", this.state.allStudents);
 		})
 		.catch(err => {
 			console.log(err);
@@ -27,21 +35,25 @@ class AllStudents extends Component {
 
 	render() {
 
-		// const students = this.state.allStudents.map((student) =>
-		// 	<div key={student.id}>
-		// 		<div>{student.id}</div>
-		// 		<div>{student.username}</div>
-		// 		<div>{student.username}</div>
-		// 	</div>
-		// );
+		const allTheStudents = this.state.allStudents.map((student) =>
+				<div className="studentInfoContainer" key={student.id}>
+					<h5>{student.id}</h5>
+					<h5>{student.username}</h5>
+					<h5>{student.email}</h5>
+					<h5>{student.strengths}</h5>
+					<h5>{student.mbti}</h5>
+					<h5>{student.gifts}</h5>
+					<h5>{student.loveLanguages}</h5>
+					<h5>{student.intelligences}</h5>
+					<h5>{student.documentUrl}</h5>
+				</div>
+		)
 
 		return (
 
 			<div>
 				<Navbar />
-				<div>
-					<h1 class="text-center">This is a Test</h1>
-				</div>
+				{ allTheStudents }
 			</div>
 		)
 	}

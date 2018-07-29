@@ -40,7 +40,6 @@ h6 {
 .infoInfoBox {
 	border-top: 2px solid silver;
 	height: 14em;
-	overflow: scroll;
 	background-color: #fff;
 }
 
