@@ -41,6 +41,14 @@ class Dashboard extends Component {
 		this.setState({ myIntelligences: updatedIntelligences });
 	}
 
+	updateMyJahariUrl = (updatedJahariUrl) => {
+		this.setState({ myJahariUrl: updatedJahariUrl });
+	}
+
+	updateMyLearningStylesUrl = (updatedLearningStylesUrl) => {
+		this.setState({ myLearningStylesUrl: updatedLearningStylesUrl });
+	}
+
 	updateMyDocumentUrl = (updatedDocumentUrl) => {
 		this.setState({ myDocumentUrl: updatedDocumentUrl });
 	}
@@ -69,6 +77,12 @@ class Dashboard extends Component {
 			if (res.data.documentUrl) {
 				this.setState({ myDocumentUrl: res.data.documentUrl })
 			}
+			if (res.data.jahariUrl) {
+				this.setState({ myJahariUrl: res.data.jahariUrl })
+			}
+			if (res.data.learningStylesUrl) {
+				this.setState({ myLearningStylesUrl: res.data.learningStylesUrl })
+			}
 		})
 		.catch(err => {
 			console.log(err);
@@ -91,7 +105,9 @@ class Dashboard extends Component {
 			loveLanguages: listOfLoveLanguages,
 			intelligences: listOfIntelligences,
 			myIntelligences: [],
-			myDocumentUrl: ""
+			myDocumentUrl: "",
+			myJahariUrl: "",
+			myLearningStylesUrl: ""
 		}
 	}
 
@@ -130,14 +146,14 @@ class Dashboard extends Component {
 							</div>
 
 							<div className="infoDiv col-md-4">
-								<MyOthers documentUrl={this.state.myDocumentUrl}/>
+								<MyOthers documentUrl={this.state.myDocumentUrl} jahariUrl={this.state.myJahariUrl} learningStylesUrl={this.state.myLearningStylesUrl}/>
 							</div>
 
 						</div>
 					</div>
 				</div>
 
-				<ModalWrapper documentUrl={this.state.myDocumentUrl} strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts} loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages} intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} intelligencesCallbackFromModalWrapper={this.updateMyIntelligences}/>
+				<ModalWrapper documentUrl={this.state.myDocumentUrl} jahariUrl={this.state.myJahariUrl} learningStylesUrl={this.state.myLearningStylesUrl} strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts} loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages} intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} intelligencesCallbackFromModalWrapper={this.updateMyIntelligences}/>
 			</div>
 		);
 	}

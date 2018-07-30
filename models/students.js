@@ -51,6 +51,14 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.JSON,
 			allowNull: true
 		},
+		jahariUrl: {
+			type: DataTypes.JSON,
+			allowNull: true
+		},
+		learningStylesUrl: {
+			type: DataTypes.JSON,
+			allowNull: true
+		},
 		isAdmin: {
 			type: DataTypes.BOOLEAN,
 			allowNull: false,

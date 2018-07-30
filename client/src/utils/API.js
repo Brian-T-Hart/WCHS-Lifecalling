@@ -86,8 +86,21 @@ export default {
 		return axios.post("students/updateIntelligences", Data);
 	},
 
+	// save a cv
 	saveDocument: function (Data) {
 		console.log("saving document..API.js");
 		return axios.post("students/saveDocument", Data);
+	},
+
+	// save jahari window document
+	saveJahari: function (Data) {
+		console.log("saving jahari..API.js");
+		return axios.post("students/saveJahari", Data);
+	},
+
+	// save learning styles document
+	saveLearningStyles: function (Data) {
+		console.log("saving learningStyles..API.js");
+		return axios.post("students/saveLearningStyles", Data);
 	}
 }

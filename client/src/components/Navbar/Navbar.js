@@ -4,13 +4,19 @@ import authenticated from "../../utils/Authenticated";
 class Navbar extends Component {
 	constructor(props) {
 		super(props);
-		this.state = {adminLink: false};
+		this.state = {
+			adminLink: false
+		};
 	  }
 
 	componentWillMount() {
 		var isAdmin = localStorage.getItem('lifeCallingIsAdmin');
 		if (isAdmin === "true") {
-			this.setState({adminLink: true})
+			this.setState(
+				{
+					adminLink: true
+				}
+			)
 		}
 	}
 

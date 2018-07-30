@@ -8,14 +8,14 @@ class MyOthers extends Component {
 
 	componentDidUpdate() {
 		console.log('MyOthers updated');
+		console.log(this.props.jahariUrl);
+		console.log(this.props.learningStylesUrl);
 		console.log(this.props.documentUrl);
 	}
 
 	constructor(props) {
 		super(props);
 		this.state = {
-			jahari: "Jahari Window",
-			learningStyles: "Learning Styles"
 		}
 	}
 
@@ -37,10 +37,17 @@ class MyOthers extends Component {
 				<div className="infoInfoBox row">
 					<div className="col-md-12">
 						<ul className="list-group list-group-flush">
-							{/* <li key={this.state.jahari} className="list-group-item d-flex align-items-center" onClick={this.handleClick}>{this.state.jahari}</li>
-							<li key={this.state.learningStyles} className="list-group-item d-flex align-items-center">{this.state.learningStyles}</li> */}
+							<li key={"jahari"} className="list-group-item d-flex align-items-center">
+								<a href={this.props.jahariUrl} target="_blank">Jahari Window</a>
+							</li>
+
+							<li key={"learningStyles"} className="list-group-item d-flex align-items-center">
+								<a href={this.props.learningStylesUrl} target="_blank">LearningStyles</a>
+							</li>
+
 							<li key={"document"} className="list-group-item d-flex align-items-center">
-								<a href={this.props.documentUrl} target="_blank">Document</a> </li>
+								<a href={this.props.documentUrl} target="_blank">Document</a>
+							</li>
 						</ul>
 					</div>
 				</div>

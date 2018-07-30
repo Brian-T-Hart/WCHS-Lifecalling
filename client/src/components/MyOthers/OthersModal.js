@@ -6,31 +6,14 @@ class OthersModal extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			documentUrl: this.props.documentUrl,
-			jahari: this.props.jahari
+			jahari: this.props.jahariUrl,
+			learningStyles: this.props.learningStylesUrl,
+			documentUrl: this.props.documentUrl
 		}
+		this.uploadJahari = this.uploadJahari.bind(this);
+		this.uploadLearningStyles = this.uploadLearningStyles.bind(this);
 		this.uploadDoc = this.uploadDoc.bind(this);
 	}
-
-	// handleClick(e) {
-	// 	e.preventDefault();
-	// 	API.updateOthers(
-	// 		{
-	// 			id: localStorage.getItem("lifeCallingId"),
-	// 		}
-	// 	)
-	// 	.then(
-	// 		res => {
-	// 			console.log(res);
-	// 		}
-	// 	)
-	// 	.catch(
-	// 		err => {
-	// 			alert('something went wrong');
-	// 			console.log(err);
-	// 		}
-	// 	);
-	// }
 
 	uploadDoc(e) {
 		e.preventDefault();
@@ -54,13 +37,80 @@ class OthersModal extends Component {
 				)
 				.then(res =>
 					{
-						console.log("response from saveDocument...OthersModal.js ", res);
+						alert('Your document was saving!')
 					}
 				)
 				.catch(err =>
 					{
-						alert('something went wrong');
-						console.log(err);
+						alert('Something went wrong. Please try again!');
+					}
+				)
+			}
+		)
+	}
+
+	uploadJahari(e) {
+		e.preventDefault();
+		window.cloudinary.openUploadWidget(
+			{
+				cloud_name: 'dfonttj4w',
+				upload_preset: 'bfkrw8gu',
+				folder: 'wchs-life-calling'
+			},
+
+			function(error, result) {
+				if (error) {
+					console.log(error);
+				}
+
+				API.saveJahari(
+					{
+						id: localStorage.getItem("lifeCallingId"),
+						jahariUrl: result[0].secure_url
+					}
+				)
+				.then(res =>
+					{
+						alert('The document has been saved.')
+					}
+				)
+				.catch(err =>
+					{
+						alert('Something went wrong. Please try again!');
+					}
+				)
+			}
+		)
+	}
+
+	uploadLearningStyles(e) {
+		e.preventDefault();
+		window.cloudinary.openUploadWidget(
+			{
+				cloud_name: 'dfonttj4w',
+				upload_preset: 'bfkrw8gu',
+				folder: 'wchs-life-calling'
+			},
+
+			function(error, result) {
+				if (error) {
+					console.log(error);
+				}
+
+				API.saveLearningStyles(
+					{
+						id: localStorage.getItem("lifeCallingId"),
+						learningStylesUrl: result[0].secure_url
+					}
+				)
+				.then(res =>
+					{
+						alert('The document has been saved.')
+					}
+				)
+				.catch(err =>
+					{
+						alert('Something went wrong. Please try again.');
 					}
 				)
 			}
@@ -82,25 +132,12 @@ class OthersModal extends Component {
 
 					<form>
 						<div className="modal-body">
-							{/* <div className="form-group">
-								<label htmlFor="Jahari">Choose Type</label>
-								<select className="form-control" id="Jahari" ref="Jahari">
-									<option selected disabled hidden>Jahari</option>
-								</select>
-							</div>
-
-							<div className="form-group">
-								<label htmlFor="learning-styles">Choose Type</label>
-								<select className="form-control" id="learning-styles" ref="learning-styles">
-									<option selected disabled hidden>Learning Styles</option>
-								</select>
-							</div> */}
-
-							<button onClick={this.uploadDoc}>Add Document</button>
+							<button onClick={this.uploadJahari}>Upload Jahari</button>
+							<button onClick={this.uploadLearningStyles}>Upload Learning Styles</button>
+							<button onClick={this.uploadDoc}>Upload CV</button>
 						</div>
 
 						<div className="modal-footer">
-							<button type="submit" className="btn btn-default" data-dismiss="modal" onClick={this.handleClick}>Submit</button>
 							<button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
 						</div>
 					</form>
