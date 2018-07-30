@@ -16,11 +16,6 @@ import Navbar from "../Navbar/Navbar.js";
 
 class Dashboard extends Component {
 
-	handleLogOut() {
-		localStorage.clear("lifeCallingId");
-		localStorage.clear("lifeCallingUsername");
-	}
-
 	updateMyStrengths = (updatedStrengths) => {
 		this.setState({ myStrengths: updatedStrengths });
 	}

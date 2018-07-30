@@ -53,8 +53,9 @@ class Navbar extends Component {
 								<a className="dropdown-item" href="/dashboard" onClick={this.handleRoute}>Dashboard</a>
 								<a className="dropdown-item" href="/login">Login</a>
 								<a className="dropdown-item" href="/register">Register</a>
-								<a className="dropdown-item" href="/login" onClick={this.handleLogOut}>Logout</a>
 								{this.state.adminLink ? <a className='dropdown-item' disabled='true' href='/allStudents'>Students</a> : null}
+								<a className="dropdown-item" href="/login" id="navLogoutLink" onClick={this.handleLogOut}>Logout</a>
+
 							</div>
 						</li>
 					</ul>
