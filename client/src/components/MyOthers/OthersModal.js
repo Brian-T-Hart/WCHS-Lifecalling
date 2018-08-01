@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
+import "./MyOthers.css";
 
 class OthersModal extends Component {
 
@@ -133,9 +134,17 @@ class OthersModal extends Component {
 
 					<form>
 						<div className="modal-body">
-							<button onClick={this.uploadJahari}>Upload Jahari</button>
-							<button onClick={this.uploadLearningStyles}>Upload Learning Styles</button>
-							<button onClick={this.uploadCv}>Upload CV</button>
+							<div className="uploadButtonDiv">
+								<button className="uploadButton" onClick={this.uploadLearningStyles}>Upload Learning Styles</button>
+							</div>
+
+							<div className="uploadButtonDiv">
+							<button className="uploadButton" onClick={this.uploadJahari}>Upload Johari Window</button>
+							</div>
+
+							<div className="uploadButtonDiv">
+							<button className="uploadButton" onClick={this.uploadDoc}>Upload CV</button>
+							</div>
 						</div>
 
 						<div className="modal-footer">

@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 
 class MyOthers extends Component {
-
+	constructor(props) {
+		super(props);
+		this.state = {
+		}
+	}
 	render() {
 
 		return (
@@ -25,7 +29,7 @@ class MyOthers extends Component {
 							</li>
 
 							<li key={"jahari"} className="list-group-item d-flex align-items-center">
-								<a href={this.props.jahariUrl} target="_blank">Jahari Window</a>
+								<a href={this.props.jahariUrl} target="_blank">Johari Window</a>
 							</li>
 
 							<li key={"document"} className="list-group-item d-flex align-items-center">
