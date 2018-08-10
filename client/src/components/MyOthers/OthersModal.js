@@ -9,10 +9,10 @@ class OthersModal extends Component {
 		}
 		this.uploadJahari = this.uploadJahari.bind(this);
 		this.uploadLearningStyles = this.uploadLearningStyles.bind(this);
-		this.uploadDoc = this.uploadDoc.bind(this);
+		this.uploadCv = this.uploadCv.bind(this);
 	}
 
-	uploadDoc(e) {
+	uploadCv(e) {
 		e.preventDefault();
 		window.cloudinary.openUploadWidget(
 			{
@@ -25,16 +25,18 @@ class OthersModal extends Component {
 				if (error) {
 					console.log(error);
 				}
-
+				var updatedDocumentUrl = result[0].secure_url;
+				
 				API.saveDocument(
 					{
 						id: localStorage.getItem("lifeCallingId"),
-						documentUrl: result[0].secure_url
+						documentUrl: updatedDocumentUrl
 					}
 				)
 				.then(res =>
 					{
-						alert('Your document was saving!')
+						alert('Your document was saved!');
+						window.location = '/dashboard';
 					}
 				)
 				.catch(err =>
@@ -68,7 +70,8 @@ class OthersModal extends Component {
 				)
 				.then(res =>
 					{
-						alert('The document has been saved.')
+						alert('The document has been saved.');
+						window.location = '/dashboard';
 					}
 				)
 				.catch(err =>
@@ -102,7 +105,8 @@ class OthersModal extends Component {
 				)
 				.then(res =>
 					{
-						alert('The document has been saved.')
+						alert('The document has been saved.');
+						window.location = '/dashboard';
 					}
 				)
 				.catch(err =>
@@ -131,7 +135,7 @@ class OthersModal extends Component {
 						<div className="modal-body">
 							<button onClick={this.uploadJahari}>Upload Jahari</button>
 							<button onClick={this.uploadLearningStyles}>Upload Learning Styles</button>
-							<button onClick={this.uploadDoc}>Upload CV</button>
+							<button onClick={this.uploadCv}>Upload CV</button>
 						</div>
 
 						<div className="modal-footer">
