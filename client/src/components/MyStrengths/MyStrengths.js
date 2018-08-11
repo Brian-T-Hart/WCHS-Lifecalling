@@ -3,15 +3,6 @@ import listOfStrengths from "../Dashboard/listOfStrengths.js";
 
 class MyStrengths extends Component {
 
-	componentDidMount() {
-		console.log("MyStrengths Mounted");
-	}
-
-	componentDidUpdate() {
-		console.log("MyStrengths.js updated");
-		console.log("CDU MyStrengths from Mystrengths.js ", this.props.myStrengths);
-	}
-
 	constructor(props) {
 		super(props);
 		this.state = {

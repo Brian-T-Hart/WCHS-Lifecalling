@@ -112,40 +112,30 @@ class Dashboard extends Component {
 			<div id="dashboardContainer">
 				<Navbar username={this.state.username}/>
 
-				<div className="row container-fluid dashboardContentRow">
-					<div className="col-md-1">
-					</div>
-
-					<div className="col-md-10">
-						<div className="row">
-							<div className="infoDiv col-md-4">
-								<MyStrengths strengths={this.state.strengths} myStrengths={this.state.myStrengths}/>
-							</div>
-
-							<div className="infoDiv col-md-4">
-								<MBTI mbti={this.state.mbti} myMbti={this.state.myMbti}/>
-							</div>
-
-							<div className="infoDiv col-md-4">
-								<MyGifts gifts={this.state.gifts} myGifts={this.state.myGifts}/>
-							</div>
+				<div className="row container-fluid dashboard-content-row">
+						<div className="info-div col-md-4 col-sm-6">
+							<MyStrengths strengths={this.state.strengths} myStrengths={this.state.myStrengths}/>
 						</div>
 
-						<div className="row">
-							<div className="infoDiv col-md-4">
-								<MyLoveLanguages loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} />
-							</div>
-
-							<div className="infoDiv col-md-4">
-								<MyIntelligences intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} />
-							</div>
-
-							<div className="infoDiv col-md-4">
-								<MyOthers documentUrl={this.state.myDocumentUrl} jahariUrl={this.state.myJahariUrl} learningStylesUrl={this.state.myLearningStylesUrl}/>
-							</div>
-
+						<div className="info-div col-md-4 col-sm-6">
+							<MBTI mbti={this.state.mbti} myMbti={this.state.myMbti}/>
 						</div>
-					</div>
+
+						<div className="info-div col-md-4 col-sm-6">
+							<MyGifts gifts={this.state.gifts} myGifts={this.state.myGifts}/>
+						</div>
+
+						<div className="info-div col-md-4 col-sm-6">
+							<MyLoveLanguages loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} />
+						</div>
+
+						<div className="info-div col-md-4 col-sm-6">
+							<MyIntelligences intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} />
+						</div>
+
+						<div className="info-div col-md-4 col-sm-6">
+							<MyOthers documentUrl={this.state.myDocumentUrl} jahariUrl={this.state.myJahariUrl} learningStylesUrl={this.state.myLearningStylesUrl}/>
+						</div>
 				</div>
 
 				<ModalWrapper documentUrl={this.state.myDocumentUrl} jahariUrl={this.state.myJahariUrl} learningStylesUrl={this.state.myLearningStylesUrl} strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts} loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages} intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} intelligencesCallbackFromModalWrapper={this.updateMyIntelligences}/>

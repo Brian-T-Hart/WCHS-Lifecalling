@@ -24,7 +24,14 @@ h6 {
 	cursor: pointer;
 }
 
-.dashboardContentRow, .loginContentRow, .registerContentRow {
+.dashboard-content-row {
+	margin: auto;
+	max-width: 1080px;
+	padding: 20px 0;
+	width: 90%;
+}
+
+.loginContentRow, .registerContentRow {
 	margin: 0;
 	padding: 0;
 }
@@ -35,6 +42,11 @@ h6 {
 	margin-top: 1.8em;
 	max-width: 90%;
 	border: 2px solid silver;
+}
+
+.info-div {
+	max-height: 300px;
+	overflow: hidden;
 }
 
 .infoInfoBox {
