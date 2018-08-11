@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 
 class MyOthers extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-		}
-	}
-	render() {
 
+	render() {
 		return (
 			<div className="infoContainer col-md-12">
 				{/* title row */}
@@ -15,8 +10,10 @@ class MyOthers extends Component {
 					<div className="col-md-12">
 						<h3>Others
 							{/* Trigger modal with edit icon */}
-							<span data-toggle="modal" data-target="#othersModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>
-							</h3>
+							<span data-toggle="modal" data-target="#othersModalWrapper">
+								<img id="editIcon" src="./../images/editIcon.png" alt="" />
+							</span>
+						</h3>
 					</div>
 				</div>
 
@@ -24,17 +21,28 @@ class MyOthers extends Component {
 				<div className="infoInfoBox row">
 					<div className="col-md-12">
 						<ul className="list-group list-group-flush">
-							<li key={"learningStyles"} className="list-group-item d-flex align-items-center">
-								<a href={this.props.learningStylesUrl} target="_blank">Learning Styles</a>
-							</li>
+						
+						{
+							this.props.learningStylesUrl ?
+								<li key={"learningStyles"} className="list-group-item d-flex align-items-center">
+									<a href={this.props.learningStylesUrl} target="_blank">Learning Styles</a>
+								</li> :null
+						}
 
-							<li key={"jahari"} className="list-group-item d-flex align-items-center">
-								<a href={this.props.jahariUrl} target="_blank">Johari Window</a>
-							</li>
+						{
+							this.props.jahariUrl ?
+								<li key={"johari"} className="list-group-item d-flex align-items-center">
+									<a href={this.props.jahariUrl} target="_blank">Johari Window</a>
+								</li> :null
+						}
 
-							<li key={"document"} className="list-group-item d-flex align-items-center">
-								<a href={this.props.documentUrl} target="_blank">CV</a>
-							</li>
+						{
+							this.props.documentUrl ?
+								<li key={"document"} className="list-group-item d-flex align-items-center">
+									<a href={this.props.documentUrl} target="_blank">CV</a>
+								</li> :null
+						}
+
 						</ul>
 					</div>
 				</div>
