@@ -8,7 +8,7 @@ class OthersModal extends Component {
 		super(props);
 		this.state = {
 		}
-		this.uploadJahari = this.uploadJahari.bind(this);
+		this.uploadJohari = this.uploadJohari.bind(this);
 		this.uploadLearningStyles = this.uploadLearningStyles.bind(this);
 		this.uploadCv = this.uploadCv.bind(this);
 	}
@@ -26,12 +26,11 @@ class OthersModal extends Component {
 				if (error) {
 					console.log(error);
 				}
-				var updatedDocumentUrl = result[0].secure_url;
 				
-				API.saveDocument(
+				API.saveCvUrl(
 					{
 						id: localStorage.getItem("lifeCallingId"),
-						documentUrl: updatedDocumentUrl
+						documentUrl: result[0].secure_url
 					}
 				)
 				.then(res =>
@@ -49,7 +48,7 @@ class OthersModal extends Component {
 		)
 	}
 
-	uploadJahari(e) {
+	uploadJohari(e) {
 		e.preventDefault();
 		window.cloudinary.openUploadWidget(
 			{
@@ -63,7 +62,7 @@ class OthersModal extends Component {
 					console.log(error);
 				}
 
-				API.saveJahari(
+				API.saveJohariUrl(
 					{
 						id: localStorage.getItem("lifeCallingId"),
 						jahariUrl: result[0].secure_url
@@ -98,7 +97,7 @@ class OthersModal extends Component {
 					console.log(error);
 				}
 
-				API.saveLearningStyles(
+				API.saveLearningStylesUrl(
 					{
 						id: localStorage.getItem("lifeCallingId"),
 						learningStylesUrl: result[0].secure_url
@@ -139,11 +138,11 @@ class OthersModal extends Component {
 							</div>
 
 							<div className="uploadButtonDiv">
-							<button className="uploadButton" onClick={this.uploadJahari}>Upload Johari Window</button>
+							<button className="uploadButton" onClick={this.uploadJohari}>Upload Johari Window</button>
 							</div>
 
 							<div className="uploadButtonDiv">
-							<button className="uploadButton" onClick={this.uploadDoc}>Upload CV</button>
+							<button className="uploadButton" onClick={this.uploadCv}>Upload CV</button>
 							</div>
 						</div>
 
