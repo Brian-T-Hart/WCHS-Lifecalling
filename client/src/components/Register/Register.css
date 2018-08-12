@@ -1,3 +1,10 @@
+input {
+	display: block;
+	margin: auto;
+	margin-bottom: 10px;
+	width: 70%;
+}
+
 .col-md-6 {
 	margin: 0px;
 	padding: 0px;
@@ -7,13 +14,6 @@
 	color: #393433;
 	margin-bottom: 20px;
 	text-align: center;
-}
-
-input {
-	display: block;
-	margin: auto;
-	margin-bottom: 10px;
-	width: 70%;
 }
 
 #largeLogo {

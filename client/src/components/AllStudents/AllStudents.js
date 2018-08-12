@@ -24,9 +24,7 @@ class AllStudents extends Component {
 			for (var i = 0; i < students.length; i++) {
 				data[i] = students[i]
 			}
-			// console.log("data ", data);
 			this.setState({allStudents: data});
-			console.log("this.state.allStudents ", this.state.allStudents);
 		})
 		.catch(err => {
 			console.log(err);

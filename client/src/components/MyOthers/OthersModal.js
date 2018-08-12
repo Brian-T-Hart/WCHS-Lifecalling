@@ -35,7 +35,7 @@ class OthersModal extends Component {
 				)
 				.then(res =>
 					{
-						alert('Your document was saved!');
+						alert('The document was saved!');
 						window.location = '/dashboard';
 					}
 				)
@@ -70,7 +70,7 @@ class OthersModal extends Component {
 				)
 				.then(res =>
 					{
-						alert('The document has been saved.');
+						alert('The document was saved.');
 						window.location = '/dashboard';
 					}
 				)
@@ -105,7 +105,7 @@ class OthersModal extends Component {
 				)
 				.then(res =>
 					{
-						alert('The document has been saved.');
+						alert('The document was saved.');
 						window.location = '/dashboard';
 					}
 				)

@@ -1,15 +1,15 @@
-#formTitle {
-	color: #393433;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	text-align: center;
-}
-
 input {
 	display: block;
 	margin: auto;
 	margin-bottom: 10px;
 	width: 100%;
+}
+
+#formTitle {
+	color: #393433;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	text-align: center;
 }
 
 #login-form {

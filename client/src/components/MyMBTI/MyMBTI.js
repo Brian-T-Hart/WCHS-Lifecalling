@@ -38,6 +38,7 @@ class MyMBTI extends Component {
 				<div className="row">
 					<h5 className="allNames">{allMBTI.name}</h5>
 				</div>
+
 				<div className="row">
 					<h6>{allMBTI.description}</h6>
 				</div>
@@ -51,10 +52,14 @@ class MyMBTI extends Component {
 				<div className="infoTitle row">
 					<div className="col-md-12">
 					{/* Trigger modal with title span */}
-						<span className="clickable" data-toggle="modal" data-target="#allMBTIModal"><h3>Myers-Briggs </h3></span>
+						<span className="clickable" data-toggle="modal" data-target="#allMBTIModal">
+							<h3>Myers-Briggs </h3>
+						</span>
 
-							{/* Trigger modal with edit icon */}
-							<span data-toggle="modal" data-target="#mbtiModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>
+						{/* Trigger modal with edit icon */}
+						<span data-toggle="modal" data-target="#mbtiModalWrapper">
+							<img id="editIcon" src="./../images/editIcon.png" alt="" />
+						</span>
 					</div>
 				</div>
 
@@ -75,13 +80,16 @@ class MyMBTI extends Component {
 						<div className="modal-content">
 							<div className="modal-header">
 								<h4 className="modal-title">{this.state.mbtiName}</h4>
+
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
+
 							<div className="modal-body">
 								<h5>{this.state.mbtiDescription}</h5>
 							</div>
+
 							<div className="modal-footer">
 								<button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
 							</div>
@@ -96,13 +104,16 @@ class MyMBTI extends Component {
 						<div className="modal-content">
 							<div className="modal-header">
 								<h4 className="modal-title">Myers-Briggs</h4>
+
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
+
 							<div className="modal-body">
 								{allMBTI}
 							</div>
+							
 							<div className="modal-footer">
 								<button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
 							</div>

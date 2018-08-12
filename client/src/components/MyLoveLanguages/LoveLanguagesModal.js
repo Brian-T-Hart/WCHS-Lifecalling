@@ -25,22 +25,25 @@ class LoveLanguagesModal extends Component {
 
 		this.props.callbackFromLoveLanguagesModal(this.myLoveLanguages);
 
-		API.updateLoveLanguages({
-			id: localStorage.getItem("lifeCallingId"),
-			myLoveLanguages: this.myLoveLanguages
-		})
-			.then(res => {
+		API.updateLoveLanguages(
+			{
+				id: localStorage.getItem("lifeCallingId"),
+				myLoveLanguages: this.myLoveLanguages
+			}
+		)
+		.then(
+			res => {
 				console.log(res);
 			}
-			)
-			.catch(err => {
-				alert('something went wrong');
-				console.log(err);
-			});
+		)
+		.catch(
+			err => {
+				alert('A problem occurred. Please try again.');
+			}
+		)
 	}
 
 	render() {
-
 		const listOfLoveLanguages = this.state.loveLanguages.map((loveLanguage) =>
 			<option key={loveLanguage.id}>{loveLanguage.name}</option>
 		);
@@ -62,6 +65,7 @@ class LoveLanguagesModal extends Component {
 						<div className="modal-body">
 							<div className="form-group">
 								<label htmlFor="loveLanguage1">Choose Type</label>
+
 								<select className="form-control" id="loveLanguage1" ref="loveLanguage1">
 									<option selected disabled hidden>{this.props.myLoveLanguages[0]}</option>
 									{listOfLoveLanguages}
@@ -70,6 +74,7 @@ class LoveLanguagesModal extends Component {
 
 							<div className="form-group">
 								<label htmlFor="loveLanguage2">Choose Type</label>
+
 								<select className="form-control" id="loveLanguage2" ref="loveLanguage2">
 									<option selected disabled hidden>{this.props.myLoveLanguages[1]}</option>
 									{listOfLoveLanguages}
@@ -79,6 +84,7 @@ class LoveLanguagesModal extends Component {
 
 						<div className="modal-footer">
 							<button type="submit" className="btn btn-default" data-dismiss="modal" onClick={this.handleClick}>Submit</button>
+							
 							<button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
 						</div>
 					</form>

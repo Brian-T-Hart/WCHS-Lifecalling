@@ -38,6 +38,7 @@ class MyGifts extends Component {
 				<div className="row">
 					<h5 className="allNames">{allGifts.name}</h5>
 				</div>
+
 				<div className="row">
 					<h6>{allGifts.description}</h6>
 				</div>
@@ -50,10 +51,14 @@ class MyGifts extends Component {
 				{/* title row */}
 				<div className="infoTitle row">
 					<div className="col-md-12">
-						<span className="clickable" data-toggle="modal" data-target="#allGiftsModal"><h3>Spiritual Gifts</h3></span>
+						<span className="clickable" data-toggle="modal" data-target="#allGiftsModal">
+							<h3>Spiritual Gifts</h3>
+						</span>
 
-							{/* Trigger modal with edit icon */}
-							<span data-toggle="modal" data-target="#giftsModalWrapper"><img id="editIcon" src="./../images/editIcon.png" alt="" /></span>
+						{/* Trigger modal with edit icon */}
+						<span data-toggle="modal" data-target="#giftsModalWrapper">
+							<img id="editIcon" src="./../images/editIcon.png" alt="" />
+						</span>
 					</div>
 				</div>
 
@@ -74,13 +79,16 @@ class MyGifts extends Component {
 						<div className="modal-content">
 							<div className="modal-header">
 								<h4 className="modal-title">{this.state.giftName}</h4>
+
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
+
 							<div className="modal-body">
 								<h5>{this.state.giftDescription}</h5>
 							</div>
+
 							<div className="modal-footer">
 								<button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
 							</div>
@@ -95,13 +103,16 @@ class MyGifts extends Component {
 						<div className="modal-content">
 							<div className="modal-header">
 								<h4 className="modal-title">Spiritual Gifts</h4>
+
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
 								</button>
 							</div>
+
 							<div className="modal-body">
 								{allGifts}
 							</div>
+							
 							<div className="modal-footer">
 								<button id="modalSubmitBtn" type="button" className="btn btn-default" data-dismiss="modal">Close</button>
 							</div>

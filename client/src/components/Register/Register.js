@@ -15,21 +15,28 @@ class Register extends Component {
 	handleRegister = event => {
 		event.preventDefault();
 		console.log("Handling register..Register.js");
-		API.registerAccount({
-			username: this.state.username,
-			password: this.state.password,
-			email: this.state.email
-		})
-			// .then(res => console.log("you have registered!"))
-			.then(res => window.location = '/login')
-			.catch(err => console.log(err));
+		API.registerAccount(
+			{
+				username: this.state.username,
+				password: this.state.password,
+				email: this.state.email
+			}
+		)
+		.then(
+			res => window.location = '/login'
+		)
+		.catch(
+			err => console.log(err)
+		);
 
 		//Clear form data after submit
-		this.setState({
-			username: "",
-			password: "",
-			email: ""
-		});
+		this.setState(
+			{
+				username: "",
+				password: "",
+				email: ""
+			}
+		)
 	};
 
 	constructor(props) {
@@ -40,17 +47,18 @@ class Register extends Component {
 			password: "",
 			passwordConfirm: ""
 		}
-		// this.handleClick = this.handleClick.bind(this);
 	}
 
 	render() {
 		return (
 			<div>
 				<Navbar />
+
 				<div className="row container-fluid registerContentRow">
 					<div className="col-md-6 largeLogo">
 						<img id="largeLogo" src="../../images/lc-logo.jpg" alt="" />
 					</div>
+					
 					<div className="col-md-6">
 						<form id="register-form" >
 							<h2 id="formTitle"> Create an Account</h2>
