@@ -14,30 +14,58 @@ class Register extends Component {
 
 	handleRegister = event => {
 		event.preventDefault();
-		console.log("Handling register..Register.js");
-		API.registerAccount(
-			{
-				username: this.state.username,
-				password: this.state.password,
-				email: this.state.email
-			}
-		)
-		.then(
-			res => window.location = '/login'
-		)
-		.catch(
-			err => console.log(err)
-		);
+		var email = this.state.email;
+		var password = this.state.password;
+		var passwordConfirm = this.state.passwordConfirm;
+		var username = this.state.username;
+		var userValidated = true;
 
-		//Clear form data after submit
-		this.setState(
-			{
-				username: "",
-				password: "",
-				email: ""
-			}
-		)
-	};
+		if (username.length < 4 || username.length > 20) {
+			alert("Your username should be between 4 and 20 characters in length.");
+			userValidated = false;
+		}
+
+		if (password.length < 4 || password.length > 20) {
+			alert("Your password should be between 4 and 20 characters in length.")
+			userValidated = false;
+		}
+		
+		if (!email.includes("wchs.com")) {
+			alert("Please register using your WCHS email account.");
+			userValidated = false;
+		}
+
+		if (password !== passwordConfirm) {
+			alert("The passwords do not match. Please try again.");
+			userValidated = false;
+		}
+
+		if (userValidated === true) {
+
+			API.registerAccount(
+				{
+					username: this.state.username,
+					password: this.state.password,
+					email: this.state.email
+				}
+			)
+			.then(
+				res => window.location = '/login'
+			)
+			.catch(
+				err => console.log(err)
+			);
+
+			//Clear form data after submit
+			this.setState(
+				{
+					username: "",
+					password: "",
+					email: ""
+				}
+			)
+		}
+	}
 
 	constructor(props) {
 		super(props);

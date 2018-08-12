@@ -15,11 +15,14 @@ class Login extends Component {
 
 	handleLogin = event => {
 		event.preventDefault();
-		API.loginAccount({
-			username: this.state.userName,
-			password: this.state.password
-		})
-			.then(res => {
+		API.loginAccount(
+			{
+				username: this.state.userName,
+				password: this.state.password
+			}
+		)
+		.then(
+			res => {
 				if (res.data.token) {
 					// decode token and set local storage
 					const decoded = decode(res.data.token);
@@ -33,12 +36,15 @@ class Login extends Component {
 				else {
 					alert('There was a problem signing in. Please make sure your username and password are correct and then try again.');
 				}
-			})
-			.catch(err => {
-				alert('There was a problem signing in. Please try again.');
+			}
+		)
+		.catch(
+			err => {
+				alert('There was a problem signing in. Please make sure your username and password are correct and then try again.');
 				console.log(err);
-			});
-		}
+			}
+		);
+	}
 
 	constructor(props) {
 		super(props);
