@@ -50,7 +50,7 @@ router.post('/getAllStudents', (req, res, next) => {
 router.post('/getStudentInfo', (req, res, next) => {
 	db.students.findOne(
 		{
-			attributes: ['strengths', 'mbti', 'gifts','loveLanguages', 'intelligences', 'documentUrl', 'jahariUrl', 'learningStylesUrl'],
+			attributes: ['strengths', 'mbti', 'gifts','loveLanguages', 'intelligences', 'documentUrl', 'johariUrl', 'learningStylesUrl'],
 			where:
 			{
 				id: req.body.id,
@@ -290,11 +290,11 @@ router.post('/saveDocument', (req, res, next) => {
 	)
 })
 
-// route to save jahari url
-router.post('/saveJahari', (req, res, next) => {
+// route to save johari url
+router.post('/saveJohari', (req, res, next) => {
 	db.students.update(
 		{
-			jahariUrl: req.body.jahariUrl
+			johariUrl: req.body.johariUrl
 		},
 		{
 			where:

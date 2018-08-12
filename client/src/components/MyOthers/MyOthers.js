@@ -30,9 +30,9 @@ class MyOthers extends Component {
 						}
 
 						{
-							this.props.jahariUrl ?
+							this.props.johariUrl ?
 								<li key={"johari"} className="list-group-item d-flex align-items-center">
-									<a href={this.props.jahariUrl} target="_blank">Johari Window</a>
+									<a href={this.props.johariUrl} target="_blank">Johari Window</a>
 								</li> :null
 						}
 

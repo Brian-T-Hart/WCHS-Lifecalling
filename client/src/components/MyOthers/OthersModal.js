@@ -65,7 +65,7 @@ class OthersModal extends Component {
 				API.saveJohariUrl(
 					{
 						id: localStorage.getItem("lifeCallingId"),
-						jahariUrl: result[0].secure_url
+						johariUrl: result[0].secure_url
 					}
 				)
 				.then(res =>

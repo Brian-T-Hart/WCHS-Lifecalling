@@ -77,9 +77,9 @@ export default {
 		return axios.post("students/saveDocument", Data);
 	},
 
-	// save jahari window document
+	// save johari window document
 	saveJohariUrl: function (Data) {
-		return axios.post("students/saveJahari", Data);
+		return axios.post("students/saveJohari", Data);
 	},
 
 	// save learning styles document

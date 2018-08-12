@@ -51,7 +51,7 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.JSON,
 			allowNull: true
 		},
-		jahariUrl: {
+		johariUrl: {
 			type: DataTypes.JSON,
 			allowNull: true
 		},
