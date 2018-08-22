@@ -49,7 +49,14 @@ input {
 	width: 400px;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 998px) {
+	#register-form, #largeLogo {
+		height: 340px;
+		width: 340px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
 	.largeLogo {
 		display: none;
 	}
@@ -60,5 +67,9 @@ input {
 		margin: auto;
 		margin-top: 5em;
 		width: 360px;
+	}
+
+	#register-form #formTitle {
+		margin-top: 0;
 	}
 }

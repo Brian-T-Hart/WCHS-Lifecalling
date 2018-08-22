@@ -38,7 +38,14 @@ input {
 	text-align: center;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 998px) {
+	#login-form, #largeLogo {
+		height: 340px;
+		width: 340px;
+	}
+}
+
+@media only screen and (max-width: 767px) {
 	.largeLogo {
 		display: none;
 	}
