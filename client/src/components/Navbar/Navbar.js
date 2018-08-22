@@ -43,7 +43,7 @@ class Navbar extends Component {
 
 		return (
 			<div>
-				<nav id="mainNavbar" className="navbar navbar-expand-lg navbar-light">
+				<nav id="mainNavbar" className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light">
 					<a id="navTitle" href="/dashboard" onClick={this.handleRoute}><img id="navLogo" src="../../images/lifeCallingLogoRed.png" alt="" />LIFE CALLING</a>
 
 					<ul id="navDropdownMenu" className="navbar-nav ml-auto">
