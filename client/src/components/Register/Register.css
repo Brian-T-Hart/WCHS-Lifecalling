@@ -10,8 +10,9 @@ input {
 	padding: 0px;
 }
 
-#formTitle {
+#register-form #formTitle {
 	color: #393433;
+	margin-top: 20px;
 	margin-bottom: 20px;
 	text-align: center;
 }
@@ -27,6 +28,7 @@ input {
 #loginLink {
 	display: block;
 	margin: auto;
+	padding: 20px;
 	text-align: center;
 }
 
@@ -50,6 +52,14 @@ input {
 }
 
 @media only screen and (max-width: 998px) {
+	#loginLink {
+		padding-top: 10px;
+	}
+	
+	#register-form #formTitle {
+		margin-top: 0px;
+	}
+
 	#register-form, #largeLogo {
 		height: 340px;
 		width: 340px;
@@ -63,13 +73,14 @@ input {
 
 	#register-form {
 		float: none;
-		height: 360px;
+		height: fit-content;
 		margin: auto;
-		margin-top: 5em;
-		width: 360px;
+		margin-bottom: 40px;
+		margin-top: 40px;
+		width: 80%;
 	}
 
 	#register-form #formTitle {
-		margin-top: 0;
+		margin-top: 10px;
 	}
 }

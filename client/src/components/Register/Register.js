@@ -101,7 +101,7 @@ class Register extends Component {
 							<input type="password" name="passwordConfirm" id="confirm-password" tabIndex="1" placeholder="Confirm Password *" value={this.state.passwordConfirm} onChange={this.handleInputChange} autoComplete="new-password" required></input>
 
 							<button type="submit" name="register-submit" id="registerBtn" tabIndex="4" className="form-control btn btn-primary btn-register" value="Register Now" onClick={this.handleRegister}>Register</button>
-							<br></br>
+							
 							<a id="loginLink" href="/login">Login</a>
 						</form>
 					</div>

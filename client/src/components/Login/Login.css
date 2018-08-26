@@ -5,10 +5,10 @@ input {
 	width: 100%;
 }
 
-#formTitle {
+#login-form #formTitle {
 	color: #393433;
 	margin-bottom: 20px;
-	margin-top: 20px;
+	margin-top: 40px;
 	text-align: center;
 }
 
@@ -39,6 +39,10 @@ input {
 }
 
 @media only screen and (max-width: 998px) {
+	#login-form #formTitle {
+		margin-top: 20px;
+	}
+
 	#login-form, #largeLogo {
 		height: 340px;
 		width: 340px;
@@ -49,11 +53,16 @@ input {
 	.largeLogo {
 		display: none;
 	}
+
 	#login-form {
 		float: none;
 		height: 360px;
 		margin: auto;
-		margin-top: 5em;
-		width: 360px;
+		margin-top: 50px;
+		width: 80%;
+	}
+
+	#login-form #formTitle {
+		margin-top: 30px;
 	}
 }
