@@ -5,6 +5,15 @@ input {
 	width: 100%;
 }
 
+#forgotPassword {
+	display: block;
+	font-size: 12px;
+	margin: auto;
+	opacity: 0.7;
+	text-align: center;
+	width: 70%;
+}
+
 #login-form #formTitle {
 	color: #393433;
 	margin-bottom: 20px;
@@ -29,6 +38,10 @@ input {
 	margin: auto;
 	margin-top: 20px;
 	width: 100px;
+}
+
+#password {
+	margin-bottom: 0;
 }
 
 #registerLink {

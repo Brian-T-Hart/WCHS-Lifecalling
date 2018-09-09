@@ -72,6 +72,8 @@ class Login extends Component {
 
 							<input type="password" name="password" id="password" tabIndex="2" placeholder="Password *" value={this.state.password} onChange={this.handleInputChange} autoComplete="current-password" required></input>
 
+							{/* <a href="/forgotPassword" id="forgotPassword">forgot password?</a> */}
+
 							<button type="submit" name="login-submit" id="login-submit" tabIndex="3" className="form-control btn btn-primary btn-login" value="Log In" onClick={this.handleLogin}>Log In</button>
 
 							<div id="registerLink" className="row">
