@@ -1,9 +1,6 @@
 var express = require("express");
 var passport = require("passport");
-var db = require("../models");
-var path = require("path");
 var router = express.Router();
-
 
 
 // ALL links in this file get prepended with /account
