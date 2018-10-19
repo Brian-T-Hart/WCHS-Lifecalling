@@ -25,21 +25,21 @@ class MyOthers extends Component {
 						{
 							this.props.learningStylesUrl ?
 								<li key={"learningStyles"} className="list-group-item d-flex align-items-center">
-									<a href={this.props.learningStylesUrl} target="_blank">Learning Styles</a>
+									<a href={this.props.learningStylesUrl} rel="noopener noreferrer" target="_blank">Learning Styles</a>
 								</li> :null
 						}
 
 						{
 							this.props.johariUrl ?
 								<li key={"johari"} className="list-group-item d-flex align-items-center">
-									<a href={this.props.johariUrl} target="_blank">Johari Window</a>
+									<a href={this.props.johariUrl} rel="noopener noreferrer" target="_blank">Johari Window</a>
 								</li> :null
 						}
 
 						{
 							this.props.documentUrl ?
 								<li key={"document"} className="list-group-item d-flex align-items-center">
-									<a href={this.props.documentUrl} target="_blank">CV</a>
+									<a href={this.props.documentUrl} rel="noopener noreferrer" target="_blank">CV</a>
 								</li> :null
 						}
 
