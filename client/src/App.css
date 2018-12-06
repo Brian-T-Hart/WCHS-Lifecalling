@@ -1,3 +1,13 @@
+* {
+	box-sizing: border-box;
+}
+
+html, body {
+	height: 100%;
+	overflow: auto;
+	width: 100%;
+}
+
 body {
 	background: url("/../images/chalkboardBackground.jpg") no-repeat center center fixed;
 	background-size: cover;
@@ -22,6 +32,11 @@ h6 {
 
 .clickable, .clickable:hover, ul li:hover {
 	cursor: pointer;
+}
+
+.content-container {
+	position: relative;
+	top: 60px;
 }
 
 .dashboard-content-row {
@@ -67,16 +82,20 @@ h6 {
 }
 
 .modal {
-	max-height: 80%;
-	margin-top: 3em;
+	margin-bottom: 80px;
+	margin-top: 80px;
 }
 
 .modal-body {
 	padding: 2em 2em;
 }
 
+.modal-dialog {
+	margin-top: 0;
+}
+
 .modal-header {
-	background-color: #0000ff;
+	background-color: #0000FF;
 }
 
 .modal-title {
@@ -94,8 +113,13 @@ h6 {
 
 #mainNavbar {
 		background-color: #d00010;
-		padding: 0.5em;
+		left: 0;
 		min-height: 4em;
+		padding: 0.5em;
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: 9;
 }
 
 #navTitle {
