@@ -86,9 +86,7 @@ class AllStudents extends Component {
 		)
 
 		return (
-
-			<div className="table-container">
-				<table className="table all-students">
+				<table className="all-students content-container table">
 					<thead>
 						<tr>
 						<th scope="col">Username</th>
@@ -106,7 +104,6 @@ class AllStudents extends Component {
 						{ allTheStudents }
 					</tbody>
 				</table>
-			</div>
 		)
 	}
 }
