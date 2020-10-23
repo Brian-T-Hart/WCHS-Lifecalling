@@ -5,7 +5,7 @@
 html, body {
 	height: 100vh;
 	overflow: hidden;
-	width: 100vw;
+	width: 100%;
 }
 
 body {
@@ -33,7 +33,7 @@ h6 {
 .app {
 	height: 100vh;
 	overflow: auto;
-	width: 100vw;
+	width: 100%;
 }
 
 .clickable, .clickable:hover, ul li:hover {
@@ -44,7 +44,7 @@ h6 {
 	min-height: 100vh;
 	position: relative;
 	top: 64px;
-	width: 100vw;
+	width: 100%;
 }
 
 .dashboard-content-row {
