@@ -19,7 +19,7 @@ class OthersModal extends Component {
 				"url",
 				"camera",
 				"google_drive",
-        		"dropbox",
+        		"dropbox"
 			],
 			showAdvancedOptions: true,
 			cropping: true,
@@ -50,7 +50,7 @@ class OthersModal extends Component {
 				}
 			}
 		} //cloudinary settings
-	}
+	}//constructor
 
 	uploadCv(e) {
 		e.preventDefault();
