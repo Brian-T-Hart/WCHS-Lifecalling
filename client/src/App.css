@@ -114,11 +114,20 @@ h6 {
 }
 
 #editIcon {
-	width: 0.7em;
-	height: auto;
+	cursor: pointer;
+	height: 24px;
+	padding: 5px;
 	position: absolute;
-	right: 0.4em;
-	top: 0.4em;
+	right: 0;
+	top: -5px;
+	width: 24px;
+	z-index: 5;
+}
+
+#editIcon img {
+	height: 100%;
+	vertical-align: top;
+	width: 100%;
 }
 
 #mainNavbar {

@@ -78,8 +78,8 @@ class MyStrengths extends Component {
 						</span>
 
 						{/* Trigger modal with edit icon */}
-						<span data-toggle="modal" data-target="#strengthsModalWrapper">
-							<img id="editIcon" src="./../images/editIcon.png" alt="" />
+						<span id="editIcon" data-toggle="modal" data-target="#strengthsModalWrapper">
+							<img src="./../images/editIcon.png" alt="" />
 						</span>
 					</div>
 				</div>
