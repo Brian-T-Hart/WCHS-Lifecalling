@@ -10,7 +10,6 @@ class MyStrengths extends Component {
 			strengthName: "",
 			strengthDescription: "",
 		}
-		this.handleClick = this.handleClick.bind(this);
 	}
 
 	strengthIndex(name) {
@@ -35,7 +34,7 @@ class MyStrengths extends Component {
 		}
 	}
 
-	handleClick(e) {
+	handleClick = (e) => {
 		e.preventDefault();
 		var strengthName = e.target.dataset.txt;
 		this.strengthIndex(strengthName);
@@ -44,9 +43,10 @@ class MyStrengths extends Component {
 	render() {
 
 		const listOfMyStrengths = this.props.myStrengths.map((strength) =>
+			strength.length > 0 ?
 			<li key={strength} className="list-group-item d-flex align-items-center" data-txt={strength} onClick={this.handleClick}>
 				{strength}
-			</li>
+			</li> : null
 		);
 
 		const allStrengths = listOfStrengthsExplorer.map((allStrength) =>
