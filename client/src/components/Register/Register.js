@@ -81,7 +81,8 @@ class Register extends Component {
 		return (
 			<div className="row container-fluid content-container registerContentRow">
 				<div className="col-md-6 largeLogo">
-					<img id="largeLogo" src="../../images/lc-logo.jpg" alt="" />
+					{/* <img id="largeLogo" src="../../images/lc-logo.jpg" alt="" /> */}
+					<img id="largeLogo" src="../../images/life-calling.png" alt="" />
 				</div>
 				
 				<div className="col-md-6">
