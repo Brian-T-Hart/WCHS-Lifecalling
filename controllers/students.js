@@ -49,7 +49,7 @@ router.post('/getAllStudents', (req, res, next) => {
 router.post('/getStudentInfo', (req, res, next) => {
 	db.students.findOne(
 		{
-			attributes: ['strengths', 'mbti', 'gifts','loveLanguages', 'intelligences', 'documentUrl', 'johariUrl', 'learningStylesUrl'],
+			attributes: ['strengths', 'enneagram', 'mbti', 'gifts','loveLanguages', 'intelligences', 'documentUrl', 'johariUrl', 'learningStylesUrl'],
 			where:
 			{
 				id: req.body.id,
@@ -68,6 +68,54 @@ router.post('/getStudentInfo', (req, res, next) => {
 		}
 	)
 });
+
+// route to get the Enneagram results of a particular student
+router.post('/getEnneagram', (req, res, next) => {
+	db.students.findOne(
+		{
+			where:
+			{
+				id: req.body.id,
+				username: req.body.username
+			}
+		}
+	)
+	.then(
+		function (results) {
+			res.json(results.enneagram)
+		}
+	)
+	.catch(
+		function (err) {
+			res.json(err);
+		}
+	)
+});
+
+// route to update Enneagram info for a student
+router.post('/updateEnneagram', (req, res, next) => {
+	db.students.update(
+		{
+			enneagram: req.body.enneagram
+		},
+		{
+			where:
+				{
+					id: req.body.id
+				}
+		}
+	)
+	.then(
+		function (results) {
+			res.json(results)
+		}
+	)
+	.catch(
+		function (err) {
+			res.json(err);
+		}
+	)
+})
 
 // route to get student strengths
 router.post('/getStrengths', (req, res, next) => {

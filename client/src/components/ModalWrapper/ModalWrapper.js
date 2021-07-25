@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import StrengthsModal from "../MyStrengths/StrengthsModal.js";
+import EnneagramModal from "../MyEnneagram/EnneagramModal.js";
 import MBTIModal from "../MyMBTI/MBTIModal.js";
 import GiftsModal from "../MyGifts/GiftsModal.js";
 import LoveLanguagesModal from "../MyLoveLanguages/LoveLanguagesModal.js";
@@ -10,6 +11,10 @@ class ModalWrapper extends Component {
 
 	updateMyStrengths = (updatedStrengths) => {
 		this.props.strengthsCallbackFromModalWrapper(updatedStrengths);
+	}
+
+	updateMyEnneagram = (updatedEnneagram) => {
+		this.props.enneagramCallbackFromModalWrapper(updatedEnneagram);
 	}
 
 	updateMyMBTI = (updatedMBTI) => {
@@ -42,6 +47,13 @@ class ModalWrapper extends Component {
 				<div className="modal fade" id="strengthsModalWrapper" role="dialog">
 					<div className="modal-dialog">
 						<StrengthsModal strengths={this.props.strengths} myStrengths={this.props.myStrengths} callbackFromStrengthsModal={this.updateMyStrengths}/>
+					</div>
+				</div>
+
+				{/* Modal wrapper for enneagramModal */}
+				<div className="modal fade" id="enneagramModalWrapper" role="dialog">
+					<div className="modal-dialog">
+						<EnneagramModal enneagram={this.props.enneagram} myEnneagram={this.props.myEnneagram} callbackFromEnneagramModal={this.updateMyEnneagram}/>
 					</div>
 				</div>
 

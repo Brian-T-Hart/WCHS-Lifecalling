@@ -47,6 +47,11 @@ export default {
 		return axios.post("accounts/register", Data);
 	},
 
+	//update enneagram in the database
+	updateEnneagram: function (Data) {
+		return axios.post("students/updateEnneagram", Data);
+	},
+
 	// update spiritual gifts in the database
 	updateGifts: function (Data) {
 		return axios.post("students/updateGifts", Data);

@@ -31,6 +31,10 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.JSON,
 			allowNull: true,
 		},
+		enneagram: {
+			type: DataTypes.JSON,
+			allowNull: true
+		},
 		mbti: {
 			type: DataTypes.JSON,
 			allowNull: true
