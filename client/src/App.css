@@ -174,3 +174,14 @@ h6 {
 	width: 100%;
 	z-index: 2;
 }
+
+
+@media only screen and (max-width: 767px) {
+	.navbar-nav .dropdown-menu {
+		position: absolute;
+	}
+
+	.nav-title {
+		display: none;
+	}
+}

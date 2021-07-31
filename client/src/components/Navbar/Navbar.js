@@ -33,7 +33,7 @@ class Navbar extends Component {
 			<nav id="mainNavbar" className="navbar navbar-expand-lg navbar-expand-md navbar-expand-sm navbar-light">
 				<NavLink id="navTitle" to={this.state.authenticated ? "/dashboard" : "/login"}>
 					<img id="navLogo" src="../../images/life-calling-white.png" alt="" />
-					<span>LIFE CALLING</span>
+					<span class="nav-title">LIFE CALLING</span>
 				</NavLink>
 
 				<ul id="navDropdownMenu" className="navbar-nav ml-auto">
