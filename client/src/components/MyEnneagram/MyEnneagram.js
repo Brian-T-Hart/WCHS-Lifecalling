@@ -42,6 +42,18 @@ class MyEnneagram extends Component {
 			</div>
 		);
 
+
+		var growth,stress;
+
+		// const enneagramIndex = listOfEnneagramTypes.indexOf(this.props.myEnneagram[0]);
+		listOfEnneagramTypes.forEach(type => {
+			if (type.name === this.props.myEnneagram[0]) {
+				console.log(type);
+				growth = type.growth;
+				stress = type.stress;
+			}
+		});
+
 		return (
 			<div className="infoContainer col-md-12">
 				{/* title row */}
@@ -64,8 +76,10 @@ class MyEnneagram extends Component {
 					<div className="col-md-12">
 						<ul className="list-group list-group-flush">
 							<span data-toggle="modal" data-target="#enneagramModal">
-								<li key={this.props.enneagram.indexOf(this.props.myEnneagram[0]) + 1} className="list-group-item d-flex align-items-center" data-txt={this.props.myEnneagram[0]} onClick={this.handleClick}>Type {this.props.myEnneagram[0]}</li>
-								<li key={this.props.enneagram.indexOf(this.props.myEnneagram[0]) + 2} className="list-group-item d-flex align-items-center" data-txt={this.props.myEnneagram[1]} onClick={this.handleClick}>Wing {this.props.myEnneagram[1]}</li>
+								<li key="enneagram-type" className="list-group-item d-flex align-items-center" data-txt={this.props.myEnneagram[0]} onClick={this.handleClick}>Type {this.props.myEnneagram[0]}</li>
+								<li key="enneagram-wing" className="list-group-item d-flex align-items-center" data-txt={this.props.myEnneagram[1]} onClick={this.handleClick}>Wing {this.props.myEnneagram[1]}</li>
+								<li key="enneagram-growth" className="list-group-item d-flex align-items-center" data-txt={growth} onClick={this.handleClick}>Growth {growth}</li>
+								<li key="enneagram-stress" className="list-group-item d-flex align-items-center" data-txt={stress} onClick={this.handleClick}>Stress {stress}</li>
 							</span>
 						</ul>
 					</div>
