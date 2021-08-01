@@ -48,7 +48,6 @@ class MyEnneagram extends Component {
 		// const enneagramIndex = listOfEnneagramTypes.indexOf(this.props.myEnneagram[0]);
 		listOfEnneagramTypes.forEach(type => {
 			if (type.name === this.props.myEnneagram[0]) {
-				console.log(type);
 				growth = type.growth;
 				stress = type.stress;
 			}
