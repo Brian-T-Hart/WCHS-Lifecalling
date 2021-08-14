@@ -75,10 +75,10 @@ class MyEnneagram extends Component {
 					<div className="col-md-12">
 						<ul className="list-group list-group-flush">
 							<span data-toggle="modal" data-target="#enneagramModal">
-								<li key="enneagram-type" className="list-group-item d-flex align-items-center" data-txt={this.props.myEnneagram[0]} onClick={this.handleClick}>Type {this.props.myEnneagram[0]}</li>
-								<li key="enneagram-wing" className="list-group-item d-flex align-items-center" data-txt={this.props.myEnneagram[1]} onClick={this.handleClick}>Wing {this.props.myEnneagram[1]}</li>
-								<li key="enneagram-growth" className="list-group-item d-flex align-items-center" data-txt={growth} onClick={this.handleClick}>Growth {growth}</li>
-								<li key="enneagram-stress" className="list-group-item d-flex align-items-center" data-txt={stress} onClick={this.handleClick}>Stress {stress}</li>
+								<li key="enneagram-type" className="list-group-item d-flex align-items-center" data-txt={this.props.myEnneagram[0]} onClick={this.handleClick}><b>Type |</b>&nbsp; {this.props.myEnneagram[0]}</li>
+								<li key="enneagram-wing" className="list-group-item d-flex align-items-center" data-txt={this.props.myEnneagram[1]} onClick={this.handleClick}><b>Wing |</b>&nbsp;{this.props.myEnneagram[1]}</li>
+								<li key="enneagram-growth" className="list-group-item d-flex align-items-center" data-txt={growth} onClick={this.handleClick}><b>Growth |</b>&nbsp;{growth}</li>
+								<li key="enneagram-stress" className="list-group-item d-flex align-items-center" data-txt={stress} onClick={this.handleClick}><b>Stress |</b>&nbsp;{stress}</li>
 							</span>
 						</ul>
 					</div>

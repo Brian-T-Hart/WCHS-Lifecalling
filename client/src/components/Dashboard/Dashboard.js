@@ -122,31 +122,31 @@ class Dashboard extends Component {
 			<div className="content-container" id="dashboardContainer">
 
 				<div className="container-fluid dashboard-content-row pt-3 row">
-					<div className="info-div col-md-4 col-sm-6">
+					<div className="info-div col-lg-4 col-md-6 col-sm-12">
 						<MyStrengths strengths={this.state.strengths} myStrengths={this.state.myStrengths} />
 					</div>
 
-					<div className="info-div col-md-4 col-sm-6">
+					<div className="info-div col-lg-4 col-md-6 col-sm-12">
 						<MyEnneagram enneagram={this.state.enneagram} myEnneagram={this.state.myEnneagram} />
 					</div>
 
-					<div className="info-div col-md-4 col-sm-6">
+					<div className="info-div col-lg-4 col-md-6 col-sm-12">
 						<MyIntelligences intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} />
 					</div>
 
-					<div className="info-div col-md-4 col-sm-6">
+					<div className="info-div col-lg-4 col-md-6 col-sm-12">
 						<MBTI mbti={this.state.mbti} myMbti={this.state.myMbti} />
 					</div>
 
-					<div className="info-div col-md-4 col-sm-6">
+					<div className="info-div col-lg-4 col-md-6 col-sm-12">
 						<MyGifts gifts={this.state.gifts} myGifts={this.state.myGifts} />
 					</div>
 
-					<div className="info-div col-md-4 col-sm-6">
+					<div className="info-div col-lg-4 col-md-6 col-sm-12">
 						<MyLoveLanguages loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} />
-					</div>					
+					</div>
 
-					<div className="info-div col-md-4 col-sm-6">
+					<div className="info-div col-lg-4 col-md-6 col-sm-12">
 						<MyOthers documentUrl={this.state.myDocumentUrl} johariUrl={this.state.myJohariUrl} learningStylesUrl={this.state.myLearningStylesUrl} />
 					</div>
 				</div>
