@@ -52,7 +52,7 @@ class MyIntelligences extends Component {
 					<div className="col-md-12">
 						{/* Trigger modal with title span */}
 						<span className="clickable" data-toggle="modal" data-target="#allIntelligencesModal">
-							<h3>Multiple Intelligences</h3>
+							<h3>Intelligences</h3>
 						</span>
 
 						{/* Trigger modal with edit icon */}
@@ -102,7 +102,7 @@ class MyIntelligences extends Component {
 					<div className="modal-dialog">
 						<div className="modal-content">
 							<div className="modal-header">
-								<h4 className="modal-title">Multiple Intelligences</h4>
+								<h4 className="modal-title">Intelligences</h4>
 
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
