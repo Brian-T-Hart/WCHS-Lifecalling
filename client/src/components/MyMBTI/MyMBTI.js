@@ -53,7 +53,7 @@ class MyMBTI extends Component {
 					<div className="col-md-12">
 					{/* Trigger modal with title span */}
 						<span className="clickable" data-toggle="modal" data-target="#allMBTIModal">
-							<h3>Myers-Briggs </h3>
+							<h3>Personality</h3>
 						</span>
 
 						{/* Trigger modal with edit icon */}
@@ -103,7 +103,7 @@ class MyMBTI extends Component {
 					<div className="modal-dialog">
 						<div className="modal-content">
 							<div className="modal-header">
-								<h4 className="modal-title">Myers-Briggs</h4>
+								<h4 className="modal-title">Personality</h4>
 
 								<button type="button" className="close" data-dismiss="modal" aria-label="Close">
 									<span aria-hidden="true">&times;</span>
