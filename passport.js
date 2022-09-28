@@ -8,7 +8,7 @@ const saltRounds = 10;
 
 const authenticate = (username, password, done) => {
   db.students
-    .find({
+    .findOne({
       where: {
         username: username
       }
@@ -39,7 +39,7 @@ const authenticate = (username, password, done) => {
 const register = (req, email, password, done) => {
   //sequelize?
   db.students
-    .find({
+    .findOne({
       where: {
         username: req.body.username
       }
