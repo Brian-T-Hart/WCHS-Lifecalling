@@ -57,7 +57,6 @@ class OthersModal extends Component {
 		window.cloudinary.openUploadWidget(this.cloudinarySettings,
 			(err, result) => {
 				if (result.event === "success") {
-					console.log("Upload Widget event - ", result);
 					API.saveCvUrl(
 					{
 						id: localStorage.getItem("lifeCallingId"),
@@ -88,7 +87,6 @@ class OthersModal extends Component {
 			this.cloudinarySettings,
 			(err, result) => {
 				if (result.event === "success") {
-					console.log("Upload Widget event - ", result);
 					API.saveJohariUrl(
 						{
 							id: localStorage.getItem("lifeCallingId"),
@@ -120,7 +118,6 @@ class OthersModal extends Component {
 			this.cloudinarySettings,
 			(err, result) => {
 				if (result.event === "success") {
-					console.log("Upload Widget event - ", result);
 					API.saveLearningStylesUrl(
 						{
 							id: localStorage.getItem("lifeCallingId"),

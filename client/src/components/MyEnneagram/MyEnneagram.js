@@ -23,7 +23,6 @@ class MyEnneagram extends Component {
 
 	handleClick(e) {
 		e.preventDefault();
-		console.log(e.target.dataset.txt);
 		var enneagramType = e.target.dataset.txt;
 		this.enneagramIndex(enneagramType);
 	}

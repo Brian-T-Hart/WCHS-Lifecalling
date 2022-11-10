@@ -16,7 +16,6 @@ class StrengthsModal extends Component {
 		let strength2 = document.getElementById('strength2').value;
 		let strength3 = document.getElementById('strength3').value;
 		changedStrengths.push(strength1, strength2, strength3);
-		console.log('myStrengths onChange', changedStrengths);
 
 		this.setState({
 			myStrengths: changedStrengths
