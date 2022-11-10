@@ -5,7 +5,7 @@ var path = require('path');
 var Sequelize = require('sequelize');
 var basename = path.basename(__filename);
 var env = process.env.Heroku_Production || 'development';
-var config = require(__dirname + '/../config/config.json')[env];
+var config = require(__dirname + '/../config/config.js')[env];
 var db = {};
 
 if (config.use_env) {
