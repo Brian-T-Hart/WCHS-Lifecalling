@@ -1,6 +1,10 @@
 {
   "name": "wchs-life-calling",
   "version": "0.1.0",
+  "engines": {
+    "node": ">=16.13.2 <17.0",
+    "npm": ">=8.1.2 <9.0"
+  },
   "scripts": {
     "server": "node server.js",
     "client": "node scripts/start-client.js",
