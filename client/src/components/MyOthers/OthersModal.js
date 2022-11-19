@@ -158,7 +158,7 @@ class OthersModal extends Component {
 					<form>
 						<div className="modal-body">
 							<div className="uploadButtonDiv">
-								<button className="uploadButton" onClick={this.uploadLearningStyles}>Upload Learning Styles</button>
+								<button className="uploadButton" onClick={this.uploadLearningStyles}>Upload Learning & Productivity</button>
 							</div>
 
 							<div className="uploadButtonDiv">

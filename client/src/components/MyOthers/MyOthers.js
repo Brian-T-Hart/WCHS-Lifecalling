@@ -25,7 +25,7 @@ class MyOthers extends Component {
 						{
 							this.props.learningStylesUrl ?
 								<li key={"learningStyles"} className="list-group-item d-flex align-items-center">
-									<a href={this.props.learningStylesUrl} rel="noopener noreferrer" target="_blank">Learning Styles</a>
+									<a href={this.props.learningStylesUrl} rel="noopener noreferrer" target="_blank">Learning & Productivity</a>
 								</li> :null
 						}
 

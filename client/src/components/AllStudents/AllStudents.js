@@ -91,7 +91,7 @@ class AllStudents extends Component {
 				</td>
 
 				<td>
-					<a href={student.learningStylesUrl}>Learning Styles</a><br></br>
+					<a href={student.learningStylesUrl}>Learning & Productivity</a><br></br>
 					<a href={student.johariUrl}>Johari Window</a><br></br>
 					<a href={student.documentUrl}>CV</a>
 				</td>
