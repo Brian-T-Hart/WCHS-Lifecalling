@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import CommonValuesModal from '../MyCommonValues/CommonValuesModal.js';
 import StrengthsModal from "../MyStrengths/StrengthsModal.js";
 import EnneagramModal from "../MyEnneagram/EnneagramModal.js";
 import MBTIModal from "../MyMBTI/MBTIModal.js";
@@ -8,6 +9,10 @@ import IntelligencesModal from "../MyIntelligences/IntelligencesModal.js";
 import OthersModal from "../MyOthers/OthersModal.js";
 
 class ModalWrapper extends Component {
+
+	updateMyCommonValues = (updatedCommonValues) => {
+		this.props.commonValuesCallbackFromModalWrapper(updatedCommonValues);
+	}
 
 	updateMyStrengths = (updatedStrengths) => {
 		this.props.strengthsCallbackFromModalWrapper(updatedStrengths);
@@ -42,6 +47,12 @@ class ModalWrapper extends Component {
 
 		return (
 			<div>
+				{/* Modal wrapper for commonValuesModal */}
+				<div className="modal fade" id="commonValuesModalWrapper" role="dialog">
+					<div className="modal-dialog">
+						<CommonValuesModal commonValues={this.props.commonValues} myCommonValues={this.props.myCommonValues} callbackFromCommonValuesModal={this.updateMyCommonValues}/>
+					</div>
+				</div>
 
 				{/* Modal wrapper for strengthsModal */}
 				<div className="modal fade" id="strengthsModalWrapper" role="dialog">

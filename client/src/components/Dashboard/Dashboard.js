@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import API from "../../utils/API";
-import MyStrengths from "../MyStrengths/MyStrengths.js";
 import ModalWrapper from '../ModalWrapper/ModalWrapper.js';
-import MBTI from "../MyMBTI/MyMBTI.js";
+import listOfCommonValues from './listOfCommonValues.js';
+import MyCommonValues from "../MyCommonValues/MyCommonValues.js"
 import listOfStrengthsExplorer from "./listOfStrengthsExplorer.js";
+import MyStrengths from "../MyStrengths/MyStrengths.js";
 import listOfMBTI from "./listOfMBTI.js";
+import MBTI from "../MyMBTI/MyMBTI.js";
 import listOfSpiritualGifts from './listOfSpiritualGifts';
 import MyGifts from "../MyGifts/MyGifts.js";
 import listOfLoveLanguages from './listOfLoveLanguages';
@@ -16,6 +18,10 @@ import MyEnneagram from "../MyEnneagram/MyEnneagram.js";
 import MyOthers from "../MyOthers/MyOthers.js";
 
 class Dashboard extends Component {
+
+	updateMyCommonValues = (updatedCommonValues) => {
+		this.setState({ myCommonValues: updatedCommonValues });
+	}
 
 	updateMyStrengths = (updatedStrengths) => {
 		this.setState({ myStrengths: updatedStrengths });
@@ -59,6 +65,9 @@ class Dashboard extends Component {
 			username: localStorage.getItem("lifeCallingUsername")
 		})
 			.then(res => {
+				if (res.data.commonValues) {
+					this.setState({ myCommonValues: res.data.commonValues });
+				}
 				if (res.data.strengths) {
 					this.setState({ myStrengths: res.data.strengths });
 				}
@@ -98,6 +107,8 @@ class Dashboard extends Component {
 		super(props);
 		this.state = {
 			username: "",
+			myCommonValues: [],
+			commonValues: listOfCommonValues,
 			myStrengths: [],
 			strengths: listOfStrengthsExplorer,
 			myEnneagram: "",
@@ -122,6 +133,10 @@ class Dashboard extends Component {
 			<div className="content-container" id="dashboardContainer">
 
 				<div className="container-fluid dashboard-content-row pt-3 row">
+					<div className="info-div col-lg-4 col-md-6 col-sm-12">
+						<MyCommonValues commonValues={this.state.commonValues} myCommonValues={this.state.myCommonValues} />
+					</div>
+
 					<div className="info-div col-lg-4 col-md-6 col-sm-12">
 						<MyStrengths strengths={this.state.strengths} myStrengths={this.state.myStrengths} />
 					</div>
@@ -151,7 +166,30 @@ class Dashboard extends Component {
 					</div>
 				</div>
 
-				<ModalWrapper documentUrl={this.state.myDocumentUrl} johariUrl={this.state.myJohariUrl} learningStylesUrl={this.state.myLearningStylesUrl} strengths={this.state.strengths} myStrengths={this.state.myStrengths} strengthsCallbackFromModalWrapper={this.updateMyStrengths} enneagram={this.state.enneagram} myEnneagram={this.state.myEnneagram} enneagramCallbackFromModalWrapper={this.updateMyEnneagram}  mbti={this.state.mbti} myMbti={this.state.myMbti} mbtiCallbackFromModalWrapper={this.updateMyMBTI} gifts={this.state.gifts} myGifts={this.state.myGifts} giftsCallbackFromModalWrapper={this.updateMyGifts} loveLanguages={this.state.loveLanguages} myLoveLanguages={this.state.myLoveLanguages} loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages} intelligences={this.state.intelligences} myIntelligences={this.state.myIntelligences} intelligencesCallbackFromModalWrapper={this.updateMyIntelligences} />
+				<ModalWrapper
+					documentUrl={this.state.myDocumentUrl}
+					johariUrl={this.state.myJohariUrl}
+					learningStylesUrl={this.state.myLearningStylesUrl}
+					commonValues={this.state.commonValues}
+					myCommonValues={this.state.myCommonValues}
+					commonValuesCallbackFromModalWrapper={this.updateMyCommonValues}
+					strengths={this.state.strengths}
+					myStrengths={this.state.myStrengths}
+					strengthsCallbackFromModalWrapper={this.updateMyStrengths}
+					enneagram={this.state.enneagram}
+					myEnneagram={this.state.myEnneagram}
+					enneagramCallbackFromModalWrapper={this.updateMyEnneagram} 
+					mbti={this.state.mbti} myMbti={this.state.myMbti}
+					mbtiCallbackFromModalWrapper={this.updateMyMBTI}
+					gifts={this.state.gifts} myGifts={this.state.myGifts}
+					giftsCallbackFromModalWrapper={this.updateMyGifts}
+					loveLanguages={this.state.loveLanguages}
+					myLoveLanguages={this.state.myLoveLanguages}
+					loveLanguagesCallbackFromModalWrapper={this.updateMyLoveLanguages}
+					intelligences={this.state.intelligences}
+					myIntelligences={this.state.myIntelligences}
+					intelligencesCallbackFromModalWrapper={this.updateMyIntelligences}
+				/>
 			</div>
 		);
 	}
