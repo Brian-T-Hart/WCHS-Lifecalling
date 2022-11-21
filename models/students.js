@@ -27,6 +27,10 @@ module.exports = function (sequelize, DataTypes) {
 			type: DataTypes.STRING,
 			allowNull: false,
 		},
+		commonValues: {
+			type: DataTypes.JSON,
+			allowNull: true,
+		},
 		strengths: {
 			type: DataTypes.JSON,
 			allowNull: true,
