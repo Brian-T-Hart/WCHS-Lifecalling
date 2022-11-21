@@ -49,11 +49,60 @@ router.post('/getAllStudents', (req, res, next) => {
 router.post('/getStudentInfo', (req, res, next) => {
 	db.students.findOne(
 		{
-			attributes: ['strengths', 'enneagram', 'mbti', 'gifts','loveLanguages', 'intelligences', 'documentUrl', 'johariUrl', 'learningStylesUrl'],
+			attributes: ['commonValues', 'strengths', 'enneagram', 'mbti', 'gifts','loveLanguages', 'intelligences', 'documentUrl', 'johariUrl', 'learningStylesUrl'],
 			where:
 			{
 				id: req.body.id,
 				username: req.body.username
+			}
+		}
+	)
+	.then(
+		function (results) {
+			res.json(results)
+		}
+	)
+	.catch(
+		function (err) {
+			res.json(err);
+		}
+	)
+});
+
+// route to get the commonValues results of a particular student
+router.post('/getCommonValues', (req, res, next) => {
+	db.students.findOne(
+		{
+			attributes: ['commonValues'],
+			where:
+				{
+					id: req.body.id,
+					username: req.body.username
+				}
+		}
+	)
+	.then(
+		function (results) {
+			res.json(results)
+		}
+	)
+	.catch(
+		function (err) {
+			res.json(err);
+		}
+	)
+});
+
+// route to update the commonValues of a student
+router.post('/updateCommonValues', (req, res, next) => {
+	db.students.update(
+		{
+			commonValues: req.body.commonValues
+		},
+		{
+			where:
+			{
+				id: req.body.id
 			}
 		}
 	)

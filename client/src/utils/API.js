@@ -7,6 +7,11 @@ export default {
 		return axios.post("students/getAllStudents", Data);
 	},
 
+	// retrieve Common Values info from database
+	getCommonValues: function (Data) {
+		return axios.post("students/getCommonValues", Data);
+	},
+	
 	// retrieve Spiritual Gifts info from database
 	getGifts: function (Data) {
 		return axios.post("students/getGifts", Data);
@@ -45,6 +50,11 @@ export default {
 	// Saves a Account to the database
 	registerAccount: function (Data) {
 		return axios.post("accounts/register", Data);
+	},
+
+	//update commonValues in the database
+	updateCommonValues: function (Data) {
+		return axios.post("students/updateCommonValues", Data);
 	},
 
 	//update enneagram in the database
