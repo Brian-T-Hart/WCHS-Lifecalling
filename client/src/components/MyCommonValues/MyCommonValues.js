@@ -24,6 +24,7 @@ class MyCommonValues extends Component {
 	handleClick(e) {
 		e.preventDefault();
 		var commonValueName = e.target.dataset.txt;
+		console.log(commonValueName);
 		this.commonValueIndex(commonValueName);
 	}
 
@@ -34,7 +35,9 @@ class MyCommonValues extends Component {
                 key={this.props.myCommonValues.indexOf(commonValue) + 1}
                 className="list-group-item d-flex align-items-center"
                 data-txt={commonValue}
-                onClick={this.handleClick}>{commonValue}
+                onClick={this.handleClick}
+			>
+				{commonValue}
             </li>
 		);
 
@@ -71,14 +74,14 @@ class MyCommonValues extends Component {
 				<div className="infoInfoBox row">
 					<div className="col-md-12">
 						<ul className="list-group list-group-flush">
-							<span data-toggle="modal" data-target="#commonValuesModal">
+							<span data-toggle="modal" data-target="#commonValueModal">
 								{listOfMyCommonValues}
 							</span>
 						</ul>
 					</div>
 				</div>
 
-				{/* Modal for displaying individual Spiritual Gift Info */}
+				{/* Modal for displaying individual common value Info */}
 				<div className="modal fade" id="commonValueModal" role="dialog">
 					<div className="modal-dialog">
 						<div className="modal-content">
