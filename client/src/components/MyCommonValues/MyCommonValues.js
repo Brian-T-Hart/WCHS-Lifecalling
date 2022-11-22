@@ -24,7 +24,6 @@ class MyCommonValues extends Component {
 	handleClick(e) {
 		e.preventDefault();
 		var commonValueName = e.target.dataset.txt;
-		console.log(commonValueName);
 		this.commonValueIndex(commonValueName);
 	}
 
