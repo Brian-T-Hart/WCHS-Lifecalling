@@ -5,15 +5,18 @@ class CommonValuesModal extends Component {
 
 	constructor(props) {
 		super(props);
+		this.cvalue1 = React.createRef();
+		this.cvalue2 = React.createRef();
+		this.cvalue3 = React.createRef();
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleClick(e) {
 		e.preventDefault();
 		this.myCommonValues = [...this.props.myCommonValues];
-		this.myCommonValues[0]=this.refs.cvalue0.value;
-		this.myCommonValues[1]=this.refs.cvalue1.value;
-		this.myCommonValues[2]=this.refs.cvalue2.value;
+		this.myCommonValues[0]=this.cvalue1.value;
+		this.myCommonValues[1]=this.cvalue2.cvalue1.value;
+		this.myCommonValues[2]=this.cvalue3.cvalue2.value;
 		this.props.callbackFromCommonValuesModal(this.myCommonValues);
 		API.updateCommonValues(
 			{
@@ -54,7 +57,7 @@ class CommonValuesModal extends Component {
 							<div className="form-group">
 								<label htmlFor="cvalue1">Choose Type</label>
 
-								<select className="form-control" id="cvalue1" ref="cvalue0">
+								<select className="form-control" id="cvalue1" ref={this.cvalue1}>
 									<option selected disabled hidden>{this.props.myCommonValues[0]}</option>
 									{listOfCommonValues}
 								</select>
@@ -63,7 +66,7 @@ class CommonValuesModal extends Component {
 							<div className="form-group">
 								<label htmlFor="cvalue2">Choose Value</label>
 
-								<select className="form-control" id="cvalue2" ref="cvalue1">
+								<select className="form-control" id="cvalue2" ref={this.cvalue2}>
 									<option selected disabled hidden>{this.props.myCommonValues[1]}</option>
 									{listOfCommonValues}
 								</select>
@@ -72,7 +75,7 @@ class CommonValuesModal extends Component {
 							<div className="form-group">
 								<label htmlFor="cvalues3">Choose Type</label>
 
-								<select className="form-control" id="cvalues3" ref="cvalue2">
+								<select className="form-control" id="cvalues3" ref={this.cvalue3}>
 									<option selected disabled hidden>{this.props.myCommonValues[2]}</option>
 									{listOfCommonValues}
 								</select>

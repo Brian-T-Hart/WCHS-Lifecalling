@@ -5,14 +5,16 @@ class IntelligencesModal extends Component {
 
 	constructor(props) {
 		super(props);
+		this.intelligence1 = React.createRef();
+		this.intelligence2 = React.createRef();
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleClick(e) {
 		e.preventDefault();
 		this.myIntelligences = [this.props.myIntelligences[0], this.props.myIntelligences[1]];
-		this.myIntelligences[0]=this.refs.intelligence1.value;
-		this.myIntelligences[1]=this.refs.intelligence2.value;
+		this.myIntelligences[0]=this.intelligence1.value;
+		this.myIntelligences[1]=this.intelligence2.value;
 		this.props.callbackFromIntelligencesModal(this.myIntelligences);
 		API.updateIntelligences(
 			{
@@ -53,7 +55,7 @@ class IntelligencesModal extends Component {
 							<div className="form-group">
 								<label htmlFor="intelligence1">Choose Type</label>
 
-								<select className="form-control" id="intelligence1" ref="intelligence1">
+								<select className="form-control" id="intelligence1" ref={this.intelligence1}>
 									<option selected disabled hidden>{this.props.myIntelligences[0]}</option>
 									{listOfIntelligences}
 								</select>
@@ -62,7 +64,7 @@ class IntelligencesModal extends Component {
 							<div className="form-group">
 								<label htmlFor="intelligence2">Choose Type</label>
 
-								<select className="form-control" id="intelligence2" ref="intelligence2">
+								<select className="form-control" id="intelligence2" ref={this.intelligence2}>
 									<option selected disabled hidden>{this.props.myIntelligences[1]}</option>
 									{listOfIntelligences}
 								</select>

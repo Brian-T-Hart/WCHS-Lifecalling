@@ -5,16 +5,20 @@ class MBTIModal extends Component {
 
 	constructor(props) {
 		super(props);
+		this.mbti1 = React.createRef();
+		this.mbti2 = React.createRef();
+		this.mbti3 = React.createRef();
+		this.mbti4 = React.createRef();
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleClick(e) {
 		e.preventDefault();
 		this.myMbti = [this.props.myMbti[0], this.props.myMbti[1], this.props.myMbti[2], this.props.myMbti[3]];
-		this.myMbti[0]=this.refs.mbti1.value;
-		this.myMbti[1]=this.refs.mbti2.value;
-		this.myMbti[2]=this.refs.mbti3.value;
-		this.myMbti[3]=this.refs.mbti4.value;
+		this.myMbti[0]=this.mbti1.value;
+		this.myMbti[1]=this.mbti2.value;
+		this.myMbti[2]=this.mbti3.value;
+		this.myMbti[3]=this.mbti4.value;
 		this.props.callbackFromMBTIModal(this.myMbti);
 		API.updateMBTI(
 			{
@@ -51,7 +55,7 @@ class MBTIModal extends Component {
 							<div className="form-group">
 								<label htmlFor="mbti1">Choose Type</label>
 
-								<select className="form-control" id="mbti1" ref="mbti1">
+								<select className="form-control" id="mbti1" ref={this.mbti1}>
 									<option selected disabled hidden>{this.props.myMbti[0]}</option>
 
 									<option>Extrovert</option>
@@ -63,7 +67,7 @@ class MBTIModal extends Component {
 							<div className="form-group">
 								<label htmlFor="mbti2">Choose Type</label>
 
-								<select className="form-control" id="mbti2" ref="mbti2">
+								<select className="form-control" id="mbti2" ref={this.mbti2}>
 									<option selected disabled hidden>{this.props.myMbti[1]}</option>
 
 									<option>Sensing</option>
@@ -75,7 +79,7 @@ class MBTIModal extends Component {
 							<div className="form-group">
 								<label htmlFor="mbti3">Choose Type</label>
 
-								<select className="form-control" id="mbti3" ref="mbti3">
+								<select className="form-control" id="mbti3" ref={this.mbti3}>
 									<option selected disabled hidden>{this.props.myMbti[2]}</option>
 
 									<option>Thinking</option>
@@ -87,7 +91,7 @@ class MBTIModal extends Component {
 							<div className="form-group">
 								<label htmlFor="mbti4">Choose Type</label>
 
-								<select className="form-control" id="mbti4" ref="mbti4">
+								<select className="form-control" id="mbti4" ref={this.mbti4}>
 									<option selected disabled hidden>{this.props.myMbti[3]}</option>
 
 									<option>Perceiving</option>

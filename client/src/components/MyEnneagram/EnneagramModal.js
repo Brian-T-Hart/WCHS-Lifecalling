@@ -1,10 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import API from "../../utils/API";
 
 class EnneagramModal extends Component {
 
 	constructor(props) {
 		super(props);
+		this.enneagram = React.createRef();
+		this.wing = React.createRef();
 		this.handleClick = this.handleClick.bind(this);
 	}
 
@@ -51,7 +53,7 @@ class EnneagramModal extends Component {
 							<div className="form-group">
 								<label htmlFor="enneagram">Choose Type</label>
 
-								<select className="form-control" id="enneagram" ref="enneagram">
+								<select className="form-control" id="enneagram" ref={this.enneagram}>
 									<option selected disabled hidden>{this.props.myEnneagram[0]}</option>
 									{listOfEnneagramTypes}
 								</select>
@@ -60,7 +62,7 @@ class EnneagramModal extends Component {
 							<div className="form-group">
 								<label htmlFor="wing">Choose Wing</label>
 
-								<select className="form-control" id="wing" ref="wing">
+								<select className="form-control" id="wing" ref={this.wing}>
 									<option selected disabled hidden>{this.props.myEnneagram[1]}</option>
 									{listOfEnneagramTypes}
 								</select>

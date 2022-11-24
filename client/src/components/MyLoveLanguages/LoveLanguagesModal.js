@@ -9,6 +9,8 @@ class LoveLanguagesModal extends Component {
 			loveLanguages: this.props.loveLanguages,
 			myLoveLanguages: this.props.myLoveLanguages
 		}
+		this.loveLanguage1 = React.createRef();
+		this.loveLanguage2 = React.createRef();
 		this.handleClick = this.handleClick.bind(this);
 	}
 
@@ -20,8 +22,8 @@ class LoveLanguagesModal extends Component {
 			this.props.myLoveLanguages[2]
 		];
 
-		this.myLoveLanguages[0]	= this.refs.loveLanguage1.value;
-		this.myLoveLanguages[1] = this.refs.loveLanguage2.value;
+		this.myLoveLanguages[0]	= this.loveLanguage1.value;
+		this.myLoveLanguages[1] = this.loveLanguage2.value;
 
 		this.props.callbackFromLoveLanguagesModal(this.myLoveLanguages);
 
@@ -66,7 +68,7 @@ class LoveLanguagesModal extends Component {
 							<div className="form-group">
 								<label htmlFor="loveLanguage1">Choose Type</label>
 
-								<select className="form-control" id="loveLanguage1" ref="loveLanguage1">
+								<select className="form-control" id="loveLanguage1" ref={this.loveLanguage1}>
 									<option selected disabled hidden>{this.props.myLoveLanguages[0]}</option>
 									{listOfLoveLanguages}
 								</select>
@@ -75,7 +77,7 @@ class LoveLanguagesModal extends Component {
 							<div className="form-group">
 								<label htmlFor="loveLanguage2">Choose Type</label>
 
-								<select className="form-control" id="loveLanguage2" ref="loveLanguage2">
+								<select className="form-control" id="loveLanguage2" ref={this.loveLanguage2}>
 									<option selected disabled hidden>{this.props.myLoveLanguages[1]}</option>
 									{listOfLoveLanguages}
 								</select>
