@@ -14,9 +14,9 @@ class GiftsModal extends Component {
 	handleClick(e) {
 		e.preventDefault();
 		this.myGifts = [this.props.myGifts[0], this.props.myGifts[1], this.props.myGifts[2]];
-		this.myGifts[0]=this.gift1.value;
-		this.myGifts[1]=this.gift2.value;
-		this.myGifts[2]=this.gift3.value;
+		this.myGifts[0]=this.gift1.current.value;
+		this.myGifts[1]=this.gift2.current.value;
+		this.myGifts[2]=this.gift3.current.value;
 		this.props.callbackFromGiftsModal(this.myGifts);
 		API.updateGifts(
 			{
