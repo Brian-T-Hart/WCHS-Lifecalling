@@ -22,8 +22,8 @@ class LoveLanguagesModal extends Component {
 			this.props.myLoveLanguages[2]
 		];
 
-		this.myLoveLanguages[0]	= this.loveLanguage1.value;
-		this.myLoveLanguages[1] = this.loveLanguage2.value;
+		this.myLoveLanguages[0]	= this.loveLanguage1.current.value;
+		this.myLoveLanguages[1] = this.loveLanguage2.current.value;
 
 		this.props.callbackFromLoveLanguagesModal(this.myLoveLanguages);
 
