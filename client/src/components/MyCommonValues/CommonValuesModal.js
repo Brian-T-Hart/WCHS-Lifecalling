@@ -14,9 +14,9 @@ class CommonValuesModal extends Component {
 	handleClick(e) {
 		e.preventDefault();
 		this.myCommonValues = [...this.props.myCommonValues];
-		this.myCommonValues[0]=this.cvalue1.value;
-		this.myCommonValues[1]=this.cvalue2.cvalue1.value;
-		this.myCommonValues[2]=this.cvalue3.cvalue2.value;
+		this.myCommonValues[0]=this.cvalue1.current.value;
+		this.myCommonValues[1]=this.cvalue2.current.value;
+		this.myCommonValues[2]=this.cvalue3.current.value;
 		this.props.callbackFromCommonValuesModal(this.myCommonValues);
 		API.updateCommonValues(
 			{
@@ -73,9 +73,9 @@ class CommonValuesModal extends Component {
 							</div>
 
 							<div className="form-group">
-								<label htmlFor="cvalues3">Choose Type</label>
+								<label htmlFor="cvalue3">Choose Type</label>
 
-								<select className="form-control" id="cvalues3" ref={this.cvalue3}>
+								<select className="form-control" id="cvalue3" ref={this.cvalue3}>
 									<option selected disabled hidden>{this.props.myCommonValues[2]}</option>
 									{listOfCommonValues}
 								</select>
