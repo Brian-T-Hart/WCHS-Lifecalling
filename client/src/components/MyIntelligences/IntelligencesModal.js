@@ -13,8 +13,8 @@ class IntelligencesModal extends Component {
 	handleClick(e) {
 		e.preventDefault();
 		this.myIntelligences = [this.props.myIntelligences[0], this.props.myIntelligences[1]];
-		this.myIntelligences[0]=this.intelligence1.value;
-		this.myIntelligences[1]=this.intelligence2.value;
+		this.myIntelligences[0]=this.intelligence1.current.value;
+		this.myIntelligences[1]=this.intelligence2.current.value;
 		this.props.callbackFromIntelligencesModal(this.myIntelligences);
 		API.updateIntelligences(
 			{
