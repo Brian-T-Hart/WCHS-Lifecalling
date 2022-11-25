@@ -15,10 +15,10 @@ class MBTIModal extends Component {
 	handleClick(e) {
 		e.preventDefault();
 		this.myMbti = [this.props.myMbti[0], this.props.myMbti[1], this.props.myMbti[2], this.props.myMbti[3]];
-		this.myMbti[0]=this.mbti1.value;
-		this.myMbti[1]=this.mbti2.value;
-		this.myMbti[2]=this.mbti3.value;
-		this.myMbti[3]=this.mbti4.value;
+		this.myMbti[0]=this.mbti1.current.value;
+		this.myMbti[1]=this.mbti2.current.value;
+		this.myMbti[2]=this.mbti3.current.value;
+		this.myMbti[3]=this.mbti4.current.value;
 		this.props.callbackFromMBTIModal(this.myMbti);
 		API.updateMBTI(
 			{
