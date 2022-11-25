@@ -1,4 +1,4 @@
-import React, { Component, createRef } from 'react';
+import React, { Component } from 'react';
 import API from "../../utils/API";
 
 class EnneagramModal extends Component {
@@ -12,7 +12,7 @@ class EnneagramModal extends Component {
 
 	handleClick(e) {
 		e.preventDefault();
-		this.myEnneagram = [this.refs.enneagram.value, this.refs.wing.value];
+		this.myEnneagram = [this.enneagram.current.value, this.wing.current.value];
 		this.props.callbackFromEnneagramModal(this.myEnneagram);
 		API.updateEnneagram(
 			{
