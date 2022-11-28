@@ -2,7 +2,8 @@
 	box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
 	height: 100vh;
 	overflow: hidden;
 	width: 100%;
@@ -36,8 +37,19 @@ h6 {
 	width: 100%;
 }
 
-.clickable, .clickable:hover, ul li:hover {
+.clickable,
+.clickable:hover,
+ul li:hover {
 	cursor: pointer;
+}
+
+.close,
+.close:hover,
+.close:focus {
+	color: #fff;
+	font-weight: 400;
+	opacity: 1;
+	outline: none;
 }
 
 .content-container {
@@ -54,7 +66,8 @@ h6 {
 	width: 90%;
 }
 
-.loginContentRow, .registerContentRow {
+.loginContentRow,
+.registerContentRow {
 	margin: 0;
 	padding: 0;
 }
@@ -133,27 +146,27 @@ h6 {
 }
 
 #mainNavbar {
-		background-color: #d00010;
-		left: 0;
-		min-height: 4em;
-		padding: 0.5em;
-		position: fixed;
-		top: 0;
-		width: 100%;
-		z-index: 9;
+	background-color: #d00010;
+	left: 0;
+	min-height: 4em;
+	padding: 0.5em;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 9;
 }
 
 #navTitle {
-		text-decoration: none;
-		color: #fff;
-		font-size: 1.3em;
+	text-decoration: none;
+	color: #fff;
+	font-size: 1.3em;
 }
 
 #navLogo {
-		height: 2.3em;
-		margin: 0em 1em;
-		padding-left: 0em;
-		width: auto;
+	height: 2.3em;
+	margin: 0em 1em;
+	padding-left: 0em;
+	width: auto;
 }
 
 #navLogoutLink {
@@ -161,18 +174,18 @@ h6 {
 }
 
 #navDropdownMenu {
-		margin-right: 1.5em;
-		font-size: 1.3em;
+	margin-right: 1.5em;
+	font-size: 1.3em;
 }
 
 #navbarDropdown {
-		color: #fff;
+	color: #fff;
 }
 
 #search-container {
 	left: 0;
 	position: fixed;
-    top: 4em;
+	top: 4em;
 	width: 100%;
 	z-index: 2;
 }
