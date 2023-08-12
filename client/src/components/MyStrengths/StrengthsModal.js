@@ -5,31 +5,23 @@ class StrengthsModal extends Component {
 
 	constructor(props) {
 		super(props);
-		this.state = {
-			myStrengths: [],
-		}
-	}
-
-	handleChange = () => {
-		let changedStrengths = []; 
-		let strength1 = document.getElementById('strength1').value;
-		let strength2 = document.getElementById('strength2').value;
-		let strength3 = document.getElementById('strength3').value;
-		changedStrengths.push(strength1, strength2, strength3);
-
-		this.setState({
-			myStrengths: changedStrengths
-		})
+		this.strength1 = React.createRef();
+		this.strength2 = React.createRef();
+		this.strength3 = React.createRef();
+		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleClick = (e) => {
 		e.preventDefault();
-		let myStrengths = this.state.myStrengths;
-		this.props.callbackFromStrengthsModal(myStrengths);
+		this.myStrengths = [...this.props.myStrengths];
+		this.myStrengths[0] = this.strength1.current.value;
+		this.myStrengths[1] = this.strength2.current.value;
+		this.myStrengths[2] = this.strength3.current.value;
+		this.props.callbackFromStrengthsModal(this.myStrengths);
 		API.updateStrengths(
 			{
 				id: localStorage.getItem("lifeCallingId"),
-				strengths: myStrengths
+				strengths: this.myStrengths
 			}
 		)
 			.then(
@@ -46,24 +38,8 @@ class StrengthsModal extends Component {
 	}
 
 	render() {
-		const myStrengths = this.props.myStrengths;
-
-		const strengths1 = this.props.strengths.map((strength) =>
-			(myStrengths[0] !== strength.name) ?
-			<option key={strength.id}>{strength.name}</option> :
-			<option selected key={strength.id}>{strength.name}</option>
-		);
-
-		const strengths2 = this.props.strengths.map((strength) =>
-			(myStrengths[1] !== strength.name) ?
-			<option key={strength.id}>{strength.name}</option> :
-			<option selected key={strength.id}>{strength.name}</option>
-		);
-
-		const strengths3 = this.props.strengths.map((strength) =>
-			(myStrengths[2] !== strength.name) ?
-			<option key={strength.id}>{strength.name}</option> :
-			<option selected key={strength.id}>{strength.name}</option>
+		const strengthsList = this.props.strengths.map((strength) =>
+			<option key={strength.id} value={strength.name}>{strength.name}</option>
 		);
 
 		return (
@@ -82,27 +58,27 @@ class StrengthsModal extends Component {
 							<div className="form-group">
 								<label htmlFor="strength1">Highest Strength</label>
 
-								<select className="form-control" id="strength1" onChange={this.handleChange}>
-									<option value="">--Select--</option>
-									{strengths1}
+								<select className="form-control" id="strength1" ref={this.strength1}>
+									<option selected disabled hidden>{this.props.myStrengths[0]}</option>
+									{strengthsList}
 								</select>
 							</div>
 
 							<div className="form-group">
 								<label htmlFor="strength2">Second Highest Strength</label>
 
-								<select className="form-control" id="strength2" onChange={this.handleChange}>
-									<option value="">--Select--</option>
-									{strengths2}
+								<select className="form-control" id="strength2" ref={this.strength2}>
+									<option selected disabled hidden>{this.props.myStrengths[1]}</option>
+									{strengthsList}
 								</select>
 							</div>
 
 							<div className="form-group">
 								<label htmlFor="strength3">Third Highest Strength</label>
 
-								<select className="form-control" id="strength3" onChange={this.handleChange}>
-									<option value="">--Select--</option>
-									{strengths3}
+								<select className="form-control" id="strength3" ref={this.strength3}>
+									<option selected disabled hidden>{this.props.myStrengths[2]}</option>
+									{strengthsList}
 								</select>
 							</div>
 						</div>
