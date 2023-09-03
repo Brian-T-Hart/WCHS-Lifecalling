@@ -106,6 +106,14 @@ ul li:hover {
 	text-transform: uppercase;
 }
 
+.markers {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	writing-mode: horizontal-tb;
+	width: 100%;
+}
+
 .modal {
 	margin-bottom: 80px;
 	margin-top: 80px;
