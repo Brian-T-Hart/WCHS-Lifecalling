@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Slider } from './Slider';
 import API from "../../utils/API";
 
 class MBTIModal extends Component {
@@ -14,11 +15,14 @@ class MBTIModal extends Component {
 
 	handleClick(e) {
 		e.preventDefault();
-		this.myMbti = [this.props.myMbti[0], this.props.myMbti[1], this.props.myMbti[2], this.props.myMbti[3]];
+		this.myMbti = [this.props.myMbti[0], this.props.myMbti[1], this.props.myMbti[2], this.props.myMbti[3], this.props.myMbti[4]];
 		this.myMbti[0]=this.mbti1.current.value;
 		this.myMbti[1]=this.mbti2.current.value;
 		this.myMbti[2]=this.mbti3.current.value;
 		this.myMbti[3]=this.mbti4.current.value;
+		this.myMbti[4]=document.getElementById('mbti-slider').value;
+		console.log(this.myMbti);
+
 		this.props.callbackFromMBTIModal(this.myMbti);
 		API.updateMBTI(
 			{
@@ -39,6 +43,18 @@ class MBTIModal extends Component {
 	}
 
 	render() {
+		let selectedOption1 = '--Select--';
+		let selectedOption2 = '--Select--';
+		let selectedOption3 = '--Select--';
+		let selectedOption4 = '--Select--';
+		
+		if (Array.isArray(this.props.myMbti)) {
+			selectedOption1 = this.props.myMbti[0];
+			selectedOption2 = this.props.myMbti[1];
+			selectedOption3 = this.props.myMbti[2];
+			selectedOption4 = this.props.myMbti[3];
+		}
+		
 		return (
 			<div>
 				<div className="modal-content">
@@ -56,7 +72,7 @@ class MBTIModal extends Component {
 								<label htmlFor="mbti1">Choose Type</label>
 
 								<select className="form-control" id="mbti1" ref={this.mbti1}>
-									<option selected disabled hidden>{this.props.myMbti[0]}</option>
+									<option selected disabled hidden>{selectedOption1}</option>
 
 									<option>Extrovert</option>
 
@@ -64,11 +80,13 @@ class MBTIModal extends Component {
 								</select>
 							</div>
 
+							<Slider myMbti={this.props.myMbti} />
+
 							<div className="form-group">
 								<label htmlFor="mbti2">Choose Type</label>
 
 								<select className="form-control" id="mbti2" ref={this.mbti2}>
-									<option selected disabled hidden>{this.props.myMbti[1]}</option>
+									<option selected disabled hidden>{selectedOption2}</option>
 
 									<option>Sensing</option>
 
@@ -80,7 +98,7 @@ class MBTIModal extends Component {
 								<label htmlFor="mbti3">Choose Type</label>
 
 								<select className="form-control" id="mbti3" ref={this.mbti3}>
-									<option selected disabled hidden>{this.props.myMbti[2]}</option>
+									<option selected disabled hidden>{selectedOption3}</option>
 
 									<option>Thinking</option>
 
@@ -92,7 +110,7 @@ class MBTIModal extends Component {
 								<label htmlFor="mbti4">Choose Type</label>
 
 								<select className="form-control" id="mbti4" ref={this.mbti4}>
-									<option selected disabled hidden>{this.props.myMbti[3]}</option>
+									<option selected disabled hidden>{selectedOption4}</option>
 
 									<option>Perceiving</option>
 
