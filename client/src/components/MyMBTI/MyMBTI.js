@@ -28,10 +28,20 @@ class MyMBTI extends Component {
 	}
 
 	render() {
+		let listOfMyMbti = "";
 
-		const listOfMyMbti = this.props.myMbti.map((mbti) =>
-			<li key={this.props.myMbti.indexOf(mbti) + 1} className="list-group-item d-flex" data-txt={mbti} onClick={this.handleClick}>{mbti}</li>
-		);
+		if (Array.isArray(this.props.myMbti)) {
+		
+			const myMbtiArray = [...this.props.myMbti];
+		
+			while (myMbtiArray.length > 4) {
+				myMbtiArray.pop();
+			}
+
+			listOfMyMbti = myMbtiArray.map((mbti) =>
+				<li key={this.props.myMbti.indexOf(mbti) + 1} className="list-group-item d-flex" data-txt={mbti} onClick={this.handleClick}>{mbti}</li>
+			);
+		}
 
 		const allMBTI = listOfMBTI.map((allMBTI) =>
 			<div key={allMBTI.id}>
