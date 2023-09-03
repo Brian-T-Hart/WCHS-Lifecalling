@@ -76,6 +76,8 @@ class Dashboard extends Component {
 				}
 				if (res.data.mbti) {
 					this.setState({ myMbti: res.data.mbti });
+				} else {
+					this.setState({ myMbti: [] });
 				}
 				if (res.data.gifts) {
 					this.setState({ myGifts: res.data.gifts });
@@ -113,7 +115,7 @@ class Dashboard extends Component {
 			strengths: listOfStrengthsExplorer,
 			myEnneagram: "",
 			enneagram: listOfEnneagramTypes,
-			myMbti: [],
+			// myMbti: [],
 			mbti: listOfMBTI,
 			myGifts: [],
 			gifts: listOfSpiritualGifts,
