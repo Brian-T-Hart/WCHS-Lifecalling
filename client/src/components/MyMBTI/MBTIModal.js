@@ -21,7 +21,6 @@ class MBTIModal extends Component {
 		this.myMbti[2]=this.mbti3.current.value;
 		this.myMbti[3]=this.mbti4.current.value;
 		this.myMbti[4]=document.getElementById('mbti-slider').value;
-		console.log(this.myMbti);
 
 		this.props.callbackFromMBTIModal(this.myMbti);
 		API.updateMBTI(
@@ -32,7 +31,7 @@ class MBTIModal extends Component {
 		)
 		.then(
 			res => {
-				console.log(res);
+				console.log(res.statusText);
 			}
 		)
 		.catch(
