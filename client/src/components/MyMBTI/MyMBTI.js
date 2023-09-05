@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import listOfMBTI from "../Dashboard/listOfMBTI.js";
+import SliderBar from './SliderBar.js';
 
 class MyMBTI extends Component {
 
@@ -29,8 +30,11 @@ class MyMBTI extends Component {
 
 	render() {
 		let listOfMyMbti = "";
+		let barWidth = undefined;
 
 		if (Array.isArray(this.props.myMbti)) {
+
+			barWidth = this.props.myMbti[4] ? this.props.myMbti[4] : undefined;
 		
 			const myMbtiArray = [...this.props.myMbti];
 		
@@ -78,6 +82,7 @@ class MyMBTI extends Component {
 					<div className="col-md-12">
 						<ul className="list-group list-group-flush">
 							<span data-toggle="modal" data-target="#mbtiModal">
+								<SliderBar barWidth={barWidth} />
 								{listOfMyMbti}
 							</span>
 						</ul>
