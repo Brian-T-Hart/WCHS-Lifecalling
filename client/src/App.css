@@ -151,6 +151,7 @@ ul li:hover {
 	background-color: rgba(0, 0, 255, 0.8);
 	border-radius: 5px 0 0 5px;
 	height: 100%;
+	padding-left: 10px;
 }
 
 .slider-bar-labels {
