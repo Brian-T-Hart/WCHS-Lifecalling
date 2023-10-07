@@ -22,6 +22,7 @@ router.post('/getAllStudents', (req, res, next) => {
 			if (results.isAdmin === true) {
 				db.students.findAll(
 					{
+						order: [['createdAt', 'DESC']]
 					}
 				)
 				.then(
