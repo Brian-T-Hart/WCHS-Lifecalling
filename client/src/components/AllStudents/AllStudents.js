@@ -56,6 +56,13 @@ class AllStudents extends Component {
 				<td>{student.email}</td>
 
 				<td>
+					{student.commonValues != null ?
+						<ul>
+							{student.commonValues.map((commonValue) => <li key={commonValue}>{commonValue}</li>)}
+						</ul> : ""}
+				</td>
+				
+				<td>
 					{student.strengths != null ?
 						<ul>
 							{student.strengths.map((myStrength) => <li key={myStrength}>{myStrength}</li>)}
@@ -116,7 +123,8 @@ class AllStudents extends Component {
 							<tr>
 								<th scope="col">Username</th>
 								<th scope="col">Email</th>
-								<th scope="col">Strengths</th>
+								<th scope="col">Common Values</th>
+								<th scope="col">Strengths Explorer</th>
 								<th scope="col">Myers-Briggs</th>
 								<th scope="col">Spiritual Gifts</th>
 								<th scope="col">Love Languages</th>
