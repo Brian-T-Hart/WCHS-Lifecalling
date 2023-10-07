@@ -44,7 +44,7 @@ class AllStudents extends Component {
 			[name]: value
 		});
 
-		let students = this.state.allStudents.filter(student => student.email.includes(value));
+		let students = this.state.allStudents.filter(student => student.email.toLowerCase().includes(value.toLowerCase()));
 		this.setState({ studentsToDisplay: students });
 	};
 
