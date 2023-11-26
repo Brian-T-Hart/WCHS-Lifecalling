@@ -30,11 +30,15 @@ class MyMBTI extends Component {
 
 	render() {
 		let listOfMyMbti = "";
-		let barWidth = undefined;
+		let listOfSliders = "";
+		let barWidth1, barWidth2, barWidth3, barWidth4;
 
 		if (Array.isArray(this.props.myMbti)) {
 
-			barWidth = this.props.myMbti[4] ? this.props.myMbti[4] : undefined;
+			barWidth1 = this.props.myMbti[4] ? this.props.myMbti[4] : undefined;
+			barWidth2 = this.props.myMbti[5] ? this.props.myMbti[5] : undefined;
+			barWidth3 = this.props.myMbti[6] ? this.props.myMbti[6] : undefined;
+			barWidth4 = this.props.myMbti[7] ? this.props.myMbti[7] : undefined;
 		
 			const myMbtiArray = [...this.props.myMbti];
 		
@@ -45,6 +49,17 @@ class MyMBTI extends Component {
 			listOfMyMbti = myMbtiArray.map((mbti) =>
 				<li key={this.props.myMbti.indexOf(mbti) + 1} className="list-group-item d-flex" data-txt={mbti} onClick={this.handleClick}>{mbti}</li>
 			);
+
+			listOfSliders = (
+				<div>
+					<SliderBar barWidth={barWidth1} slideBarLabel1="Introvert" slideBarLabel2="Extrovert" />
+					<SliderBar barWidth={barWidth2} slideBarLabel1="Sensing" slideBarLabel2="Intuition" />
+					<SliderBar barWidth={barWidth3} slideBarLabel1="Thinking" slideBarLabel2="Feeling" />
+					<SliderBar barWidth={barWidth4} slideBarLabel1="Perceiving" slideBarLabel2="Judging" />
+				</div>
+			);
+
+
 		}
 
 		const allMBTI = listOfMBTI.map((allMBTI) =>
@@ -80,12 +95,13 @@ class MyMBTI extends Component {
 				{/* display container */}
 				<div className="infoInfoBox row">
 					<div className="col-md-12">
-						<ul className="list-group list-group-flush">
+						{/* <ul className="list-group list-group-flush">
 							<span data-toggle="modal" data-target="#mbtiModal">
-								<SliderBar barWidth={barWidth} />
 								{listOfMyMbti}
-							</span>
-						</ul>
+							</span>	
+						</ul> */}
+
+						{listOfSliders}
 					</div>
 				</div>
 

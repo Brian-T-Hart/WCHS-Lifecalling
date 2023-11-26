@@ -20,7 +20,10 @@ class MBTIModal extends Component {
 		this.myMbti[1]=this.mbti2.current.value;
 		this.myMbti[2]=this.mbti3.current.value;
 		this.myMbti[3]=this.mbti4.current.value;
-		this.myMbti[4]=document.getElementById('mbti-slider').value;
+		this.myMbti[4]=document.getElementById('introvert-extrovert').value;
+		this.myMbti[5]=document.getElementById('sensing-intuition').value;
+		this.myMbti[6]=document.getElementById('thinking-feeling').value;
+		this.myMbti[7]=document.getElementById('perceiving-judging').value;
 
 		this.props.callbackFromMBTIModal(this.myMbti);
 		API.updateMBTI(
@@ -46,12 +49,20 @@ class MBTIModal extends Component {
 		let selectedOption2 = '--Select--';
 		let selectedOption3 = '--Select--';
 		let selectedOption4 = '--Select--';
+		let selectedOption5 = '0';
+		let selectedOption6 = '0';
+		let selectedOption7 = '0';
+		let selectedOption8 = '0';
 		
 		if (Array.isArray(this.props.myMbti)) {
 			selectedOption1 = this.props.myMbti[0];
 			selectedOption2 = this.props.myMbti[1];
 			selectedOption3 = this.props.myMbti[2];
 			selectedOption4 = this.props.myMbti[3];
+			selectedOption5 = this.props.myMbti[4];
+			selectedOption6 = this.props.myMbti[5];
+			selectedOption7 = this.props.myMbti[6];
+			selectedOption8 = this.props.myMbti[7];
 		}
 		
 		return (
@@ -79,7 +90,13 @@ class MBTIModal extends Component {
 								</select>
 							</div>
 
-							<Slider myMbti={this.props.myMbti} />
+							<Slider
+								sliderId="introvert-extrovert"
+								sliderLabel1="Introvert"
+								sliderLabel2="Extrovert"
+								sliderValue={selectedOption5}
+								myMbti={this.props.myMbti}
+							/>
 
 							<div className="form-group">
 								<label htmlFor="mbti2">Choose Type</label>
@@ -93,6 +110,14 @@ class MBTIModal extends Component {
 								</select>
 							</div>
 
+							<Slider
+								sliderId="sensing-intuition"
+								sliderLabel1="Sensing"
+								sliderLabel2="Intuition"
+								sliderValue={selectedOption6}
+								myMbti={this.props.myMbti}
+							/>
+
 							<div className="form-group">
 								<label htmlFor="mbti3">Choose Type</label>
 
@@ -105,6 +130,14 @@ class MBTIModal extends Component {
 								</select>
 							</div>
 
+							<Slider
+								sliderId="thinking-feeling"
+								sliderLabel1="Thinking"
+								sliderLabel2="Feeling"
+								sliderValue={selectedOption7}
+								myMbti={this.props.myMbti}
+							/>
+
 							<div className="form-group">
 								<label htmlFor="mbti4">Choose Type</label>
 
@@ -116,6 +149,14 @@ class MBTIModal extends Component {
 									<option>Judging</option>
 								</select>
 							</div>
+
+							<Slider
+									sliderId="perceiving-judging"
+									sliderLabel1="Perceiving"
+									sliderLabel2="Judging"
+									sliderValue={selectedOption8}
+									myMbti={this.props.myMbti}
+							/>
 						</div>
 
 						<div className="modal-footer">
