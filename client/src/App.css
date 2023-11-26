@@ -136,14 +136,21 @@ ul li:hover {
 	color: #fff;
 }
 
+.slider {
+	margin-bottom: 0;
+}
+
+.slider-label {
+	margin-bottom: 0;
+}
+
 .slider-bar {
 	background-color: #efefef;
 	border: 1px solid #aaa;
 	border-radius: 5px;
 	height: 12px;
 	line-height: 12px;
-	margin: 10px 10px 20px;
-	/* padding-right: 2px; */
+	margin: 20px 10px 32px;
 	position: relative;
 }
 
@@ -169,7 +176,7 @@ ul li:hover {
 	font-size: 12px;
 	justify-content: space-between;
 	line-height: 12px;
-	margin-top: 12px;
+	margin-top: 14px;
 }
 
 #editIcon {

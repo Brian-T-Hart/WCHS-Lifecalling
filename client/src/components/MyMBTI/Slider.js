@@ -10,7 +10,7 @@ function Slider(props) {
 
         return (
             <div className="form-group">
-                <label htmlFor={sliderId}>{"Where are you on the " + sliderId + " scale?"}</label>
+                <label className='slider-label' htmlFor={sliderId}>{"Where are you on the " + sliderId + " scale?"}</label>
                 <input
                     type="range"
                     defaultValue={defaultValue}
